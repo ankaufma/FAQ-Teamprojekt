@@ -18,10 +18,10 @@ class Usermanager {
 		
 		foreach($users AS $searchUser) {
 			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $seachUser->getUsername()) {
-				return true;
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public function validateUsername(User $user) {
@@ -52,7 +52,7 @@ class Usermanager {
 		", '". $user->getFirstname() ."'" .
 		", '". $user->getLastname() . "'" .
 		", '". $user->getPassword() . "'" .
-		", '". $user->getUserrole() ."')";
+		", 'User')";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		mysqli_free_result($result);	
