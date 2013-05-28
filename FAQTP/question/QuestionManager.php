@@ -1,5 +1,5 @@
 <?php
-include ('question.php');
+include('Question.php');
 class QuestionManager {
 	
 	private $questions = Array();

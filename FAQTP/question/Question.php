@@ -1,6 +1,4 @@
 <?php
-
-
 class Question
 {
 	private $questionID;
@@ -49,10 +47,6 @@ class Question
 
 	public function getQuestionID() {
 		return $this->category;
-	}
-	
-	public function getQuestionID() {
-		return $this->questionID;
 	}
 
 	public function getQuestion() {

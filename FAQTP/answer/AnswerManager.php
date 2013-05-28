@@ -1,6 +1,6 @@
 <?php
 include('Answer.php');
-include('Question.php');
+include('..\question\Question.php');
 
 class AnswerManager {
 	private $answers = Array();

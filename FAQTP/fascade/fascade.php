@@ -2,9 +2,9 @@
 include('ShowAllAnswersDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
-include('usermanager.php');
-include('AnswerManager.php');
-include('RatingManager.php');
+include('..\user\usermanager.php');
+include('..\answer\AnswerManager.php');
+include('..\answer\RatingManager.php');
 
 	class Fascade {
 		public function applyUser($firstname, $lastname, $username, $email, $password) {
@@ -38,4 +38,8 @@ include('RatingManager.php');
 		}
 	}
 	
+	$fassi = new Fascade();
+	foreach($fassi->showAllAnswers() AS $myAnswers){
+		echo($myAnswers);
+	}
 ?>
