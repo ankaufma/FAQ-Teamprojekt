@@ -10,13 +10,12 @@ class User {
 		private $lastname;
 		private $userrole;
 		
-		public function __construct($userId, $username, $password, $email, $firstname, $lastname, $userrole) {
+		public function __construct($username, $password, $email, $firstname, $lastname) {
 			$this->username = $username;
 			$this->password = $password; 
 			$this->email = $email;
 			$this->firstname = $firstname;
 			$this->lastname = $lastname;
-			$this->userrole = $userrole;
 		}
 		
 		public function setUserId($userId) {

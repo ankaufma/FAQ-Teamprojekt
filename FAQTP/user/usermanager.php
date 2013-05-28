@@ -10,13 +10,13 @@ class Usermanager {
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
 		while ($row = mysqli_fetch_array($result)) {
-			array_push($this->users,new User($row[0], $row[1],$row[2],$row[3],$row[4],$row[5],$row[6]));
+			array_push($this->users,new User($row[1],$row[2],$row[3],$row[4],$row[5]));
 		}
 		
 		mysqli_free_result($result);
 		mysqli_close($db);
 		
-		foreach($users AS $searchUser) {
+		foreach($this->users AS $searchUser) {
 			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $seachUser->getUsername()) {
 				return false;
 			}
@@ -30,14 +30,14 @@ class Usermanager {
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 	
 		while ($row = mysqli_fetch_array($result)) {
-			array_push($this->users,new User($row[0], $row[1],$row[2],$row[3],$row[4],$row[5],$row[6]));
+			array_push($this->users,new User($row[1],$row[2],$row[3],$row[4],$row[5]));
 		}
 	
 		mysqli_free_result($result);
 		mysqli_close($db);
 	
-		foreach($users AS $searchUser) {
-			if($searchUser->getUsername() == $seachUser->getUsername()) {
+		foreach($this->users AS $searchUser) {
+			if($searchUser->getUsername() == $searchUser->getUsername()) {
 				return true;
 			}
 		}
@@ -54,8 +54,7 @@ class Usermanager {
 		", '". $user->getPassword() . "'" .
 		", 'User')";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
-		mysqli_free_result($result);	
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');	
 		mysqli_close($db);
 	}
 }
