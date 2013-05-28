@@ -13,6 +13,7 @@ class ApplyUserDTO {
 		$this->firstname = $firstname;
 		$this->lastname = $lastname;
 	}
+
 	
 	public function setUserName($username) {
 		$this->username = $username;

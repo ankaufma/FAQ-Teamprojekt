@@ -57,5 +57,16 @@ class Usermanager {
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');	
 		mysqli_close($db);
 	}
+	
+	public function loadUserByUsername($username) {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$sql = "SELECT * FROM User WHERE Username='".$username."';";
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		while ($row = mysqli_fetch_array($result)) {
+			$sessionUser = new User($row[1],$row[2],$row[3],$row[4],$row[5]);
+		}	
+		mysqli_close($db);
+		return $sessionUser;
+	}
 }
 ?>

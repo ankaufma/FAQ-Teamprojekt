@@ -10,7 +10,6 @@ class Rating
 		$this->answer = $answer;
 		$this->user = $user;
 		$this->rating = $rating;
-
 	}
 
 	public function setBwID($answer) {
