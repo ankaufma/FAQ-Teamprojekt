@@ -1,10 +1,12 @@
 <?php
 include('ShowAllAnswersDTO.php');
+include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
 include('..\user\usermanager.php');
 include('..\answer\AnswerManager.php');
 include('..\answer\RatingManager.php');
+include('..\question\QuestionManager.php');
 
 	class Fascade {
 		public function applyUser($firstname, $lastname, $username, $email, $password) {
@@ -36,10 +38,22 @@ include('..\answer\RatingManager.php');
 			}
 			return $showAnswers;
 		}
+		
+		public function showQuestionAnswerDTO() {
+			$qm = new QuestionManager();
+			$allQAs = Array();
+			foreach($qm->loadAllQuestions() AS $myQ) {
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			}
+			return $allQAs;
+		}
 	}
 	
 	$fassi = new Fascade();
-	foreach($fassi->showAllAnswers() AS $myAnswers){
-		echo($myAnswers);
+	foreach($fassi->showQuestionAnswerDTO() AS $myQA) {
+		echo("<p>Frage: " . $myQA->getQuestion() . " " . $myQA->getQDate(). "</p>");
+		foreach($myQA->getAnswers() AS $myAnswers) {
+			echo("<p>Antwort: " .$myAnswers->getAnswer(). "</p>");
+		}
 	}
 ?>

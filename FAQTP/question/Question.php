@@ -3,20 +3,28 @@ class Question
 {
 	private $questionID;
 	private $question;
-	private $fDate;
+	private $qDate;
 	private $language;
 	private $user;
+	private $answers = Array();
 	private $category = Array();
 	private $publicityState;
 	
-	public function __construct( $question, $language, Array $category, $user) {
+	public function __construct($questionID, $question, $language, $publicityState, $qDate, Array $answers, Array $category, User $user) {
+		$this->questionID = $questionID;
 		$this->question = $question;
 		$this->language = $language;
-		$this->user = $user;
+		$this->publicityState = $publicityState;
+		$this->qDate=$qDate;
+		$this->answers = $answers;
 		$this->category = $category;
-
+		$this->user = $user;
 	}
 
+	public function setPublicityState($publicityState) {
+		$this->publicityState = $publicityState;
+	}	
+	
 	public function setQuestionID($questionID) {
 		$this->questionID = $questionID;
 	}
@@ -25,19 +33,19 @@ class Question
 		$this->question = $question;
 	}
 	
-	public function setFDate($fDate) {
-		$this->fDate = $fDate;
+	public function setqDate($qDate) {
+		$this->qDate = $qDate;
 	}
 	
 	public function setLanguage($language) {
 		$this->language= $language;
 	}
 	
-	public function setAnswers($User) {
-		$this->User = $User;
+	public function setAnswers(Array $answer) {
+		$this->answers = $answers;
 	}
 	
-	public function setUser($user) {
+	public function setUser(User $user) {
 		$this->user = $user;
 	}
 
@@ -53,8 +61,8 @@ class Question
 		return $this ->question;
 	}
 
-	public function getFDate() {
-		return $this->fDate;
+	public function getqDate() {
+		return $this->qDate;
 	}
 
 	public function getLanguage() {
@@ -65,9 +73,16 @@ class Question
 		return $this->answers;
 	}
 	
+	public function getCategories() {
+		return $this->categories;
+	}
+	
 	public function getUser() {
 		return $this->user;
 	}	
 	
+	public function getPublicityState() {
+		return $this->publicityState;
+	}
 }
 ?>

@@ -10,7 +10,7 @@
 			$this->answer = $answer;
 		}
 		
-		public function getAnswer($answer) {
+		public function getAnswer() {
 			return $this->answer;
 		}
 	}
