@@ -59,6 +59,15 @@ include('..\question\CategoryManager.php');
 			return $allQAs;
 		}
 		
+		public function showQuestionByText($text) {
+			$qm = new QuestionManager();
+			$allQAs = Array();
+			foreach($qm->loadQuestionByText($text) AS $myQ) {
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			}
+			return $allQAs;
+		}
+		
 		public function showQuestionsByCategory($catId) {
 			$qm = new QuestionManager();
 			$allQbyC = Array();
