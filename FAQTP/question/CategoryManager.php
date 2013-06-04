@@ -25,5 +25,17 @@ class CategoryManager {
 		mysqli_close($db);
 		return $this->categories;
 	}
+	
+	public function loadRoots () {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$sql = "SELECT * FROM Category WHERE PreCategory IS NULL";
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		while ($row = mysqli_fetch_array($result)) {
+			array_push($this->categories, new Category($row[0],$row[1],$row[2]));
+		}
+		mysqli_free_result($result);
+		mysqli_close($db);
+		return $this->categories;
+	}
 }
 ?>

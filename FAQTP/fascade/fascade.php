@@ -50,6 +50,24 @@ include('..\question\CategoryManager.php');
 			return $allQAs;
 		}
 		
+		public function showQuestionNoAnswer() {
+			$qm = new QuestionManager();
+			$allQAs = Array();
+			foreach($qm->loadQuestionsByNoAnswer() AS $myQ) {
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			}
+			return $allQAs;
+		}
+		
+		public function showQuestionsByCategory($catId) {
+			$qm = new QuestionManager();
+			$allQbyC = Array();
+			foreach($qm->loadQuestionByCategory($catId) AS $myQ) {
+				array_push($allQbyC,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			}
+			return $allQbyC;
+		}
+		
 		public function showCatByPreCat($id){
 			$cm = new CategoryManager();
 			$allNachfolger = Array();
@@ -57,6 +75,15 @@ include('..\question\CategoryManager.php');
 				array_push($allNachfolger, new ShowCategoriesDTO($nachfolger->getCatID(), $nachfolger->getDescriptionOfCategory()));
 			}
 			return $allNachfolger;
+		}
+		
+		public function showRootCats(){
+			$cm = new CategoryManager();
+			$roots = Array();
+			foreach($cm->loadRoots() AS $myRoot) {
+				array_push($roots, new ShowCategoriesDTO($myRoot->getCatID(), $myRoot->getDescriptionOfCategory()));
+			}
+			return $roots;
 		}
 		
 		public function showAllCategories() {
@@ -67,20 +94,5 @@ include('..\question\CategoryManager.php');
 			}
 			return $allCats;
 		}
-	}
-	
-	$fassi = new Fascade();
-	foreach($fassi->showQuestionAnswerDTO() AS $myQA) {
-		echo("<p>Frage: " . $myQA->getQuestion() . " " . $myQA->getQDate(). "</p>");
-		foreach($myQA->getAnswers() AS $myAnswers) {
-			echo("<p>Antwort: " .$myAnswers->getAnswer(). "</p>");
-		}
-	}
-	foreach($fassi->showCatByPreCat(1) AS $test) {
-		echo("<div>".$test->getCategoryName()."</div>");
-	}
-	
-	foreach($fassi->showAllCategories() AS $test) {
-		echo("<div>".$test->getCategoryName()."</div>");
 	}
 ?>
