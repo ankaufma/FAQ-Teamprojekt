@@ -213,9 +213,6 @@ class QuestionManager {
 		return $this->questions;
 	}
 	
-	public function 
-	
-	
 	
 }
 ?>

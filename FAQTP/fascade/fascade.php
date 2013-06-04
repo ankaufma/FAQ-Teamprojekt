@@ -1,4 +1,5 @@
 <?php
+include('ShowCategoriesDTO.php');
 include('ShowAllAnswersDTO.php');
 include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
@@ -7,6 +8,7 @@ include('..\user\usermanager.php');
 include('..\answer\AnswerManager.php');
 include('..\answer\RatingManager.php');
 include('..\question\QuestionManager.php');
+include('..\question\CategoryManager.php');
 
 	class Fascade {
 		public function applyUser($firstname, $lastname, $username, $email, $password) {
@@ -47,6 +49,24 @@ include('..\question\QuestionManager.php');
 			}
 			return $allQAs;
 		}
+		
+		public function showCatByPreCat($id){
+			$cm = new CategoryManager();
+			$allNachfolger = Array();
+			foreach($cm->loadCategoryByCatId($id) AS $nachfolger) {
+				array_push($allNachfolger, new ShowCategoriesDTO($nachfolger->getCatID(), $nachfolger->getDescriptionOfCategory()));
+			}
+			return $allNachfolger;
+		}
+		
+		public function showAllCategories() {
+			$cm = new CategoryManager();
+			$allCats = Array();
+			foreach($cm->loadAllCategories() AS $myCats) {
+				array_push($allCats, new ShowCategoriesDTO($myCats->getCatID(), $myCats->getDescriptionOfCategory()));
+			}
+			return $allCats;
+		}
 	}
 	
 	$fassi = new Fascade();
@@ -55,5 +75,12 @@ include('..\question\QuestionManager.php');
 		foreach($myQA->getAnswers() AS $myAnswers) {
 			echo("<p>Antwort: " .$myAnswers->getAnswer(). "</p>");
 		}
+	}
+	foreach($fassi->showCatByPreCat(1) AS $test) {
+		echo("<div>".$test->getCategoryName()."</div>");
+	}
+	
+	foreach($fassi->showAllCategories() AS $test) {
+		echo("<div>".$test->getCategoryName()."</div>");
 	}
 ?>
