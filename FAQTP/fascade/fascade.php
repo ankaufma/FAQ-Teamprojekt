@@ -1,4 +1,6 @@
 <?php
+include('ShowCommentByAnswerDTO.php');
+include('ShowRatingByAnswerDTO.php');
 include('ShowCategoriesDTO.php');
 include('ShowAllAnswersDTO.php');
 include('ShowQuestionAnswerDTO.php');
@@ -9,6 +11,7 @@ include('..\answer\AnswerManager.php');
 include('..\answer\RatingManager.php');
 include('..\question\QuestionManager.php');
 include('..\question\CategoryManager.php');
+include('..\answer\CommentManager.php');
 
 	class Fascade {
 		public function applyUser($firstname, $lastname, $username, $email, $password) {
@@ -102,6 +105,18 @@ include('..\question\CategoryManager.php');
 				array_push($allCats, new ShowCategoriesDTO($myCats->getCatID(), $myCats->getDescriptionOfCategory()));
 			}
 			return $allCats;
+		}
+		
+		public function showRatingByAnswer($answer) {
+			$rm = new RatingManager();
+			$swrba = new ShowRatingByAnswerDTO($rm->calcRatingForEachAnswer($answer));
+			return $swrba->getRating();
+		}
+		
+		public function showCommentsByAnswer($answer) {
+			$cm = new CommentManager();
+			$swcba = new ShowCommentByAnswerDTO($cm->loadCommentsByAnswer($answer));
+			return $swcba->getComments();
 		}
 	}
 ?>

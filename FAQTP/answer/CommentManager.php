@@ -24,11 +24,8 @@ class CommentManager {
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
 			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
 			$userRow = mysqli_fetch_row($result2);
-			array_push($this->comments,new Comment($row[0],$row[1],$row[2],new User($UserRow[0],$UserRow[1],$UserRow[2],$UserRow[3],$UserRow[4],$UserRow[5],$UserRow[6]),$answer));
+			array_push($this->comments,new Comment($row[0],$row[1],$row[2],new User($userRow[0],$userRow[1],$userRow[2],$userRow[3],$userRow[4],$userRow[5],$userRow[6]),$answer));
 		}
-		
-		mysqli_free_result($result2);
-		mysqli_free_result($result);
 		mysqli_close($db);
 		
 		return $this->comments;

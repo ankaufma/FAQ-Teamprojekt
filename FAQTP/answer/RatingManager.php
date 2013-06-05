@@ -20,10 +20,11 @@ class RatingManager
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		$sql = "SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer =".$answer->getAnswerId();
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
-		
+		$ratingRow = mysqli_fetch_row($result);
+		$rating = $ratingRow[0];
 		mysqli_close($db);
 		
-		return $result;	
+		return $rating;	
 	}
 		
 }
