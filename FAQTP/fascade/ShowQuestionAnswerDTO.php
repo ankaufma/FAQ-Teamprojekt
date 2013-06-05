@@ -1,17 +1,21 @@
 <?php
 class ShowQuestionAnswerDTO {
+	private $questionId;
 	private $question;
 	private $qDate;
 	private $username;
 	private $answers = Array();
 	
-	public function __construct ($question, $qDate, $username, Array $answers) {
+	public function __construct ($questionID, $question, $qDate, $username, Array $answers) {
 		$this->question=$question;
 		$this->qDate=$qDate;
 		$this->username=$username;
 		$this->answers=$answers;
+		$this->questionId=$questionId;
 	}
-	
+	public function setQuestionId($questionId) {
+		$this->questionId=$questionId;
+	}
 	public function setQuestion($question) {
 		$this->question=$question;
 	}
@@ -25,6 +29,9 @@ class ShowQuestionAnswerDTO {
 		$this->answers=$answers;
 	}
 	
+	public function getQuestionId() {
+		return $this->questionId;
+	}
 	public function getQuestion() {
 		return $this->question;
 	}
