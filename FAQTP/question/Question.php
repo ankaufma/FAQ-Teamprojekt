@@ -54,7 +54,7 @@ class Question
 	}
 
 	public function getQuestionID() {
-		return $this->category;
+		return $this->questionID;
 	}
 
 	public function getQuestion() {
@@ -74,7 +74,7 @@ class Question
 	}
 	
 	public function getCategories() {
-		return $this->categories;
+		return $this->category;
 	}
 	
 	public function getUser() {

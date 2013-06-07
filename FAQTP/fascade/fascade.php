@@ -57,8 +57,7 @@ include('..\answer\CommentManager.php');
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionsByNoAnswer() AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
-			}
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));			}
 			return $allQAs;
 		}
 		
@@ -66,18 +65,27 @@ include('..\answer\CommentManager.php');
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionByText($text) AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
 		}
 		
 		public function showQuestionsByCategory($catId) {
 			$qm = new QuestionManager();
-			$allQbyC = Array();
-			foreach($qm->loadQuestionByCategory($catId) AS $myQ) {
-				array_push($allQbyC,new ShowQuestionAnswerDTO($myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			$allQAs = Array();
+			foreach($qm->loadQuestionByCategory(new Category($catId, "Mock", 1)) AS $myQ) {
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
-			return $allQbyC;
+			return $allQAs;
+		}
+		
+		public function showAnswersByQId($id) {
+			$am = new AnswerManager();
+			$allQbyId = Array();
+			foreach($am->loadAnswerByQuestion($id) AS $myA) {
+				array_push($allQbyC,new ShowAllAnswersDTO($myA->getAnswer()));
+			}
+			return $allQbyId;
 		}
 		
 		public function showCatByPreCat($id){

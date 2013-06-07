@@ -72,13 +72,13 @@ class AnswerManager {
 		return $this->answers;
 	}
 	
-	public function loadAnswerByQuestion(Question $question) {
+	public function loadAnswerByQuestion($question) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		
 		/*
 		 * Gib alle Antworten zu einer Frage zurück
 		 */
-		$sql = "SELECT a.* FROM Answer a, QuestionAnswer qa WHERE a.AnswerID=qa.Answer and qa.Question='". $question->getQuestionID() ."';";
+		$sql = "SELECT a.* FROM Answer a, QuestionAnswer qa WHERE a.AnswerID=qa.Answer and qa.Question='". $question ."';";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
@@ -92,7 +92,6 @@ class AnswerManager {
 							)
 					);
 		}
-		mysqli_free_result($result2);
 		mysqli_free_result($result);
 		mysqli_close($db);
 		return $this->answers;
