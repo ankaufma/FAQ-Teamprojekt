@@ -2,7 +2,7 @@
   <head>
     <title>FAQ-Manager</title>
     <!-- Einbinden des Bootstrap-Stylesheets -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../client/css/bootstrap.min.css">
  
     <!-- optional: Einbinden der jQuery-Bibliothek -->
     <script type="text/javascript" src="../client/js/jquery-2.0.0.min></script>
