@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
  
     <!-- optional: Einbinden der jQuery-Bibliothek -->
-    <script type="text/javascript" src="../js/jquery-2.0.0.min></script>
+    <script type="text/javascript" src="../client/js/jquery-2.0.0.min></script>
  
     <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/buildTree.js"></script>
+    <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../client/js/buildTree.js"></script>
   </head>
   <body>
 		<div class="row-fluid">
