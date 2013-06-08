@@ -1,5 +1,5 @@
 <?php
-	include('../fascade/fascade.php');
+	include('../business/fascade/fascade.php');
 	$fassi = new Fascade();
 	foreach($fassi->showQuestionAnswerDTO() AS $myQs) {
 		echo("<p></p>");

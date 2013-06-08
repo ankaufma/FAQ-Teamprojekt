@@ -1,5 +1,5 @@
 <?php
-	include('../fascade/fascade.php');
+	include('../business/fascade/fascade.php');
 	$category = Array();;
 	$fassi = new Fascade();
 	foreach($fassi->showRootCats() AS $myCats) {
