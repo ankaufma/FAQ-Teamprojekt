@@ -1,5 +1,5 @@
 <?php
-	include('../business/fascade/fascade.php');
+	include('/../business/fascade/fascade.php');
 	$cat = $_POST['cat'];
 	$fassi = new Fascade();
 	foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {

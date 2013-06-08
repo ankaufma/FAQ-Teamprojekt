@@ -1,5 +1,5 @@
 <?php
-	include('../business/fascade/fascade.php');
+	include('/../business/fascade/fascade.php');
 	$category = Array();
 	$precat = $_POST['precat'];
 	$fassi = new Fascade();

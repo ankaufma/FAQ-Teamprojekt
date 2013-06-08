@@ -1,4 +1,6 @@
 <?php
+
+$pfad = '/../';
 include('ShowCommentByAnswerDTO.php');
 include('ShowRatingByAnswerDTO.php');
 include('ShowCategoriesDTO.php');
@@ -7,12 +9,12 @@ include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
 include('CheckUserDTO.php');
-include('..\user\usermanager.php');
-include('..\answer\AnswerManager.php');
-include('..\answer\RatingManager.php');
-include('..\question\QuestionManager.php');
-include('..\question\CategoryManager.php');
-include('..\answer\CommentManager.php');
+include $pfad.'user/usermanager.php';
+include $pfad.'answer/AnswerManager.php';
+include $pfad.'answer/RatingManager.php';
+include $pfad.'question/QuestionManager.php';
+include $pfad.'question/CategoryManager.php';
+include $pfad.'answer/CommentManager.php';
 
 	class Fascade {
 		public function applyUser($firstname, $lastname, $username, $email, $password) {
