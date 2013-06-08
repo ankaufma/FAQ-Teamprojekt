@@ -14,7 +14,7 @@ class Answer {
 		$this->user=$user;
 	}
 	
-	public function setAnswerId($answerId)  {
+	public function setAnswerId($answerId) {
 		$this->answerId=answerId;	
 	}
 	
