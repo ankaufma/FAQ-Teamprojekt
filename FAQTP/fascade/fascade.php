@@ -6,6 +6,7 @@ include('ShowAllAnswersDTO.php');
 include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
+include('CheckUserDTO.php');
 include('..\user\usermanager.php');
 include('..\answer\AnswerManager.php');
 include('..\answer\RatingManager.php');
@@ -125,6 +126,17 @@ include('..\answer\CommentManager.php');
 			$cm = new CommentManager();
 			$swcba = new ShowCommentByAnswerDTO($cm->loadCommentsByAnswer($answer));
 			return $swcba->getComments();
+		}
+		
+		public function checkUser($username, $password) {
+			$cudto = new CheckUserDTO($username, $password);
+			$user = new User($cudto->getUsername(), $cudto->getPassword(), "Mock", "Mock", "Mock");
+			$um = new Usermanager();
+			if($um->validatePassword($user) && $um->validateUsername($password)) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 ?>
