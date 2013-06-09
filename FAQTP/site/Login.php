@@ -26,17 +26,17 @@
 		<div class="row-fluid">
 			<div class="span4"></div>
 			<div class="span4">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action="/../server/SessionBasedUserLogin.php" method="post">
 					<div class="control-group">
 						<label class="control-label" for="inputEmail">Email</label>
 						<div class="controls">
-							<input type="text" id="inputEmail" placeholder="Email">
+							<input type="text" id="inputEmail" placeholder="Username" name ="username">
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="inputPassword">Password</label>
 						<div class="controls">
-							<input type="password" id="inputPassword" placeholder="Password">
+							<input type="password" id="inputPassword" placeholder="Passwort" name ="passwort">
 						</div>
 					</div>
 					<div class="control-group">
@@ -44,7 +44,7 @@
 							<label>
 								<button class="btn btn-link btn-small" type="button" onclick="window.location.replace('Register.php')">register</button>
 							</label>
-							<button class="btn btn-success btn-small" type="button">login</button>
+							<button class="btn btn-success btn-small" type="submit">login</button>
 							<button class="btn btn-danger btn-small" type="button">cancel</button>
 						</div>
 					</div>
