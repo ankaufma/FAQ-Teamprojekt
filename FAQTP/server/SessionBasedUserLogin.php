@@ -1,20 +1,13 @@
 <?php
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	session_start();
-	$userName = $_POST['username'];
-	$userPW = $_POST['passwort'];
-	if($fassi->checkUser($userName,$userPW)==true){
-		if($userName == $_SESSION["berechtigter_User"]){
-				
-		}else{
-			$_SESSION["berechtigter_User"] = $userName;
-		}
-	}
-}else{
-// 	header("HTTP/1.1 403 Forbidden");
-// 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
+$userName = $_POST['username'];
+$userPasswort = $_POST['passwort'];
+session.start();
+
+if($fassi->checkUser($userName,$userPasswort)){
+	$_SESSION['username'] = $userName;
+	print_r($_SESSION);
+	echo $_SESSION['username'];
 }
-print_r($_SESSION)
 ?>
