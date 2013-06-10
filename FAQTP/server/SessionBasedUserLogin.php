@@ -17,6 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
 }
 foreach ($_SESSION as $wert){
-print_r($wert);
+echo $wert;
 }
 ?>
