@@ -3,7 +3,7 @@ include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 $userName = $_POST['username'];
 $userPasswort = $_POST['passwort'];
-session.start();
+session_start();
 
 if($fassi->checkUser($userName,$userPasswort)){
 	$_SESSION['username'] = $userName;
