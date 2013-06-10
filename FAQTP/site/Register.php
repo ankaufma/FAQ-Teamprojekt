@@ -71,7 +71,9 @@
 					</div>
 				</form>
 			</div>
-			<div class="span4"></div>
+			<div class="span4">
+			<?php $_SESSION["berechtigter_User"]?>
+			</div>
 		</div>
   </body>
 </html>
