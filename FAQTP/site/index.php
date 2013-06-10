@@ -67,11 +67,9 @@
 				<!-- ============================================================================ -->
 				<div class="container-fluid">
 					<!-- Search Bar -->
-					<form class="form-search">
-						<input type="text" class="input-medium search-query input-xxlarge" placeholder="Search">
-						<button type="submit" class="btn btn-success">Search</button>
-					</form>
-					
+						<input id="search" name="search" type="text" list="searchResults" class="input-medium search-query input-xxlarge" onkeyup="findQuestion(this.value)" placeholder="Search">
+						<datalist id="searchResults" name="searchResults"></datalist>
+						<button class="btn btn-success" onclick="loadQuestionsByText(search.value)">Search</button>
 					<div class="row-fluid">
 						<!-- ResultList -->
 						<div class="span9 contResultList">
