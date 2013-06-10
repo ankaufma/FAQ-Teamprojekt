@@ -24,7 +24,7 @@ include $pfad.'answer/CommentManager.php';
 			if($usermanager->validateUsername($newUser)){
 				$usermanager->createUser($newUser);
 			}
-		}
+	 	} 
 		
 		public function applyRating($username, $answerid, $rating) {
 			$usermanager = new Usermanager();

@@ -1,50 +1,25 @@
 <?php
-session_start(); 
+include('/../business/fascade/fascade.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	session_start(); 
+	$userName = $_POST['username'];
+	$userPW = $_POST['passwort'];
+	if(checkUser($userName,$userPW)==true){
+		if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
+			if (php_sapi_name() == 'cgi') {
+				header('Status: 303 See Other');
+			}
+			else {
+				header('HTTP/1.1 303 See Other');
+			}
+		}
+		
+		header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
+		exit;
+		}
+	}else{
+		header("HTTP/1.1 403 Forbidden");
+		exit( file_get_contents( '/../business/fascade/403.php' ) );
+	}
 
-if(isset($_SESSION['user'])) 
-    { 
-        // Code for Logged members 
-
-        // Identifying the user 
-        $user = $_SESSION['user']; 
-        
-        // Information for the user. 
-    } 
-else 
-    { 
-        // Code to show Guests 
-    
-    } 
-?> 
-
-Code for Logging a User: 
-<?php 
-//Username Stored for logging 
-$userName = $_POST['username'];
-$userPW = $_POST['passwort'];
-define("USER", "user"); 
-
-// Normal user section - Not logged ------ 
-        if(isset($_REQUEST['username']) && isset($_REQUEST['password'])) 
-            { 
-                // Section for logging process ----------- 
-                $user = trim($_REQUEST['username']); 
-                $pass = trim($_REQUEST['password']); 
-                if($user == USER && $pass == PASS) 
-                    { 
-                        // Successful login ------------------ 
-                        
-                        // Setting Session 
-                        $_SESSION['user'] = USER; 
-                        
-                        // Redirecting to the logged page. 
-                        header("Location: index.php"); 
-                    } 
-                else 
-                    { 
-                        // Wrong username or Password. Show error here. 
-                        
-                    } 
-                
-            } 
 ?> 
