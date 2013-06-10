@@ -15,8 +15,27 @@
 .content {
 	padding-top: 1%;
 	padding-bottom: 1%;
-	margin-top: 20px;
-	margin-bottom: 100px;
+	margin-top: 20 px;
+	margin-bottom: 20 px;
+}
+
+
+.navtree {
+	background-color: #FF9933;
+	margin-top: 1px;
+	margin-bottom: 30px;
+	margin-left:10px;
+	margin-right:10px;
+	padding: 1%;
+	border-radius:10px;
+}
+
+.navtreecell {
+	height: 200px;
+	padding: 2%;
+	backgground-color: #FFFF99;
+	border:2px solid;
+
 }
 
 .contResultList {

@@ -9,6 +9,7 @@
     <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="../client/js/buildTree.js"></script>
+	<script type="text/javascript" src="../client/js/bootstrap.js"></script>
     <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
 	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../client/css/HomeCSS.css">
@@ -28,20 +29,21 @@
 			<div class="span4" align="center">
 				<table frame = "void" border = "1">
 					<tr align = "center">
-						<td width = "60px"><a href="Login.php">Login</a></td>
+						<td width = "60px">Login</td>
 						<td width = "60px">Contact</td>
 						<td width = "60px">About</td>
 					</tr>
 				</table>
 				<!-- Language Selection -->
 				<div class="btn-group ">
-					<a class="btn btn-mini" href="#"><i class="icon-globe"></i>Language</a>
-					<a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"><i class="icon-comment"></i>Deutsch</a></li>
+  					<a class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown" href="#"><i class="icon-globe"></i>Language<span class="caret"></span>
+					</a>
+ 					<ul class="dropdown-menu">
+    					<li><a href="#"><i class="icon-comment"></i>Deutsch</a></li>
 						<li><a href="#"><i class="icon-comment"></i>English</a></li>
-					</ul>
-				</div>		
+			 		</ul>
+				</div>
+		
 			</div>
 		</div>
 		
@@ -50,28 +52,37 @@
 		<!-- ============================================================================ -->
 		<div class = "row-fluid">
 			<div class = "span12 content">
-			<?php 
-				include('/../server/tree.php');
-			?>
 			
+			<!-- ============================================================================ -->
+			<!-- 				NavigationTree
+			<!-- ============================================================================ -->
+  			
+				<?php 
+					include('/../server/tree.php');
+				?>
+				
+				
 				<!-- ============================================================================ -->
 				<!-- 				"Search Bar, "ResulList" and "Ask New Question"
 				<!-- ============================================================================ -->
 				<div class="container-fluid">
 					<!-- Search Bar -->
-						<input name="search" id="search" list="searchResults" type="text" onkeyup="findQuestion(this.value)" class="input-medium search-query input-xxlarge" placeholder="Search">
-						<datalist id="searchResults" name="searchResults">
-						</datalist>
-						<button onclick="loadQuestionsByText(search.value)" class="btn btn-success">Search</button>
+					<form class="form-search">
+						<input type="text" class="input-medium search-query input-xxlarge" placeholder="Search">
+						<button type="submit" class="btn btn-success">Search</button>
+					</form>
 					
 					<div class="row-fluid">
 						<!-- ResultList -->
 						<div class="span9 contResultList">
 							<h2 class="headersContainers">Result List</h2>
 							<p> Questions related to Banane</p>
+							
+							
 							<?php 
 								include('/../server/ResultList.php');
 							?>							
+							
 							
 							<div class = "row-fluid">
 								<div class = "span12">
