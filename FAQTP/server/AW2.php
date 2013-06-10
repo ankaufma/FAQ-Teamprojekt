@@ -24,40 +24,24 @@
     <h1>FAQ-Manager</h1>
 
 	<div class="row">
-		<div class="span4"><textarea rows="2"><?php echo $_POST['auswahl_frage'];?></textarea></div>
-	</div>
+		<div class="span4">
 	
-	<div class="row">
-		<div class="span4"><textarea rows="2">
+	
+	
 		
 		<?php
 					include('..\business\fascade\fascade.php');
 					$fassi = new Fascade(); 
 					$question=Array();
+			
+					foreach($fassi->showQuestionById($_POST['auswahl_frage']) as $myQ) {
+							
+							echo ("<textarea rows=\"2\">".$myQ->getQuestion()."</textarea>");		
 					
-					
-					
-					foreach($fassi->showQuestionNoAnswer() as $myQ) {
-					
-					
-				    		echo("<option value=".$myQ->getQuestionId().">".$myQ->getQuestion()." vom: ".$myQ->getQDate()."</option>");
-				 		
-				   
-						
-					 }
-					 
-					if($myQ==Null){
-						
-						echo ("<option>Keine neuen Fragen ohne Antworten vorhanden</option>");
-						
-					}
-					
-					
-				?>
-		
-		</textarea></div>
+					}	
+		?>
+		</div>
 	</div>
-	
 			
 
 

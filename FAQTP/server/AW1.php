@@ -25,10 +25,12 @@
 		
 	<div class="span4">
 		
-		<form  class="form-horizontal" method="post">
+		<form  class="form-horizontal"action="AW2.php" method="post">
 			
 		
-			<select id="select" name="auswahl_frage" size=5>
+			
+		
+			<select id="select" name="auswahl_frage" size=5 >
 				<?php
 					include('..\business\fascade\fascade.php');
 					$fassi = new Fascade(); 
@@ -57,9 +59,9 @@
 			
 			</select>
 			
+		  	
 			
-			
-		 <button type="submit" onclick="meineMethode(select.value)" class="btn">Submit</button>
+		 <button type="submit"  class="btn">Submit</button>
 		</form>
 			
 

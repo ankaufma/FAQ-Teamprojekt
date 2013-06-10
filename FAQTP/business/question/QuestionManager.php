@@ -183,17 +183,13 @@ class QuestionManager {
 					new Question(
 							$row[0],
 							$row[1],
-							$row[2],
+				 			$row[2],
 							$row[3],
 							$row[4],
 							$this->answers,
 							$this->categories,
 							new User($rowU[0],$rowU[1],$rowU[2],$rowU[3],$rowU[4],$rowU[5],$rowU[6])));
 		}
-		mysqli_free_result($resultC);
-		mysqli_free_result($result2);
-		mysqli_free_result($resultU);
-		mysqli_free_result($resultA);
 		mysqli_free_result($result);
 		mysqli_close($db);
 	
