@@ -13,15 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 	}
 }else{
-	header("HTTP/1.1 403 Forbidden");
-	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
+// 	header("HTTP/1.1 403 Forbidden");
+// 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
 }
+header("location: http://localhost/FAQTP/site/Register.php");
 ?>
-<html>
-<head>
-</head>
-<body>
-	<button class="btn btn-link btn-small" type="button"
-		onclick="window.location.replace('/../site/Register.php')">register</button>
-</body>
-</html>
+
