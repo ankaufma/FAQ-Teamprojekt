@@ -22,13 +22,13 @@ function buildTree(level, precat) {
 							}
 							for(var i=0; i<data.length; i++) {
 								if(level==1) {
-									$("#level2").append($("<div><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('2', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level2").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('2', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}		
 								if(level==2) {
-									$("#level3").append($("<div><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level3").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								if(level==3) {
-									$("#level4").append($("<div><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level4").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								i++;
 							}
@@ -39,7 +39,7 @@ function buildTree(level, precat) {
 function loadRootCats() {
 	$.getJSON('../server/rootCats.php', function(data) {
 		for(var i=0; i<data.length; i++) {
-			$("#level1").append($("<div><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('1', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+			$("#level1").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('1', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 			i++;
 		}
 	});
