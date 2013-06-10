@@ -25,13 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				header('HTTP/1.1 303 See Other');
 			}
 		}
-
-		header('Location: http://localhost/FAQTP/site/Login.php');
+		header('location: /../site/start.php');
 		exit;
 	}
 }
 foreach($_SESSION as $sessionWert){
 	//echo $sessionWert;
 	print_r($sessionWert);
-}
+} 
 ?>

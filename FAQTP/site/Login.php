@@ -11,6 +11,8 @@
     <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
     <script 
 	
+	
+	
 	type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/buildTree.js"></script>
 </head>
