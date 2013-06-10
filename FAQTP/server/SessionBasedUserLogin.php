@@ -7,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
 	if($fassi->checkUser($userName,$userPW)==true){
 		if($userName == $_SESSION["berechtigter_User"]){
-			print_r($_SESSION["berechtigter_User"]);
+			echo ($_SESSION["berechtigter_User"]);
 		}else{
 			$_SESSION["berechtigter_User"] = $userName;
-			print_r($_SESSION["berechtigter_User"]);
+			echo ($_SESSION["berechtigter_User"]);
 		}
 	}
 }else{
