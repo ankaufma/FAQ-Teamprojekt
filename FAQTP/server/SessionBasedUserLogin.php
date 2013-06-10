@@ -19,5 +19,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <html>
 <head></head>
-<button class="btn btn-danger btn-small" type="button" onclick="window.location.replace('/../site/Login.php')">cancel</button>
+<button class="btn btn-danger btn-small" type="button" onclick="window.location.replace('/../site/Test.php')">cancel</button>
 </html>
