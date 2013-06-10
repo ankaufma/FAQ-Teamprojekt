@@ -1,0 +1,70 @@
+/*!
+ * CSS for Page HOME
+ *
+ */
+ 
+.top-buffer {  
+	background-color: #66E066;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.headline{
+	
+}
+
+.content {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-top: 20px;
+	margin-bottom: 100px;
+}
+
+.contResultList {
+	background-color: #D1FFC2;
+	padding: 10px;
+}
+
+.contAskNewQuestion {
+	background-color: #A3FF85;
+	padding: 10px;
+	height: 270px;
+}
+
+.headersContainers{
+	font-size: 28px;
+}
+
+.question {
+	background-color: 
+}
+.questionFont {
+	font-size: 22px;
+}
+
+.answer{
+	
+}
+
+.answerFont {
+	font-size: 14px;
+}
+
+
+
+
+
+.textNewQuestion {
+	width: 180px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.footer {
+	background-color: #66E066;
+	margin-top: 200px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-size: 14px;
+	margin-left:2%;
+}
+ 
