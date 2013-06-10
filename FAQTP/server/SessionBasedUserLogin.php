@@ -1,7 +1,7 @@
 <?php
 include('/../business/fascade/fascade.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	session_start(); 
+	session_start();
 	$userName = $_POST['username'];
 	$userPW = $_POST['passwort'];
 	if(checkUser($userName,$userPW)==true){
@@ -13,13 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				header('HTTP/1.1 303 See Other');
 			}
 		}
-		
+
 		header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
 		exit;
-		}
-	}else{
-		header("HTTP/1.1 403 Forbidden");
-		exit( file_get_contents( '/../business/fascade/403.php' ) );
 	}
+}else{
+	header("HTTP/1.1 403 Forbidden");
+	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
+}
 
-?> 
+?>
