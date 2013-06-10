@@ -242,10 +242,6 @@ class QuestionManager {
 							$this->categories,
 							new User($rowU[0],$rowU[1],$rowU[2],$rowU[3],$rowU[4],$rowU[5],$rowU[6])));
 		}
-		mysqli_free_result($resultC);
-		mysqli_free_result($result2);
-		mysqli_free_result($resultU);
-		mysqli_free_result($resultA);
 		mysqli_free_result($result);
 		mysqli_close($db);
 		
