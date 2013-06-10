@@ -91,6 +91,15 @@ include $pfad.'answer/CommentManager.php';
 			return $allQbyId;
 		}
 		
+		public function showAnswersByQText($text) {
+			$am = new AnswerManager();
+			$anByText = Array();
+			foreach($am->loadAnswersByText($text) AS $myA) {
+				array_push($anByText,new ShowAllAnswersDTO($myA->getAnswer()));
+			}
+			return $anByText;
+		}
+		
 		public function showCatByPreCat($id){
 			$cm = new CategoryManager();
 			$allNachfolger = Array();
