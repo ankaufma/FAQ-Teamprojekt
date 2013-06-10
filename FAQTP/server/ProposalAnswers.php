@@ -13,10 +13,12 @@
 
 
  
-//re turn in JSON format
-echo "{";
-echo "item1: ", json_encode($item1), "\n";
-echo "item2: ", json_encode($item2), "\n";
-echo "item3: ", json_encode($item3), "\n";
-echo "}";
+
+include('/../business/fascade/fascade.php');
+	$category = Array();
+	$fassi = new Fascade();
+	foreach($fassi->showRootCats() AS $myCats) {
+		array_push($category,$myCats->getCategoryName(), $myCats->getCategory());
+	}
+	echo json_encode($category);
 ?>
