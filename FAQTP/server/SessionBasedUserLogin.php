@@ -2,11 +2,11 @@
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 
-if($fassi->checkUser($userName,$userPasswort)){
-	$_SESSION['username'] = $userName;
-	print_r($_SESSION);
-	echo $_SESSION['username'];
-}
+// if($fassi->checkUser($userName,$userPasswort)){
+// 	$_SESSION['username'] = $userName;
+// 	print_r($_SESSION);
+// 	echo $_SESSION['username'];
+// }
 
 session_start();
 if($fassi->checkUser($userName,$userPasswort)){
