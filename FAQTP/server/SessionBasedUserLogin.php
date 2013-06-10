@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$username = $_POST['username'];
 	$passwort = $_POST['passwort'];
 	$_SESSION['username'] = $username;
-	$_SESSION['passwort'] = $passwort;
 
 	$hostname = $_SERVER['HTTP_HOST'];
 	$path = dirname($_SERVER['PHP_SELF']);
@@ -29,9 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		exit;
 	}
 }
-foreach($_SESSION as $sessionWert){
-	//echo $sessionWert;
-	print_r($sessionWert);
-} 
 echo '<br><a href="/../site/Login.php">Weiter</a><br>';
 ?>
