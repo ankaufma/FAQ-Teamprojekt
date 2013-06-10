@@ -19,7 +19,6 @@ function findQuestion(text) {
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(questions){
-			console.log(questions);
 				$("#searchResults").append($("<option>"+questions+"</option>"));
 		}
 	});
@@ -33,6 +32,7 @@ function loadQuestionsByText(text) {
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(questions){
+			console.log("BLLAAA");
 			$("#QContainer").append($("<div>"+questions+"</div>"));
 		}
 	});
