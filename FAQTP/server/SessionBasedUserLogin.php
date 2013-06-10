@@ -33,4 +33,5 @@ foreach($_SESSION as $sessionWert){
 	//echo $sessionWert;
 	print_r($sessionWert);
 } 
+echo '<br><a href="/../site/Login.php">Weiter</a><br>';
 ?>
