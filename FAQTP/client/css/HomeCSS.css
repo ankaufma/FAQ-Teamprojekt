@@ -13,14 +13,19 @@
 }
 
 .headerLinks {
-	color: black;
-}
-.headerLinks:hover{
-	color: black;
+	color: #333333;
 	text-decoration: none;
 }
 .headerLinks:active{
-	color: black;
+	color: #333333;
+	text-decoration: none;
+}
+.headerLinks:hover{
+	color: #333333;
+	text-decoration: none;
+}
+.languageBtn{
+	margin-top:10px;
 }
 
 .content {
@@ -29,16 +34,30 @@
 	margin-top: 20 px;
 	margin-bottom: 20 px;
 }
-
-
-.navtree {
-	background-color: #99CCFF;
+.navAccordeon{
 	margin-top: 1px;
 	margin-bottom: 30px;
 	margin-left:10px;
 	margin-right:10px;
+	background-color:#E0F0FF;
+	margin-bottom:15px;
+}
+.navAccordLink {
+	color: #333333;
+	text-decoration: none;
+}
+.navAccordLink:active {
+	color: #333333;
+	text-decoration: none;
+}
+
+
+.navtree {
+	background-color: #99CCFF;
 	padding: 1%;
 	border-radius:10px;
+	margin-left:6px;
+	margin-right:6px;
 }
 
 .navtreecell {
@@ -52,17 +71,20 @@
 
 a.navTreeContent {
 	font-size:15px;
-	color: black;
+	color: #333333;
+	text-decoration: none;
 }
 
 a.navTreeContent:visited{
 	font-size:18px;
 	font-style: italic;
+	color: #333333;
 }
 
 .contResultList {
 	background-color: #D1FFC2;
 	padding: 10px;
+	margin-top: 20px;
 }
 
 .contAskNewQuestion {

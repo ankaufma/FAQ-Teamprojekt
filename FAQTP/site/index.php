@@ -11,6 +11,13 @@
     <script type="text/javascript" src="../client/js/buildTree.js"></script>
 	<script type="text/javascript" src="../client/js/bootstrap.js"></script>
     <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
+    <script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
+	<script>  
+		$(function ()  
+			{ $("#example").popover();  
+		});  
+	</script>  
+
 	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../client/css/HomeCSS.css">
 
@@ -29,13 +36,14 @@
 			<div class="span4" align="center">
 				<table frame = "void" border = "1">
 					<tr align = "center">
-						<td width = "60px"><a class = "headerLinks" href="Login.php">Login</a></td>
-						<td width = "60px"><a class="headerLinks" href="">Contact</a></td>
-						<td width = "60px">About</td>
+						<td width = "60px"><a class ="headerLinks" href="Login.php">Login</a></td>
+						<td width = "60px"><a class="headerLinks" href="">Contact</a><a href="#" id="example" class="btn btn-danger" rel="popover" data-content="It's so simple to create a tooltop for my website!" data-original-title="Twitter Bootstrap Popover">hover for popover</a></td>
+						
+						<td width = "60px"><a class="headerLinks" href=$('#example').popover(options)>About</a></td>
 					</tr>
 				</table>
 				<!-- Language Selection -->
-				<div class="btn-group">
+				<div class="btn-group languageBtn">
   					<a class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown" href="#"><i class="icon-globe"></i>Language<span class="caret"></span>
 					</a>
  					<ul class="dropdown-menu">
@@ -56,17 +64,27 @@
 			<!-- ============================================================================ -->
 			<!-- 				NavigationTree
 			<!-- ============================================================================ -->
-  			
-				<?php 
-					include('/../server/tree.php');
-				?>
-				
-				
+  			<div class="accordion navAccordeon" id="accordion2">
+  				<div class="accordion-group">
+    				<div class="accordion-heading">
+     					<a class="accordion-toggle navAccordLink" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">hide /show Navigation Tree
+      					</a>
+    				</div>
+    				<div id="collapseOne" class="accordion-body collapse in">
+      					<div class="accordion-inner">
+        					<?php 
+								include('/../server/tree.php');
+							?>
+      					</div>
+    				</div>
+  				</div>
+  			</div>
+
+				<div class="container-fluid">
 				<!-- ============================================================================ -->
 				<!-- 								"Search Bar"
 				<!-- ============================================================================ -->
-				<div class="container-fluid">
-					<!-- Search Bar -->
+				
 						<input id="search" name="search" type="text" list="searchResults" class="input-medium search-query input-xxlarge" onkeyup="findQuestion(this.value)" placeholder="Search">
 						<datalist id="searchResults" name="searchResults"></datalist>
 						<button class="btn btn-success" onclick="loadQuestionsByText(search.value)">Search</button>
