@@ -22,6 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 	<button class="btn btn-link btn-small" type="button"
-		onclick="window.location.replace('Register.php')">register</button>
+		onclick="window.location.replace('/../site/Register.php')">register</button>
 </body>
 </html>
