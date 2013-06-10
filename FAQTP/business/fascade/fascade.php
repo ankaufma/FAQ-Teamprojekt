@@ -86,7 +86,7 @@ include $pfad.'answer/CommentManager.php';
 			$am = new AnswerManager();
 			$allQbyId = Array();
 			foreach($am->loadAnswerByQuestion($id) AS $myA) {
-				array_push($allQbyC,new ShowAllAnswersDTO($myA->getAnswer()));
+				array_push($allQbyC,new ShowAllAnswersDTO($myA->getAnswerId(), $myA->getAnswer()));
 			}
 			return $allQbyId;
 		}
@@ -95,7 +95,7 @@ include $pfad.'answer/CommentManager.php';
 			$am = new AnswerManager();
 			$anByText = Array();
 			foreach($am->loadAnswersByText($text) AS $myA) {
-				array_push($anByText,new ShowAllAnswersDTO($myA->getAnswer()));
+				array_push($anByText,new ShowAllAnswersDTO($myA->getAnswerId(), $myA->getAnswer()));
 			}
 			return $anByText;
 		}

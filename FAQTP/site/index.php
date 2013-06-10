@@ -9,7 +9,9 @@
     <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
     <script type="text/javascript" src="../client/js/buildTree.js"></script>
+    <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
 	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../client/css/HomeCSS.css">
 
 </head>
 
@@ -26,7 +28,7 @@
 			<div class="span4" align="center">
 				<table frame = "void" border = "1">
 					<tr align = "center">
-						<td width = "60px">Login</td>
+						<td width = "60px"><a href="Login.php">Login</a></td>
 						<td width = "60px">Contact</td>
 						<td width = "60px">About</td>
 					</tr>
@@ -57,10 +59,10 @@
 				<!-- ============================================================================ -->
 				<div class="container-fluid">
 					<!-- Search Bar -->
-					<form class="form-search">
-						<input type="text" class="input-medium search-query input-xxlarge" placeholder="Search">
-						<button type="submit" class="btn btn-success">Search</button>
-					</form>
+						<input name="search" id="search" list="searchResults" type="text" onkeyup="findQuestion(this.value)" class="input-medium search-query input-xxlarge" placeholder="Search">
+						<datalist id="searchResults" name="searchResults">
+						</datalist>
+						<button onclick="loadQuestionsByText(search.value)" class="btn btn-success">Search</button>
 					
 					<div class="row-fluid">
 						<!-- ResultList -->

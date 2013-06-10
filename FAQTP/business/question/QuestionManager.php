@@ -254,30 +254,29 @@ class QuestionManager {
 	
 	Public function loadQuestionByText($text){
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "SELECT * FROM QUESTIONS WHERE Question Like '%".$text."%';";
+		$sql = "SELECT * FROM QUESTION WHERE Question like '%".$text."%';";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare!');
-			while ($rowA = mysqli_fetch_array($resultQ)) {
+			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
 				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
-						new Answer(
-								$rowA[0],
+						new Answer($rowA[0],
 								$rowA[1],
 								$rowA[2],
 								new User($rowU[0],$rowU[1],$rowU[2],$rowU[3],$rowU[4],$rowU[5],$rowU[6])
-						)
-				);
+								)
+						);
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare!');
+			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
@@ -295,10 +294,6 @@ class QuestionManager {
 							$this->categories,
 							new User($rowU[0],$rowU[1],$rowU[2],$rowU[3],$rowU[4],$rowU[5],$rowU[6])));
 		}
-		mysqli_free_result($resultC);
-		mysqli_free_result($result2);
-		mysqli_free_result($resultU);
-		mysqli_free_result($resultA);
 		mysqli_free_result($result);
 		mysqli_close($db);
 		
