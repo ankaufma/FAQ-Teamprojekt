@@ -8,7 +8,7 @@
 			$this->answer = $answer;
 		}
 		
-		public function setAnswer($answer) {
+		public function setAnswerId($answerid) {
 			$this->answerid = $answerid;
 		}
 		
@@ -16,7 +16,7 @@
 			$this->answer = $answer;
 		}
 		
-		public function getAnswer() {
+		public function getAnswerId() {
 			return $this->answerid;
 		}
 		
