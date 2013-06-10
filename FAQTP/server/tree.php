@@ -5,7 +5,3 @@
 	<div id="level3" class="span3"></div>
 	<div id="level4" class="span3"></div>
 </div>
-
-<div id="AbstandZumTree">	</div>
-
-<div id="QContainer">		</div>

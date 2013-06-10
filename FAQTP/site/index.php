@@ -67,7 +67,9 @@
 						<div class="span9 contResultList">
 							<h2 class="headersContainers">Result List</h2>
 							<p> Questions related to Banane</p>
-							
+							<?php 
+								include('/../server/ResultList.php');
+							?>							
 							
 							<div class = "row-fluid">
 								<div class = "span12">
