@@ -1,5 +1,5 @@
 <?php
-include('/../FAQTP/business/fascade/fascade.php');
+include('/../business/fascade/fascade.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
 	$userName = $_POST['username'];
