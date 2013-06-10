@@ -26,7 +26,7 @@
 		<div class="row-fluid">
 			<div class="span4"></div>
 			<div class="span4">
-				<form class="form-horizontal" action="/../server/SessionBasedUserLogin.php" method="post">
+				<form class="form-horizontal" action="/../server/FAQTP/SessionBasedUserLogin.php" method="post">
 					<div class="control-group">
 						<label class="control-label" for="inputEmail">Email</label>
 						<div class="controls">
@@ -51,7 +51,6 @@
 				</form>
 			</div>
 			<div class="span4">
-				<button type="button" onclick=
 			</div>
 		</div>
   </body>
