@@ -7,14 +7,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$userPW = $_POST['passwort'];
 	if($fassi->checkUser($userName,$userPW)==true){
 		if($userName == $_SESSION["berechtigter_User"]){
-			
+				
 		}else{
 			$_SESSION["berechtigter_User"] = $userName;
 		}
 	}
 }else{
-	header("HTTP/1.1 403 Forbidden");
-	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
+// 	header("HTTP/1.1 403 Forbidden");
+// 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
 }
 ?>
-<script language="javascript" type="text/javascript">"window.location.replace('Register.php')"</script>';
+<html>
+<head></head>
+<button class="btn btn-danger btn-small" type="button" onclick="window.location.replace('/../site/Test.php')">cancel</button>
+</html>
