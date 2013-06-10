@@ -12,6 +12,17 @@
 	
 }
 
+.headerLinks {
+	color: black;
+}
+.headerLinks:hover{
+	color: black;
+	text-decoration: none;
+}
+.headerLinks:active{
+	color: black;
+}
+
 .content {
 	padding-top: 1%;
 	padding-bottom: 1%;
@@ -21,7 +32,7 @@
 
 
 .navtree {
-	background-color: #FF9933;
+	background-color: #99CCFF;
 	margin-top: 1px;
 	margin-bottom: 30px;
 	margin-left:10px;
@@ -34,13 +45,16 @@
 	padding: 1%;
 	backgground-color: #FFFF99;
 	border-left:2px solid;
-
+}
+.navTreeCellgap {
+	margin-bottom:7px;
 }
 
 a.navTreeContent {
 	font-size:15px;
 	color: black;
 }
+
 a.navTreeContent:visited{
 	font-size:18px;
 	font-style: italic;
@@ -55,6 +69,7 @@ a.navTreeContent:visited{
 	background-color: #A3FF85;
 	padding: 10px;
 	height: 270px;
+	border-radius:10px;
 }
 
 .headersContainers{

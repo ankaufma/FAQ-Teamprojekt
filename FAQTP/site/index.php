@@ -29,13 +29,13 @@
 			<div class="span4" align="center">
 				<table frame = "void" border = "1">
 					<tr align = "center">
-						<td width = "60px">Login</td>
-						<td width = "60px">Contact</td>
+						<td width = "60px"><a class = "headerLinks" href="Login.php">Login</a></td>
+						<td width = "60px"><a class="headerLinks" href="">Contact</a></td>
 						<td width = "60px">About</td>
 					</tr>
 				</table>
 				<!-- Language Selection -->
-				<div class="btn-group ">
+				<div class="btn-group">
   					<a class="btn dropdown-toggle btn-success btn-mini" data-toggle="dropdown" href="#"><i class="icon-globe"></i>Language<span class="caret"></span>
 					</a>
  					<ul class="dropdown-menu">
@@ -63,7 +63,7 @@
 				
 				
 				<!-- ============================================================================ -->
-				<!-- 				"Search Bar, "ResulList" and "Ask New Question"
+				<!-- 								"Search Bar"
 				<!-- ============================================================================ -->
 				<div class="container-fluid">
 					<!-- Search Bar -->
@@ -73,7 +73,9 @@
 					</form>
 					
 					<div class="row-fluid">
-						<!-- ResultList -->
+						<!-- ============================================================================ -->
+						<!-- 								ResultList
+						<!-- ============================================================================ -->
 						<div class="span9 contResultList">
 							<h2 class="headersContainers">Result List</h2>
 							<p> Questions related to Banane</p>
@@ -114,7 +116,9 @@
 							
 						</div>
 							
-						<!--New Question-->
+						<!-- ============================================================================ -->
+						<!-- 				"Ask New Question"
+						<!-- ============================================================================ -->
 						<div class="span3 contAskNewQuestion" align="center">
 							<h2 class="headersContainers">Ask New Question</h2>
 							<div class="textNewQuestion">
