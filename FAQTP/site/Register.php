@@ -72,7 +72,7 @@
 				</form>
 			</div>
 			<div class="span4">
-			<?php echo '$_SESSION["berechtigter_User"]'; ?>
+			<?php $_SESSION["berechtigter_User"]; ?>
 			</div>
 		</div>
   </body>
