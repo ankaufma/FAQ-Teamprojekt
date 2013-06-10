@@ -31,11 +31,19 @@
 }
 
 .navtreecell {
-	height: 200px;
-	padding: 2%;
+	padding: 1%;
 	backgground-color: #FFFF99;
-	border:2px solid;
+	border-left:2px solid;
 
+}
+
+a.navTreeContent {
+	font-size:15px;
+	color: black;
+}
+a.navTreeContent:visited{
+	font-size:18px;
+	font-style: italic;
 }
 
 .contResultList {
