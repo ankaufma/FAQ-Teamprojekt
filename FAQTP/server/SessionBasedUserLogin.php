@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$userPW = $_POST['passwort'];
 	if($fassi->checkUser($userName,$userPW)==true){
 		if($userName == $_SESSION["berechtigter_User"]){
-			
+				
 		}else{
 			$_SESSION["berechtigter_User"] = $userName;
 		}
@@ -17,4 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
 }
 ?>
-<script language="javascript" type="text/javascript">"window.location.replace('Register.php')"</script>';
+<html>
+<head>
+</head>
+<body>
+	<button class="btn btn-link btn-small" type="button"
+		onclick="window.location.replace('Register.php')">register</button>
+</body>
+</html>
