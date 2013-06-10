@@ -45,7 +45,7 @@
 				 
 						
 					}
-					
+					 
 					if($myQ==Null){
 						
 						echo ("<option>Keine neuen Fragen ohne Antworten vorhanden</option>");
