@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-
+$user = $_POST['user'];
 if(isset($_SESSION['user'])) 
     { 
         // Code for Logged members 
@@ -13,7 +13,6 @@ if(isset($_SESSION['user']))
 else 
     { 
         // Code to show Guests 
-    
     } 
 ?> 
 
