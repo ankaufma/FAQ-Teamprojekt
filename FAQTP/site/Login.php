@@ -13,6 +13,8 @@
 	
 	
 	
+	
+	
 	type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/buildTree.js"></script>
 </head>
@@ -65,7 +67,9 @@
 			</form>
 		</div>
 		<div class="span4">
-			<?php foreach($_SESSION as $sessionWert){
+			<?php
+			session_start();
+			foreach($_SESSION as $sessionWert){
 				//echo $sessionWert;
 				print_r($sessionWert);
 }?>
