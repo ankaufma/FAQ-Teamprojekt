@@ -6,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$userName = $_POST['username'];
 	$userPW = $_POST['passwort'];
 	if($fassi->checkUser($userName,$userPW)==true){
-		if($userName == $_SESSION["berechtigter_User"]){
-				
+		if($userName == $_SESSION["berechtigter_User"]){	
+			$_SESSION["berechtigter_User"] = $userName;
 		}else{
 			$_SESSION["berechtigter_User"] = $userName;
 		}
