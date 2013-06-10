@@ -26,7 +26,7 @@
 		<div class="row-fluid">
 			<div class="span4"></div>
 			<div class="span4">
-				<form class="form-horizontal" action="/../server/RegisterOnServer.php" method="post">
+				<form class="form-horizontal" action="/../FAQTP/server/RegisterOnServer.php" method="post">
 					<div class="control-group">
 						<label class="control-label" for="inputUserName">Benutzername</label>
 						<div class="controls">
@@ -71,7 +71,9 @@
 					</div>
 				</form>
 			</div>
-			<div class="span4"></div>
+			<div class="span4">
+			<?php $_SESSION["berechtigter_User"]?>
+			</div>
 		</div>
   </body>
 </html>

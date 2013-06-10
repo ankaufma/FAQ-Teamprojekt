@@ -1,25 +1,20 @@
 <?php
 include('/../business/fascade/fascade.php');
+$fassi = new Fascade();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	session_start(); 
+	session_start();
 	$userName = $_POST['username'];
 	$userPW = $_POST['passwort'];
-	if(checkUser($userName,$userPW)==true){
-		if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
-			if (php_sapi_name() == 'cgi') {
-				header('Status: 303 See Other');
-			}
-			else {
-				header('HTTP/1.1 303 See Other');
-			}
+	if($fassi->checkUser($userName,$userPW)==true){
+		if($userName == $_SESSION["berechtigter_User"]){
+			
+		}else{
+			$_SESSION["berechtigter_User"] = $userName;
 		}
-		
-		header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
-		exit;
-		}
-	}else{
-		header("HTTP/1.1 403 Forbidden");
-		exit( file_get_contents( '/../business/fascade/403.php' ) );
 	}
-
-?> 
+}else{
+	header("HTTP/1.1 403 Forbidden");
+	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
+}
+?>
+<script language="javascript" type="text/javascript">"window.location.replace('Register.php')"</script>';

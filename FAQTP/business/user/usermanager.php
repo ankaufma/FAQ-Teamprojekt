@@ -17,7 +17,7 @@ class Usermanager {
 		mysqli_close($db);
 		
 		foreach($this->users AS $searchUser) {
-			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $seachUser->getUsername()) {
+			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $searchUser->getUsername()) {
 				return false;
 			}
 		}
