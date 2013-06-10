@@ -56,6 +56,15 @@ include $pfad.'answer/CommentManager.php';
 			return $allQAs;
 		}
 		
+		public function showQuestionById($id) {
+			$qm = new QuestionManager();
+			$allQAs = Array();
+			foreach($qm->loadQuestionById($id) AS $myQ) {
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+			}
+			return $allQAs;
+		}
+		
 		public function showQuestionNoAnswer() {
 			$qm = new QuestionManager();
 			$allQAs = Array();

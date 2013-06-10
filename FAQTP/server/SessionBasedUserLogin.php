@@ -1,22 +1,32 @@
 <?php
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	session_start();
-	$userName = $_POST['username'];
-	$userPW = $_POST['passwort'];
-	if($fassi->checkUser($userName,$userPW)==true){
-		if($userName == $_SESSION["berechtigter_User"]){
-				
-		}else{
-			$_SESSION["berechtigter_User"] = $userName;
-		}
-	}
-}else{
-// 	header("HTTP/1.1 403 Forbidden");
-// 	exit( file_get_contents( '/../business/fascade/errorpage.php' ) );
-}
-foreach ($_SESSION as $wert){
-echo $wert;
-}
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      session_start();
+
+      $username = $_POST['username'];
+      $passwort = $_POST['passwort'];
+
+      $hostname = $_SERVER['HTTP_HOST'];
+      $path = dirname($_SERVER['PHP_SELF']);
+
+      // Benutzername und Passwort werden überprüft
+      if ($username == 'benjamin' && $passwort == 'geheim') {
+       $_SESSION['angemeldet'] = true;
+
+       // Weiterleitung zur geschützten Startseite
+       if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
+        if (php_sapi_name() == 'cgi') {
+         header('Status: 303 See Other');
+         }
+        else {
+         header('HTTP/1.1 303 See Other');
+         }
+        }
+
+       header('Location: http://'.$hostname.($path == '/' ? '' : $path).'/index.php');
+       exit;
+       }
+      }
+      print_r($_SESSION);
 ?>
