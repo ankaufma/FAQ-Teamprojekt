@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// Benutzername und Passwort werden überprüft
 	if ($fassi->checkUser($_SESSION['username'],$passwort)) {
 		$userDTO = $fassi->userByUsername($username);
-		$_SESSION['userRole'] = $userDTO.getUserrole();
+		$_SESSION['userRole'] = $this->$userDTO.getUserrole();
 		$_SESSION['angemeldet'] = true;
 
 		// Weiterleitung zur geschützten Startseite

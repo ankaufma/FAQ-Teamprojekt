@@ -70,7 +70,6 @@
 			<?php
 			session_start();
 			foreach($_SESSION as $sessionWert){
-				//echo $sessionWert;
 				print_r($sessionWert);
 }?>
 		</div>
