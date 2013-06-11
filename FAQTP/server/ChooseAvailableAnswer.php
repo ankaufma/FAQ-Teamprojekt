@@ -1,4 +1,4 @@
-<h2>Vorhandene Frage auswählen</h2>
+<h2>Vorhandene Antwort auswählen</h2>
 
 <div>
 	<input type="text" onkeyup="findAnswers(this.value)">
