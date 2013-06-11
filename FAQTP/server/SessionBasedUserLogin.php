@@ -3,8 +3,8 @@ include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
-	$_SESSION['userRole'];
-	$_SESSION['angemeldet'];
+	$_SESSION['userRole']= null;
+	$_SESSION['angemeldet']= null;
 	$username = $_POST['username'];
 	$_SESSION['username'] = $username;
 	$passwort = $_POST['passwort'];
