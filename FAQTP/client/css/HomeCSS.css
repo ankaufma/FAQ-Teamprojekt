@@ -3,6 +3,11 @@
  *
  */
  
+ a:hover {
+ cursor:pointer;
+}
+ 
+ 
 .top-buffer {  
 	background-color: #66E066;
 	padding-top: 2%;
@@ -92,29 +97,70 @@ a.navTreeContent:visited{
 	padding: 10px;
 	height: 270px;
 	border-radius:10px;
+	margin-top:20px;
 }
 
-.headersContainers{
+h2.headersContainers{
 	font-size: 28px;
 }
 
+
+.qacContainer {
+	padding:1%;
+}
+.questionObject{
+	background-color: #F8F8F8;
+	margin-bottom:10px;
+	padding-bottom:1%;
+
+}
 .question {
-	background-color: 
+	margin-top:10px;
+	padding-left: 2%;
+	padding-right:2%;
 }
 .questionFont {
-	font-size: 22px;
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+.questionFooter{
+	margin-bottom:2px;
+}
+.questionFooterText{
+	font-style:italic;
+	color:#C0C0C0;	
+	font-size:11px;
 }
 
 .answer{
+	padding-left:50px;
 	
 }
-
 .answerFont {
-	font-size: 14px;
+	font-size: 16px;
+	font-style:italic;
 }
 
 
 
+.comment{
+	background-color:#99D6FF;
+	margin-top:5px;
+	border-radius:15px;
+	padding:2%;
+}
+.commentText{
+	
+}
+.commentFooter{
+
+}
+.commentFooterFont {
+	font-style:italic;
+	color:#C0C0C0;	
+	font-size:11px;
+}
 
 
 .textNewQuestion {
@@ -129,6 +175,5 @@ a.navTreeContent:visited{
 	padding-top: 2%;
 	padding-bottom: 2%;
 	font-size: 14px;
-	margin-left:2%;
 }
  
