@@ -5,11 +5,9 @@
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
 
 <!-- optional: Einbinden der jQuery-Bibliothek -->
-<script type="text/javascript"
-	src="../client/js/jquery-2.0.0.min></script>
+	<script	src="../client/js/jquery-2.0.0.min"></script>
  
     <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
-    <script 
 	<script type="text/javascript" src="..client/js/jquery.raty.min.js"></script>
 	<script type="text/javascript" src="..client/js/ratyFunctions.js"></script>
 	
