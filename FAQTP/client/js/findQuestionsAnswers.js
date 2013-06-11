@@ -2,11 +2,11 @@ function findAnswers(text) {
 	$("#searchResults").empty();
 	$.ajax({
 		type: 		"POST",
-		url: 		"../server/?????????.php",
+		url: 		"../server/loadAnswersByText.php",
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(answers){
-				$("#searchResults").append($("<option>"+answers+"</option>"));
+				$("#AnswerSelect").append($("<option>"+answers+"</option>"));
 		}
 	});
 }

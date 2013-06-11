@@ -13,9 +13,10 @@
 	
 	<script type="text/javascript">
 	
-	
+		//window.location.replace('index.php')
 	
 	</script>
+
 
 
 	
@@ -23,24 +24,40 @@
   <body>
     <h1>FAQ-Manager</h1>
 
-	<div class="row">
+	<div class="row"> 
 		<div class="span4">
-	
-	
-	
+			<?php
+
+				include('..\server\QuestionById.php');
 		
-		<?php
-					include('..\business\fascade\fascade.php');
-					$fassi = new Fascade(); 
-					$question=Array();
-			
-					foreach($fassi->showQuestionById($_POST['auswahl_frage']) as $myQ) {
-							
-							echo ("<textarea rows=\"2\">".$myQ->getQuestion()."</textarea>");		
-					
-					}	
-		?>
+			?>
+		
 		</div>
+		
+		
+				<select id="AnswerSelect" name="auswahl_frage" size=5 >
+				<?php
+			
+					include('..\server\loadAnswersByText.php');
+					
+				?> 
+		
+				</select>
+			
+		  	
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+			
+		<button class="btn btn-link btn-small" type="button" onclick="window.location.replace('index.php')">Submit</button>
+							
+		
 	</div>
 			
 
