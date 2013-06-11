@@ -30,5 +30,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['angemeldet'] = false;
 	}
 }
-echo '<br><a href="/../site/Login.php">Weiter</a><br>';
+echo '<br><a href="/../FAQTP/site/Login.php">Weiter</a><br>';
 ?>
