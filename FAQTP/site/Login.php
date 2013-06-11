@@ -41,7 +41,7 @@
 			<form class="form-horizontal"
 				action="/../FAQTP/server/SessionBasedUserLogin.php" method="post">
 				<div class="control-group">
-					<label class="control-label" for="inputEmail">Email</label>
+					<label class="control-label" for="inputEmail">Username</label>
 					<div class="controls">
 						<input type="text" id="inputEmail" placeholder="Username"
 							name="username">
