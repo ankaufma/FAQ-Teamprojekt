@@ -6,8 +6,11 @@
 		echo("<p></p>");
 		echo("<div>Frage: ".$myQs->getQuestion()."</div>");
 		foreach($myQs->getAnswers() as $myA) {
-			echo("<div>Antwort: ".$myA->getAnswer()."</div>");
+			echo("<div>Antowrt: ".$myA->getAnswer()."</div>");
 			echo("<div>Rating:  ".$fassi->showRatingByAnswer($myA)."</div>");
+			foreach($fassi->showCommentsByAnswer($myA) as $myC) {
+				echo("<div>Comments:  ".$myC->getComment()."</div>");
+			}
 		}
 		echo("<p></p>");
 	}

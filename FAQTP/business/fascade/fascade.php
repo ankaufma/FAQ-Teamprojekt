@@ -50,7 +50,26 @@ include $pfad.'answer/CommentManager.php';
 			$answermanager = new AnswerManager();
 			$allAnswers = $answermanager->loadAllAnswers();
 			foreach($allAnswers AS $myAnswer) {
-				array_push($showAnswers, new ShowAllAnswersDTO($myAnswer->getAnswer()));
+				array_push($showAnswers, new ShowAllAnswersDTO($myAnswer->getAnswerId(), $myAnswer->getAnswer()));
+			}
+			return $showAnswers;
+		}
+		
+		public function showMainAnswers($questionId) {
+			$answermanager = new AnswerManager();
+			$allAnswers = $answermanager->loadMainAnswerByQuestion($questionId);
+			foreach($allAnswers AS $myAnswer) {
+				$showAnswers = new ShowAllAnswersDTO($myAnswer->getAnswerId(), $myAnswer->getAnswer());
+			}
+			return $showAnswers;
+		}
+		
+		public function showRelAnswers($questionId) {
+			$showAnswers = Array();
+			$answermanager = new AnswerManager();
+			$allAnswers = $answermanager->loadRelAnswerByQuestion($questionId);
+			foreach($allAnswers AS $myAnswer) {
+				array_push($showAnswers, new ShowAllAnswersDTO($myAnswer->getAnswerId(), $myAnswer->getAnswer()));
 			}
 			return $showAnswers;
 		}
@@ -144,15 +163,15 @@ include $pfad.'answer/CommentManager.php';
 			return $allCats;
 		}
 		
-		public function showRatingByAnswer($answer) {
+		public function showRatingByAnswer($answerId) {
 			$rm = new RatingManager();
-			$swrba = new ShowRatingByAnswerDTO($rm->calcRatingForEachAnswer($answer));
+			$swrba = new ShowRatingByAnswerDTO($rm->calcRatingForEachAnswer($answerId));
 			return $swrba->getRating();
 		}
 		
-		public function showCommentsByAnswer($answer) {
+		public function showCommentsByAnswer($answerId) {
 			$cm = new CommentManager();
-			$swcba = new ShowCommentByAnswerDTO($cm->loadCommentsByAnswer($answer));
+			$swcba = new ShowCommentByAnswerDTO($cm->loadCommentsByAnswer($answerId));
 			return $swcba->getComments();
 		}
 		

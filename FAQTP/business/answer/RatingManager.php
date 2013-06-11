@@ -18,7 +18,7 @@ class RatingManager
 	public function calcRatingForEachAnswer(Answer $answer){
 		#SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer = 1; 
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer =".$answer->getAnswerId();
+		$sql = "SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer =".$answer->getAnswerId().";";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		$ratingRow = mysqli_fetch_row($result);
 		$rating = $ratingRow[0];

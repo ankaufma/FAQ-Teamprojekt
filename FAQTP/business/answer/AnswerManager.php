@@ -5,15 +5,84 @@ class AnswerManager {
 	private $answers = Array();
 	private $relatedAnswers = Array();
 	
-	public function createAnswer(Answer $answer) {
+	public function createMainAnswer(Answer $answer) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "INSERT INTO Answer (answer, user) VALUES " .
+		$sql = "INSERT INTO Answer (answer, ,description, user) VALUES " .
 				"('" . $answer->getAnswer() . "'" .
+				", 'Main' " .
 				", '" . $answer->getUser()->getUserId() ."');";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
 		mysqli_close($db);
+	}
+	
+	public function createRelAnswer(Answer $answer) {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$sql = "INSERT INTO Answer (answer, ,description, user) VALUES " .
+				"('" . $answer->getAnswer() . "'" .
+				", 'Related' " .
+				", '" . $answer->getUser()->getUserId() ."');";
+	
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+	
+		mysqli_close($db);
+	}
+	
+	public function loadRelAnswerByQuestion($questionId) {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		/*
+		 * Gib alle Antworten zurück
+		*/
+		$sql = "SELECT a.* FROM Answer a, QuestionAnswer qa WHERE a.AnswerID = qa.Answer and qa.Description='Related' and qa.question=".$questionId.";";
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		while ($row = mysqli_fetch_array($result)) {
+			/*
+			 * Finde den richtige User zur Antwort
+			*/
+			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
+			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$userRow = mysqli_fetch_row($result2);
+			array_push($this->answers,
+					new Answer($row[0],
+							$row[1],
+							$row[2],
+							new User($userRow[0],$userRow[1],$userRow[2],$userRow[3],$userRow[4],$userRow[5],$userRow[6])
+					)
+			);
+		}
+		mysqli_free_result($result);
+		mysqli_free_result($result2);
+		mysqli_close($db);
+		return $this->answers;
+	}
+	
+	public function loadMainAnswerByQuestion($questionId) {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		/*
+		 * Gib alle Antworten zurück
+		*/
+		$sql = "SELECT a.* FROM Answer a, QuestionAnswer qa WHERE a.AnswerID = qa.Answer and qa.Description='Main' and qa.question=".$questionId.";";
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		while ($row = mysqli_fetch_array($result)) {
+			/*
+			 * Finde den richtige User zur Antwort
+			*/
+			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
+			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$userRow = mysqli_fetch_row($result2);
+			array_push($this->answers,
+					new Answer($row[0],
+							$row[1],
+							$row[2],
+							new User($userRow[0],$userRow[1],$userRow[2],$userRow[3],$userRow[4],$userRow[5],$userRow[6])
+					)
+			);
+		}
+		mysqli_free_result($result);
+		mysqli_free_result($result2);
+		mysqli_close($db);
+		return $this->answers;
 	}
 	
 	public function loadAnswersById($id) {
