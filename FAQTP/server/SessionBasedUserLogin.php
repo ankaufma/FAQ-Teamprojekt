@@ -3,18 +3,17 @@ include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
-	$_SESSION['userRole']= null;
-	$_SESSION['angemeldet']= null;
+	$_SESSION['angemeldet']= false;
 	$username = $_POST['username'];
 	$_SESSION['username'] = $username;
+	$userDTO = $fassi->userByUsername($username);
+	$_SESSION['userRole']= $userDTO->getUserrole();
 	$passwort = $_POST['passwort'];
 	$hostname = $_SERVER['HTTP_HOST'];
 	$path = dirname($_SERVER['PHP_SELF']);
 
 	// Benutzername und Passwort werden überprüft
 	if ($fassi->checkUser($_SESSION['username'],$passwort)) {
-		$userDTO = $fassi->userByUsername($username);
-		$_SESSION['userRole'] = $userDTO->getUserrole();
 		print_r ($_SESSION);
 		$_SESSION['angemeldet'] = true;
 
