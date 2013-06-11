@@ -17,10 +17,18 @@ include $pfad.'question/CategoryManager.php';
 include $pfad.'answer/CommentManager.php';
 
 	class Fascade {
-		public function applyUser($firstname, $lastname, $username, $email, $password) {
-			$audto = new ApplyUserDTO($firstname, $lastname, $username, $email, $password);
+		
+		public function userByUsername($username) {
 			$usermanager = new Usermanager();
-			$newUser = new User($audto->getUsername(),$audto->getPassword(),$audto->getEmail(),$audto->getFirstname(),$audto->getLastname());
+			$user = $usermanager->loadUserByUsername($username);
+			$audto = new ApplyUserDTO($user->getUserId(), $user->getFirstname(), $user->getLastname(), $user->getUsername(), $user->getEmail(), $user->getPassword(), $user->getUserrole());
+			return $audto;
+		}
+		
+		public function applyUser($firstname, $lastname, $username, $email, $password) {
+			$audto = new ApplyUserDTO(1, $firstname, $lastname, $username, $email, $password, 'User');
+			$usermanager = new Usermanager();
+			$newUser = new User(1,$audto->getUsername(),$audto->getPassword(),$audto->getEmail(),$audto->getFirstname(),$audto->getLastname(), $audto->getUserrole());
 			if($usermanager->validateUsername($newUser)){
 				$usermanager->createUser($newUser);
 			}

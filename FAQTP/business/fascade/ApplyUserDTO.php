@@ -1,20 +1,27 @@
 <?php
+/* Auch für Userabfrage */
 class ApplyUserDTO {
+	private $userId;
 	private $firstname;
 	private $lastname;
 	private $username;
 	private $email;
 	private $password;
+	private $userrole;
 	
-	public function __construct($firstname, $lastname, $username, $email, $password) {
+	public function __construct($userId, $firstname, $lastname, $username, $email, $password, $userrole) {
+		$this->userId = $userId;
 		$this->username = $username;
 		$this->password = $password;
 		$this->email = $email;
 		$this->firstname = $firstname;
 		$this->lastname = $lastname;
+		$this->userrole = $userrole;
 	}
 
-	
+	public function setUserId($userId) {
+		$this->userId = $userId;
+	}	
 	public function setUserName($username) {
 		$this->username = $username;
 	}
@@ -34,7 +41,13 @@ class ApplyUserDTO {
 	public function setLastname($lastname) {
 		$this->lastname = $lastname;
 	}
+	public function setUserrole($userrole) {
+		$this->userrole = $userrole;
+	}
 	
+	public function getUserId() {
+		return $this->userId;
+	}
 	public function getUsername() {
 		return $this->username;
 	}
@@ -53,6 +66,9 @@ class ApplyUserDTO {
 	
 	public function getLastname() {
 		return $this->lastname;
+	}
+	public function getUserrole() {
+		return $this->userrole;
 	}
 	
 }
