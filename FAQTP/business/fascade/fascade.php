@@ -32,7 +32,7 @@ include $pfad.'answer/CommentManager.php';
 			if($usermanager->validateUsername($newUser)){
 				$usermanager->createUser($newUser);
 			}
-	 	} 
+	 	}
 		
 		public function applyRating($username, $answerid, $rating) {
 			$usermanager = new Usermanager();
@@ -81,6 +81,17 @@ include $pfad.'answer/CommentManager.php';
 				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
+		}
+		
+		public function applyQuestion($question, $publicityState, $username) {
+			$qm = new QuestionManager();
+			$um = new Usermanager();
+			$user = new User(1, $username, 'Anonymmous', 'Anonymous', 'Anonymmous', 'Anonymmous', 'User');
+			if($um->validateUsername($user)) {
+				$udto = self::userByUsername($username);
+				$user = new User($udto->getUserId(), $udto->getUserName(), $udto->getPassword(), $udto->getEmail(), $udto->getFirstname(), $udto->getLastname(), $udto->getUserrole());
+			}
+			$qm->createQuestion(new Question(1, $question, 'German', $publicityState, 'date', Array(), Array(), $user));
 		}
 		
 		public function showQuestionById($id) {
