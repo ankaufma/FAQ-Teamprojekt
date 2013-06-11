@@ -10,13 +10,9 @@
  
     <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
     <script 
+	<script type="text/javascript" src="..client/js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="..client/js/ratyFunctions.js"></script>
 	
-	
-	
-	
-	
-	type="text/javascript" src="../client/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../client/js/buildTree.js"></script>
 </head>
 <body>
 	<div class="row-fluid">
@@ -74,5 +70,11 @@
 }?>
 		</div>
 	</div>
+	  <div id="container">
+          <div class="demo">
+            <div id="default-demo"></div>
+          </div>
+		  <div id="score-demo"></div>
+  </div>
 </body>
 </html>
