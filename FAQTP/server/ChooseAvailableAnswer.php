@@ -5,7 +5,7 @@
 </div>
 
 <div>
-	<select id="AnswerSelect" name="AnswerSelect" >
+	<select id="AnswerSelect" name="AnswerSelect" size="5">
 
 	</select>
 </div>
