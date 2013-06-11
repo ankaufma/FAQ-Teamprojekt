@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="../client/js/bootstrap.js"></script>
     <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
     <script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
+    <script tpye="text/javascript" src="../client/js/askQuestion.js"></script>
 	<script>  
 		$(function ()  
 			{ $("#example").popover();  
@@ -136,7 +137,7 @@
 						<!-- 				"Ask New Question"
 						<!-- ============================================================================ -->
 						<div class="span3 contAskNewQuestion" align="center">
-							<h2 class="headersContainers"><a href="AskQuestion.php">Ask New Question</a></h2>
+							<h2 class="headersContainers"><a onclick="askQuestion()" href="#">Ask New Question</a></h2>
 							<div class="textNewQuestion">
 								<p class = "text-center">We are deligthed to give you answers related to questions related to software development</p>
 							</div>
