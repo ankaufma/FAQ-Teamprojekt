@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$path = dirname($_SERVER['PHP_SELF']);
 
 	// Benutzername und Passwort werden überprüft
-	if ($fassi->checkUser($_SESSION['username'],$passwort)and !$_SESSION['userRole']) {
+	if ($fassi->checkUser($_SESSION['username'],$passwort)and !$_SESSION['angemeldet']) {
 		$_SESSION['angemeldet'] = true;
 
 		// Weiterleitung zur geschützten Startseite
