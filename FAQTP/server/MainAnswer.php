@@ -1,4 +1,4 @@
-<h2>Type in Answer</h2>
+<h2>Frage eingeben</h2>
 <div>
 	<textarea id="MainAnswer"></textarea>
 </div>

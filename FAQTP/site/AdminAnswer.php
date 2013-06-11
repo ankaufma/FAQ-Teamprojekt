@@ -4,7 +4,6 @@
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>FAQ-System</title>
     <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
@@ -23,7 +22,7 @@
 	<link rel="stylesheet" href="../client/css/HomeCSS.css">
 
 </head>
-<form id="AdminAnswer" name="AdminAnswer" method="post" action="/../server/XXXX.php">
+<form id="AdminAnswer" name="AdminAnswer" method="post" action="/../server/Store.php">
 <?php
 include('/../server/ThisQuestion.php');
 include('/../server/MainAnswer.php');
