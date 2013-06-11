@@ -136,7 +136,7 @@
 						<!-- 				"Ask New Question"
 						<!-- ============================================================================ -->
 						<div class="span3 contAskNewQuestion" align="center">
-							<h2 class="headersContainers">Ask New Question</h2>
+							<h2 class="headersContainers"><a href="AskQuestion.php">Ask New Question</a></h2>
 							<div class="textNewQuestion">
 								<p class = "text-center">We are deligthed to give you answers related to questions related to software development</p>
 							</div>
