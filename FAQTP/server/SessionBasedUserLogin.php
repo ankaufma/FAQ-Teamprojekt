@@ -1,6 +1,6 @@
 <?php
 include('/../business/fascade/fascade.php');
-if(!empty($_POST['username']) or  !empty($_POST['passwort'])){
+if(isset($_POST['username'])or isset($_POST['passwort'])){
 	$fassi = new Fascade();	
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
