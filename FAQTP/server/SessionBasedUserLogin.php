@@ -1,6 +1,7 @@
 <?php
 include('/../business/fascade/fascade.php');
-$fassi = new Fascade();
+if(!empty($_POST['username']) or  !empty($_POST['passwort'])){
+	$fassi = new Fascade();	
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
 	$_SESSION['angemeldet']= false;
@@ -31,5 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$_SESSION['angemeldet'] = false;
 	}
 }
-echo '<br><a href="/../FAQTP/site/Login.php">Weiter</a><br>';
+}else
+{
+	sleep(500);
+	header("Location: errorpage.php");
+}
 ?>
