@@ -21,7 +21,6 @@
 			data: {		"text" : text,	},
 			dataType: 	"html",
 			success: 	function(answer){
-				
 					$("#AnswerSelect").append($(answer));
 			}  
 				
@@ -37,8 +36,11 @@
 
 </head>
 <body>
-	<h1>FAQ-Manager</h1>
 
+
+<form class="form-horizontal" action="/../FAQTP/server/?????.php" method="post">	
+
+<h1>FAQ-Manager</h1>
 
 	<h2>Frage:</h2>
 	<div class="row">
@@ -66,13 +68,35 @@
 			<select id="AnswerSelect" name="AnswerSelect" size=5 width="300" style="width: 300px">
 			</select>
 		</div>
+		
+		<h2>Relate to available answer</h2>
 
-	</div>
+		<div>
+			<input type="text" onkeyup="alert('funktion einbauen')">
+		</div>
+
+		<div>
+			<select id="RelateAnswer" name="AnswerSelect" size=5 width="300" style="width: 300px">
+			</select>
+		</div>
+
+		<h2>Relate to category</h2>
+
+		<div>
+			<input id="RelateAnswer" type="text" onkeyup="alert('funktion einbauen')">
+		</div>
+
+		<div>
+			<select id="RelateCategory" name="AnswerSelect" size=5 width="300" style="width: 300px">
+			</select>
+		</div>
+	</div> 
 
 
 	<button class="btn btn-link btn-small" type="button"
 		onclick="window.location.replace('index.php')">Submit</button>
 
+</form>
 
 
 
