@@ -25,7 +25,7 @@
 		
 	<div class="span4">
 		
-		<form  class="form-horizontal" action="AW2.php" method="post">
+		<form  class="form-horizontal" action="AdminAnswer.php" method="post">
 			
 			
 		

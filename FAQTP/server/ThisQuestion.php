@@ -1,6 +1,6 @@
 <h2>Frage:</h2>
 
-<div class="span4">
+<div>
 <?php
 
 	include('..\server\QuestionById.php');

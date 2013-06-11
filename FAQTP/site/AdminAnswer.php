@@ -30,4 +30,7 @@ include('/../server/MainAnswer.php');
 include('/../server/ChooseAvailableAnswer.php');
 include('/../server/selectAllKategories.php');
 ?>
+<div>
+	<button type="submit" value="Antworten">Antworten</button>
+</div>
 </form>
