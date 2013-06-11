@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
 	$username = $_POST['username'];
 	$_SESSION['username'] = $username;
-
+	$passwort = $_POST['passwort'];
 	$hostname = $_SERVER['HTTP_HOST'];
 	$path = dirname($_SERVER['PHP_SELF']);
 
