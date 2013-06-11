@@ -1,13 +1,13 @@
 function findAnswers(text) {
-	$("#searchResults").empty();
+	$("#AnswerSelect").empty();
 	$.ajax({
 		type: 		"POST",
-		url: 		"../server/loadAnswersByText.php",
+		url: 		"../server/AnswersByText.php",
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(answers){
-				$("#AnswerSelect").append($("<option>"+answers+"</option>"));
-		}
+				$("#AnswerSelect").append($(answers));
+		}  
 	});
 }
 
