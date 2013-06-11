@@ -136,7 +136,7 @@ class AnswerManager {
 					);
 		}
 		mysqli_free_result($result);
-		mysqli_free_result($result2);
+		//mysqli_free_result($result2);
 		mysqli_close($db);
 		return $this->answers;
 	}

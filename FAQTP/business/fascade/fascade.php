@@ -177,7 +177,7 @@ include $pfad.'answer/CommentManager.php';
 		
 		public function checkUser($username, $password) {
 			$cudto = new CheckUserDTO($username, $password);
-			$user = new User($cudto->getUsername(), $cudto->getPassword(), "Mock", "Mock", "Mock");
+			$user = new User(1, $cudto->getUsername(), $cudto->getPassword(), "Mock", "Mock", "Mock", "Mock");
 			$um = new Usermanager();
 			if($um->validatePassword($user) && $um->validateUsername($password)) {
 				return true;

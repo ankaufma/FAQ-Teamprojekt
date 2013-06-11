@@ -25,36 +25,16 @@
 		
 	<div class="span4">
 		
-		<form  class="form-horizontal"action="AW2.php" method="post">
+		<form  class="form-horizontal" action="AW2.php" method="post">
 			
-		
 			
 		
 			<select id="select" name="auswahl_frage" size=5 >
 				<?php
-					include('..\business\fascade\fascade.php');
-					$fassi = new Fascade(); 
-					$question=Array();
+			
+					include('..\server\QuestionNoAnswer.php');
 					
-					
-					
-					foreach($fassi->showQuestionNoAnswer() as $myQ) {
-					
-					
-						echo("<option value=".$myQ->getQuestionId().">".$myQ->getQuestion()." vom: ".$myQ->getQDate()."</option>");
-						
-				 
-						
-				      	}
-					
-					if($myQ==Null){
-						
-						echo ("<option>Keine neuen Fragen ohne Antworten vorhanden</option>");
-						
-					} 
-					
-					
-				?>
+				?> 
 			
 			
 			</select>
