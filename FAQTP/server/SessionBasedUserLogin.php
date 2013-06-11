@@ -3,9 +3,7 @@ include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	session_start();
-
 	$username = $_POST['username'];
-	$passwort = $_POST['passwort'];
 	$_SESSION['username'] = $username;
 
 	$hostname = $_SERVER['HTTP_HOST'];
@@ -13,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	// Benutzername und Passwort werden überprüft
 	if ($fassi->checkUser($_SESSION['username'],$passwort)) {
+		$userDTO = $fassi->userByUsername($username);
+		$_SESSION['userRole'] = $userDTO.getUserrole();
 		$_SESSION['angemeldet'] = true;
 
 		// Weiterleitung zur geschützten Startseite
@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 		header('location: /../site/start.php');
 		exit;
+	}else{
+		$_SESSION['angemeldet'] = false;
 	}
 }
 echo '<br><a href="/../site/Login.php">Weiter</a><br>';
