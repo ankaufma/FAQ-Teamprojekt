@@ -127,7 +127,7 @@ include $pfad.'answer/CommentManager.php';
 			return $allQbyId;
 		}
 		
-		public function showAnswersByQText($text) {
+		public function showAnswersByText($text) {
 			$am = new AnswerManager();
 			$anByText = Array();
 			foreach($am->loadAnswersByText($text) AS $myA) {
