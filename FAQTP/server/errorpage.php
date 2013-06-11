@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
 <title>FAQ-Manager</title>
+		<meta http-equiv="refresh" content="3; URL=../site/Login.php">';
+		<!-- ... andere Angaben im Dateikopf ... -->
 <!-- Einbinden des Bootstrap-Stylesheets -->
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
 
@@ -17,8 +19,5 @@
 <body>
 	<span class="label label-important">Passwort und Nutzername stimmen
 		nicht überein</span>
-	<?php 
-	echo '<br><a href="/../FAQTP/site/Login.php">Zurück zum Login</a><br>';
-	?>
 </body>
 </html>
