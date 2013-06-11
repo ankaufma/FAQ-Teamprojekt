@@ -94,6 +94,20 @@ include $pfad.'answer/CommentManager.php';
 			$qm->createQuestion(new Question(1, $question, 'German', $publicityState, 'date', Array(), Array(), $user));
 		}
 		
+		
+		//in Entwicklung
+		public function applyAnswer($answer, $username) {
+			$am = new AnswerManager();
+			$um = new Usermanager();
+			$user = new User(1, $username, 'Anonymmous', 'Anonymous', 'Anonymmous', 'Anonymmous', 'User');
+			if($um->validateUsername($user)) {
+				$udto = self::userByUsername($username);
+				$user = new User($udto->getUserId(), $udto->getUserName(), $udto->getPassword(), $udto->getEmail(), $udto->getFirstname(), $udto->getLastname(), $udto->getUserrole());
+			}
+			$am->createMainAnswer(new Answer($answerId, $answer, 'date', $user));
+		}
+		
+		
 		public function showQuestionById($id) {
 			$qm = new QuestionManager();
 			$allQAs = Array();

@@ -1,6 +1,15 @@
 <?php
-$frage=$_POST['ChoosenAnswer']
-$_POST['MainAnswer']
-$_POST['AnswerText']
-$_POST['auswahl_frage']
-$_POST['auswahl_frage']
+$ZubeantwortendeFrage=$_POST['ChoosenQuestion'];
+$EingetippteAntwort=$_POST['AnswerText'];
+$AusgewaehlteVorhandeneAntwort=$_POST['AnswerSelect'];
+
+
+include('/../business/fascade/fascade.php');
+$fassi = new Fascade();
+session_start();
+$fassi->applyAnswer($_POST['AnswerText'],$_SESSION['username']);
+
+
+
+
+?>

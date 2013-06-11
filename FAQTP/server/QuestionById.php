@@ -6,8 +6,8 @@ $question=Array();
 	
 foreach($fassi->showQuestionById($_POST['auswahl_frage']) as $myQ) {
 		
-	echo ("<textarea id=\"ChoosenAnswer\" value=".$myQ->getQuestionId()." rows=\"2\">".$myQ->getQuestion()."</textarea>");
-		
+	echo ("<textarea id=\"ChoosenQuestion\"  rows=\"2\">".$myQ->getQuestion()."</textarea>");
+	echo ("<span hidden=\"true\"><input type=\"text\" id=\"qid\">".$myQ->getQuestionId()."</input></span>");	
 }
 ?>
  
