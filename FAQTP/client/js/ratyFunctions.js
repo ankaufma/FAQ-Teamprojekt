@@ -1,7 +1,7 @@
    $(function() {
       $.fn.raty.defaults.path = '../client/img';
 
-      $('#default-demo').raty();
+      $('#star').raty();
 
       $('#score-demo').raty({ score: 3 });
 

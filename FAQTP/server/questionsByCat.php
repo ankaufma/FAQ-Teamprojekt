@@ -49,10 +49,13 @@
 						<div class = \"span10 answer\">
 							<p class = \"answerFont\">".$myA->getAnswer()."</p>
 						</div>
-						<div class = \"span1 offset1\" id=\"star\"> 
+						
+						<!-- RATING -->
+						<div class = \"span1 offset1\">
+							<div id=\"star\">Rating</div>
 							".$fassi->showRatingByAnswer($myA)."
 						</div>
-						
+
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
 								<a class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#comments\">
@@ -68,7 +71,28 @@
 
 						<div class =\"row-fluid\">		
 							<div class=\"span2 offset1\">
-								 <button class=\"btn btn-mini btn-primary\" type=\"button\">Leave Comment</button>
+								
+					
+								<a href=\"#myModal\" role=\"button\" class=\"btn btn-mini btn-primary\" data-toggle=\"modal\">Leave Comment</a>
+								
+								<!-- Modal -->
+								<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+								  <div class=\"modal-header\">
+								    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
+								    <h3 id=\"myModalLabel\">Leave Comment</h3>
+								  </div>
+								  <div class=\"modal-body\">
+								    <p>Comment...</p>
+									<textarea class=\"span12\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+								  </div>
+								  <div class=\"modal-footer\">
+								    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+								    <button class=\"btn btn-primary\">Post</button>
+								  </div>
+								</div>
+							
+							
+							
 							</div> 
 						</div>
 			");
@@ -99,4 +123,5 @@
 				</div>
 			</div>
 		");
+	
 ?>

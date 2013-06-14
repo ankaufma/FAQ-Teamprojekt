@@ -14,17 +14,12 @@
     <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
     <script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
     <script type="text/javascript" src="../client/js/bootstrap-popover.js"></script>
-    <script tpye="text/javascript" src="../client/js/jquery.raty.js"></script>
-
-	<script>  
-		$(function ()  
-			{ $("#aboutPopover").popover();  
-		});  
-	</script>  
-	<script>
-		$('#star').raty();
-
-	</script>
+    <script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="../client/js/ratyFunctions.js"></script>
+	<script type="text/javascript" src="../client/js/indexFunctions.js"></script>  
+	<script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
+	
+		
 
 	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../client/css/HomeCSS.css">
@@ -121,8 +116,9 @@
 				</div>
 			</div>
 		</div>
-
-
+				
+	
+		
 		<!-- ============================================================================ -->
 		<!-- 									FOOTER
 		<!-- ============================================================================ -->

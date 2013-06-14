@@ -61,14 +61,7 @@
 			session_start();
 			foreach($_SESSION as $sessionWert){
 				print_r($sessionWert);
-}?>
+			}?>
 		</div>
-	</div>
-	  <div id="container">
-          <div class="demo">
-            <div id="default-demo"></div>
-          </div>
-		  <div id="score-demo"></div>
-  </div>
 </body>
 </html>
