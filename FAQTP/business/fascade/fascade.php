@@ -15,7 +15,7 @@ include $pfad.'answer/RatingManager.php';
 include $pfad.'question/QuestionManager.php';
 include $pfad.'question/CategoryManager.php';
 include $pfad.'answer/CommentManager.php';
-
+include $pfad.'answer/Comment.php';
 
 	class Fascade {
 		
