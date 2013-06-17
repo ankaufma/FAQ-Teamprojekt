@@ -15,7 +15,7 @@ include $pfad.'answer/RatingManager.php';
 include $pfad.'question/QuestionManager.php';
 include $pfad.'question/CategoryManager.php';
 include $pfad.'answer/CommentManager.php';
-include $pfad.'answer/Comment.php';
+
 
 	class Fascade {
 		
@@ -47,7 +47,7 @@ include $pfad.'answer/Comment.php';
 		}
 		
 
-		public function applyComment($username,$answerid, $comment) {
+		/*public function applyComment($username,$answerid, $comment) {
 			$CommentManager = new CommentManager();
 			$usermanager = new Usermanager();
 			$answermanager= new AnswerManager();
@@ -56,7 +56,7 @@ include $pfad.'answer/Comment.php';
 					new Comment(
 					$comdto->getComment(), $comdto->getuser(),$answermanager->loadAnswersById($comdto->getAnswerId())[0]
 					));
-		}
+		}*/
 		
 		public function showAllAnswers() {
 			$showAnswers = Array();
