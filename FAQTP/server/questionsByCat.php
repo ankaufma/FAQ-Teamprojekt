@@ -76,21 +76,24 @@
 								<a href=\"#myModal\" role=\"button\" class=\"btn btn-mini btn-primary\" data-toggle=\"modal\">Leave Comment</a>
 								
 								<!-- Modal -->
-								<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-								  <div class=\"modal-header\">
-								    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
-								    <h3 id=\"myModalLabel\">Leave Comment</h3>
-								  </div>
-								  <div class=\"modal-body\">
-								    <p>Comment...</p>
-									<textarea class=\"span12\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
-								  </div>
-								  <div class=\"modal-footer\">
-								    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-								    <button class=\"btn btn-primary\">Post</button>
-								  </div>
-								</div>
+								<form action=\"postComment()\">
+									
 							
+									<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+									  <div class=\"modal-header\">
+									    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
+									    <h3 id=\"myModalLabel\">Leave Comment</h3>
+									  </div>
+									  <div class=\"modal-body\">
+									    <p>Comment...</p>
+										<textarea class=\"span12\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+									  </div>
+									  <div class=\"modal-footer\">
+									    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+									    <button type=\"submit\"  class=\"btn btn-primary\">Post</button>
+									  </div>
+									</div>
+								</form>	
 							
 							
 							</div> 

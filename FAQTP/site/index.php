@@ -17,7 +17,10 @@
     <script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
 	<script type="text/javascript" src="../client/js/ratyFunctions.js"></script>
 	<script type="text/javascript" src="../client/js/indexFunctions.js"></script>  
+	<script type="text/javascript" src="../client/js/PostComment.js"></script>
 	<script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
+	
+	
 	
 		
 

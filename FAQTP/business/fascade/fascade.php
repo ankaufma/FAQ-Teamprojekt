@@ -45,9 +45,11 @@ include $pfad.'answer/CommentManager.php';
 					);
 		}
 		
-		public function applyComment($username, $answerid) {
+		public function applyComment($answerid) {
 			$CommentManager = new CommentManager();
 			$usermanager = new Usermanager();
+			
+			
 			$comdto = new ApplyCommentDTO($username, $comment);
 			
 			$CommentManager->createComment(Comment $comment)
