@@ -46,17 +46,20 @@ include $pfad.'answer/CommentManager.php';
 					);
 		}
 		
-
-		/*public function applyComment($username,$answerid, $comment) {
+		//In Entwicklung
+		public function applyComment($username,$answerid, $comment) {
 			$CommentManager = new CommentManager();
 			$usermanager = new Usermanager();
 			$answermanager= new AnswerManager();
 			$comdto = new ApplyCommentDTO($usermanager->loadUserByUsername($username), $answerid,$comment);		
 			$CommentManager->createComment(
 					new Comment(
-					$comdto->getComment(), $comdto->getuser(),$answermanager->loadAnswersById($comdto->getAnswerId())[0]
+					0,$comdto->getComment(), 'date',$comdto->getuser(),$answermanager->loadAnswersById($comdto->getAnswerId())[0]
 					));
-		}*/
+			//($commentId, $comment, $cDate, User $user, Answer $answer)
+		}
+		
+		
 		
 		public function showAllAnswers() {
 			$showAnswers = Array();
