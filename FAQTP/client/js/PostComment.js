@@ -1,5 +1,7 @@
 function postComment() {
-	console.log('hhihi');
+	
+	var commentText = document.CommentFormular.textfeld.value;
+	
 	$("#QContainer").html("<div> </div>");
 	$.ajax({
 		type: 		"POST",
@@ -8,5 +10,9 @@ function postComment() {
 		success: 	function(form){
 				$("#QContainer").append($(form));
 		}
-	});
+	});	
+
+	document.getElementById("TestComment").innerHTML = commentText;
+	
+	alert("Post Comment" + commentText);
 }
