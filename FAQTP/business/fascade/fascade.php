@@ -45,6 +45,18 @@ include $pfad.'answer/CommentManager.php';
 					);
 		}
 		
+		public function applyComment($username, $answerid) {
+			$CommentManager = new CommentManager();
+			$usermanager = new Usermanager();
+			$comdto = new ApplyCommentDTO($username, $comment);
+			
+			$CommentManager->createComment(Comment $comment)
+			$ratingmanager->createRating(
+					new Rating(
+							$usermanager->loadUserByUsername($ardto->getUser()), $answermanager->loadAnswerById($ardto->getAnswer()), $ardto->getRating())
+			);
+		}
+		
 		public function showAllAnswers() {
 			$showAnswers = Array();
 			$answermanager = new AnswerManager();
@@ -83,6 +95,8 @@ include $pfad.'answer/CommentManager.php';
 			return $allQAs;
 		}
 		
+		
+		//In Entwicklung
 		public function applyQuestion($question, $publicityState, $username) {
 			$qm = new QuestionManager();
 			$um = new Usermanager();
