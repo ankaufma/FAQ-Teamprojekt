@@ -113,6 +113,8 @@ class AnswerManager {
 		return $this->answers;
 	}
 	
+
+	
 	public function loadAnswersByText($text) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		/*
