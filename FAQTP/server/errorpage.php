@@ -31,7 +31,7 @@
 	</div>
 	<div class="row-fluid">
 	<div class="span4"></div>
-	<div class="span4"><h3><p class="text-error">... stimmen nicht überein</p></h3></div>
+	<div class="span4"><h3><p class="text-error">... stimmen nicht überein!</p></h3></div>
 	<div class="span4"></div>
 	</div>
 </body>

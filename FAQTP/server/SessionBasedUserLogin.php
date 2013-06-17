@@ -13,8 +13,9 @@ if(trim($_POST['username']) != ""){
 		$hostname = $_SERVER['HTTP_HOST'];
 		$path = dirname($_SERVER['PHP_SELF']);
 		// Benutzername und Passwort werden überprüft
-		if ($fassi->checkUser($_SESSION['username'],$passwort)and !$_SESSION['angemeldet']) {
+		if ($fassi->checkUser($_SESSION['username'],$passwort) == 0) {
 			$_SESSION['angemeldet'] = true;
+			header("Location: ../site/index.php");
 		// Weiterleitung zur geschützten Startseite
 			if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
 				if (php_sapi_name() == 'cgi') {
