@@ -45,19 +45,19 @@ include $pfad.'answer/CommentManager.php';
 					);
 		}
 		
-		public function applyComment($answerid) {
-			$CommentManager = new CommentManager();
-			$usermanager = new Usermanager();
+// 		public function applyComment($answerid) {
+// 			$CommentManager = new CommentManager();
+// 			$usermanager = new Usermanager();
 			
 			
-			$comdto = new ApplyCommentDTO($username, $comment);
+// 			$comdto = new ApplyCommentDTO($username, $comment);
 			
-			$CommentManager->createComment(Comment $comment)
-			$ratingmanager->createRating(
-					new Rating(
-							$usermanager->loadUserByUsername($ardto->getUser()), $answermanager->loadAnswerById($ardto->getAnswer()), $ardto->getRating())
-			);
-		}
+// 			//$CommentManager->createComment(Comment $comment)
+// 			$ratingmanager->createRating(
+// 					new Rating(
+// 							$usermanager->loadUserByUsername($ardto->getUser()), $answermanager->loadAnswerById($ardto->getAnswer()), $ardto->getRating())
+// 			);
+// 		}
 		
 		public function showAllAnswers() {
 			$showAnswers = Array();
