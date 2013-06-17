@@ -6,7 +6,7 @@ class Comment {
 	private $user;
 	private $answer;
 	
-	public function __construct($commentId, $comment, $cDate, User $user, Answer $answer) {
+	public function __construct($comment, User $user, Answer $answer) {
 		$this->comment=$comment;
 		$this->user=$user;
 		$this->answer=$answer;

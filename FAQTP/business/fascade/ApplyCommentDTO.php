@@ -1,15 +1,15 @@
 <?php
-class Comment {
+class ApplyCommentDTO {
 
 	private $comment;
-	private $cDate;
 	private $user;
-
+	private $answerid;
 	
-	public function __construct($comment, $cDate, User $user) {
+	
+	public function __construct($user, $answerid,$comment) {
 		$this->comment=$comment;
 		$this->user=$user;
-		
+		$this->answerid=$answerid;
 	}
 	
 	
@@ -17,12 +17,21 @@ class Comment {
 		$this->comment=$comment;
 	}
 	
-	public function setCDate($cDate) {
-		$this->cDate=$cDate;
-	}
 	
 	public function setUser($user) {
 		$this->user=$user;
+	}
+	
+	public function setAnswerId($user) {
+		$this->user=$user;
+	}
+	
+	public function getAnswerId() {
+		$this->user=$user;
+	}
+	
+	public function getUser() {
+		return $this->user;
 	}
 	
 	
@@ -30,15 +39,11 @@ class Comment {
 		return $this->comment;
 	}
 	
-	public function getCDate() {
-		return $this->cDate;
-	}
 	
 	public function getUser() {
 		return $this->user;
 	}
 	
-
 }
 
 ?>
