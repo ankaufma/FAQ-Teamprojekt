@@ -85,12 +85,12 @@ class AnswerManager {
 		return $this->answers;
 	}
 	
-	public function loadAnswersById($id) {
+	public function loadAnswersById($AnswerId) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		/*
 		 * Gib alle Antworten zurück
 		*/
-		$sql = "SELECT * FROM Answer WHERE AnswerID = '". $id ."';";
+		$sql = "SELECT * FROM Answer WHERE AnswerID = '". $AnswerId ."';";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {
 			/*
