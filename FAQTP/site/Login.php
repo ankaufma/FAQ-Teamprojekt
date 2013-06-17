@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="row-fluid">
-		<div class="span4">b</div>
+		<div class="span4"></div>
 		<div class="span4">
 			<h3>
 				Bitte einloggen
