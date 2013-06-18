@@ -85,7 +85,7 @@
 									  </div>
 									  <div class=\"modal-body\">
 									    <p>Comment...</p>
-										<textarea name=\"textfeld\" class=\"span12\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+										<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
 									  </div>
 									  <div class=\"modal-footer\">
 									    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
