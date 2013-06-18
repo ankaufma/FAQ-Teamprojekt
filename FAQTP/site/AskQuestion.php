@@ -19,11 +19,8 @@ if ( isset($_SESSION['username']) ) {
 	echo(
 	"<html>
 	<head>
-	<meta http-equiv=\"refresh\" content=\"3; URL=Login.php\">
+	<script>$('#myModal').modal('show')</script>
 	</head>
-	<body>
-	Bitte Melde dich zunächst an oder Registriere dich als neuen Nutzer.
-	</body>
 	</html>
 	");
 }
