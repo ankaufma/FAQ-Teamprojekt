@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
 <link rel="stylesheet" href="../client/css/HomeCSS.css">
 
+
+
 </head>
 
 <!-- ============================================================================ -->
@@ -82,18 +84,13 @@
 		<div class="accordion navAccordeon" id="accordion2">
 			<div class="accordion-group">
 				<div class="accordion-heading">
-					
-					<span id="NavTreeHide">
-						<a class="accordion-toggle navAccordLink btn-link"
+				
+					<a class="accordion-toggle navAccordLink btn-link"
 						data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne" onClick=hideShowNavTree()>Hide Navigation Tree </a>
-					</span>	
-					<span id="NavTreeShow">
-						<a class="accordion-toggle navAccordLink btn-link"
-						data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne" onClick=hideShowNavTree()>Show Navigation Tree </a>
-					</span>	
-					
+						href="#collapseOne" onClick="NavTreeShowHide()">
+						<p id="NavTreeHideShow">Hide Navigation Tree</p>
+					</a>
+				
 				</div>
 				<div id="collapseOne" class="accordion-body collapse in">
 					<div class="accordion-inner">
