@@ -1,6 +1,5 @@
 <?php
 session_start();
-if(isset($_SESSION['angemeldet'])){
 	if($_SESSION['angemeldet']==0){
 		if(trim($_POST['username']) != ""){
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -37,7 +36,4 @@ if(isset($_SESSION['angemeldet'])){
 	}else{
 		header("Location: ../site/index.php");
 	}
-}else{
-	header("Location: errorpage.php");
-}
 ?>
