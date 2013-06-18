@@ -29,6 +29,11 @@
 	color: #333333;
 	text-decoration: none;
 }
+
+#myModal .modal-body {
+	max-height: 800px;
+}
+
 .languageBtn{
 	margin-top:10px;
 }

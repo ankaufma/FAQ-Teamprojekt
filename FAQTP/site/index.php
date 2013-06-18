@@ -12,8 +12,7 @@
 <script type="text/javascript" src="../client/js/buildTree.js"></script>
 <script type="text/javascript" src="../client/js/askQuestion.js"></script>
 <script type="text/javascript" src="../client/js/bootstrap.js"></script>
-<script type="text/javascript"
-	src="../client/js/findQuestionsAnswers.js"></script>
+<script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
 <script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
 <script type="text/javascript" src="../client/js/bootstrap-popover.js"></script>
 <script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
@@ -23,17 +22,14 @@
 <script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
 
 
-
-
-
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../client/css/HomeCSS.css">
+<link rel="stylesheet" href="../client/css/HomeCSS.css">
 
 </head>
 
 <!-- ============================================================================ -->
 <!-- 									Header
-		<!-- ============================================================================ -->
+<!-- ============================================================================ -->
 <div class="row-fluid top-buffer">
 	<div class="span4"></div>
 
@@ -45,58 +41,18 @@
 		<table frame="void" border="1">
 			<tr align="center">
 				<td width="60px">
-					<!-- Button to trigger modal --> <a href="#myModal" role="button"
-					class="btn btn-link headerLinks" data-toggle="modal">Login</a> <!-- Modal -->
-					<div id="myModal" class="modal hide fade" tabindex="-1"
-						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">x</button>
-							<h3 id="myModalLabel">User Login</h3>
-						</div>
-						<div class="modal-body">
-
-							<form class="form-horizontal"
-								action="/../server/SessionBasedUserLogin.php" method="post">
-								<div class="control-group">
-									<label class="control-label" for="inputEmail">Username</label>
-									<div class="controls">
-										<input type="text" id="inputEmail" placeholder="Username"
-											name="username">
-									
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label" for="inputPassword">Password</label>
-									<div class="controls">
-										<input type="password" id="inputPassword"
-											placeholder="Passwort" name="passwort">
-									
-									</div>
-								</div>
-								<div>
-									<button class="btn btn-link" type="button"
-										onclick="window.location.replace('Register.php')">register</button>
-								</div>
-								<div class="control-group">
-									<div class="controls"></div>
-									<button class="offset1 btn btn-success" type="submit">login</button>
-									<button class="btn btn-danger" type="button"
-										onClick=location.reload()>cancel</button>
-								</div>
-						
-						</div>
-
-						</form>
-					</div>
-					</div>
+			
+				<!-- Calling Modal for Login and Registration -->
+				<?php 
+						include('/../server/LoginAndRegist.php');
+				?>	
 				</td>
 
 				<td width="60px"><a class="headerLinks btn-links" href="">Contact</a>
 				</td>
 				<td width="60px"><a href="#" id="aboutPopover"
 					class="headerLinks btn-links" rel="popover" data-placement="bottom"
-					data-html="true" data-content="<strong> FAQ Manager</strong> <br />
+					data-html="true" data-content="<strong> FAQ Manager</strong> <br/>
 						No Rights Reserved!!!" data-original-title="About">About</a></td>
 			</tr>
 		</table>
@@ -111,7 +67,6 @@
 				<li><a href="#"><i class="icon-comment"></i>English</a></li>
 			</ul>
 		</div>
-
 	</div>
 </div>
 
@@ -127,9 +82,18 @@
 		<div class="accordion navAccordeon" id="accordion2">
 			<div class="accordion-group">
 				<div class="accordion-heading">
-					<a class="accordion-toggle navAccordLink btn-link"
+					
+					<span id="NavTreeHide">
+						<a class="accordion-toggle navAccordLink btn-link"
 						data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne"> hide /show Navigation Tree </a>
+						href="#collapseOne" onClick=hideShowNavTree()>Hide Navigation Tree </a>
+					</span>	
+					<span id="NavTreeShow">
+						<a class="accordion-toggle navAccordLink btn-link"
+						data-toggle="collapse" data-parent="#accordion2"
+						href="#collapseOne" onClick=hideShowNavTree()>Show Navigation Tree </a>
+					</span>	
+					
 				</div>
 				<div id="collapseOne" class="accordion-body collapse in">
 					<div class="accordion-inner">

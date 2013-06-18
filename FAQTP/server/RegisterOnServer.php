@@ -1,3 +1,11 @@
+html>
+	<head>
+	<meta http-equiv="refresh" content=0"; URL=../site/index.php">
+	</head>
+	<body>
+	</body>
+	</html>
+	
 <?php
 	include('/../business/fascade/fascade.php');
 	$fassi = new Fascade();
