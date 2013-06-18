@@ -1,4 +1,4 @@
 <h2>Antwort eingeben</h2>
 <div>
-	<textarea id="AnswerText"></textarea>
+	<textarea name="AnswerText" id="AnswerText"></textarea>
 </div>

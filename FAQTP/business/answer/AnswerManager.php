@@ -7,9 +7,8 @@ class AnswerManager {
 	
 	public function createMainAnswer(Answer $answer) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "INSERT INTO Answer (answer, ,description, user) VALUES " .
+		$sql = "INSERT INTO Answer (answer, user) VALUES " .
 				"('" . $answer->getAnswer() . "'" .
-				", 'Main' " .
 				", '" . $answer->getUser()->getUserId() ."');";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
@@ -19,7 +18,7 @@ class AnswerManager {
 	
 	public function createRelAnswer(Answer $answer) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "INSERT INTO Answer (answer, ,description, user) VALUES " .
+		$sql = "INSERT INTO Answer (answer, description, user) VALUES " .
 				"('" . $answer->getAnswer() . "'" .
 				", 'Related' " .
 				", '" . $answer->getUser()->getUserId() ."');";

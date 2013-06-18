@@ -19,6 +19,19 @@ class QuestionManager {
 			mysqli_close($db);	
 	}
 	
+	public function createAnswerToQuestion($answerId, $questionId){
+	
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$sql = "INSERT INTO questionanswer (question, answer, description) VALUES " .
+				"('" . $questionId . "'" .
+				", '" . $answerId . "'" .
+				", 'Main');";
+	
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+	
+		mysqli_close($db);
+	}
+	
 	
 	Public function updateQuestion(Question $question){
 	

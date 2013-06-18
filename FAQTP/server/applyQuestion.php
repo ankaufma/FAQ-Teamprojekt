@@ -1,6 +1,6 @@
 	<html>
 	<head>
-	<meta http-equiv="refresh" content=1"; URL=../site/index.php">
+	<meta http-equiv="refresh" content="1; URL=../site/">
 	</head>
 	<body>
 	Ihr Frage wird in Kürze beantwortet.

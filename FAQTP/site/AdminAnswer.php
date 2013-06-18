@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="../client/css/HomeCSS.css">
 
 </head>
-<form id="AdminAnswer" name="AdminAnswer" method="post" action="/../server/Store.php">
+<form id="AdminAnswer" name="AdminAnswer" method="post" action="/../server/StoreAnswer.php">
 <?php
 include('/../server/ThisQuestion.php');
 include('/../server/MainAnswer.php');

@@ -114,15 +114,20 @@ include $pfad.'answer/CommentManager.php';
 		
 		
 		//in Entwicklung
-		public function applyAnswer($answer, $username) {
+		public function applyAnswer($answer, $username, $questionId) {
 			$am = new AnswerManager();
+			$qm = new QuestionManager();
 			$um = new Usermanager();
 			$user = new User(1, $username, 'Anonymmous', 'Anonymous', 'Anonymmous', 'Anonymmous', 'User');
 			if($um->validateUsername($user)) {
 				$udto = self::userByUsername($username);
 				$user = new User($udto->getUserId(), $udto->getUserName(), $udto->getPassword(), $udto->getEmail(), $udto->getFirstname(), $udto->getLastname(), $udto->getUserrole());
 			}
-			$am->createMainAnswer(new Answer($answerId, $answer, 'date', $user));
+			$am->createMainAnswer(new Answer('1', $answer, 'date', $user));
+			foreach( self::showAnswersByText($answer) AS $myA ) {
+				$answerId = $myA->getAnswerId();
+			} 
+			$qm->createAnswerToQuestion($answerId, $questionId);
 		}
 		
 		
