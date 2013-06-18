@@ -26,7 +26,9 @@ if(!isset($_SESSION["angemeldet"])){
 		No Rights Reserved!!!\" data-original-title=\"About\">About</a></td>
 		</tr>
 		</table>
+			
 		
+				
 		<!-- Language Selection -->
 		<div class=\"btn-group languageBtn\">
 		<a class=\"btn dropdown-toggle btn-success btn-mini\"
@@ -64,6 +66,12 @@ if(!isset($_SESSION["angemeldet"])){
 					</tr>
 				</table>
 		
+				<div>
+				<label>User: <strong>".$_SESSION['username']."</strong></label>
+				</div>
+				<div>
+				<label>Role: <strong>".$_SESSION['userRole']."</strong></label>
+				</div>		
 				<!-- Language Selection -->
 				<div class=\"btn-group languageBtn\">
 					<a class=\"btn dropdown-toggle btn-success btn-mini\"
