@@ -1,5 +1,4 @@
 <?php
-$_SESSION['angemeldet']= null;
 session_start();
 if($_SESSION['angemeldet']==0){
 	if(trim($_POST['username']) != ""){
