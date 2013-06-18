@@ -23,8 +23,8 @@
 					
 					<div class = \"row-fluid questionFooter\">
 						<div class=\" span2 offset1 \">
-							<a class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
-  								hide/show answer
+							<a id=\"BtnAnswerHideShow\" onClick=\"BtnAnswerShowHide()\" class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
+  								Show Answers
 							</a>
 						</div>
 					
@@ -58,8 +58,8 @@
 
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
-								<a class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#comments\">
-  									hide/show comments
+								<a id=\"BtnCommentsHideShow\" onClick=\"BtnCommentsHideShow()\" class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#comments\">
+  									Show Comments
 								</a>
 							</div>
 						</div>	

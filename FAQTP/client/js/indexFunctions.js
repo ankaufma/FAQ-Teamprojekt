@@ -5,18 +5,46 @@ $(function ()
 	});  
 
 
-var show = false;
-
+var showNavTree = false;
 function NavTreeShowHide()
 {
-	if(show == true)
+	if(showNavTree == true)
 	{
 		document.getElementById("NavTreeHideShow").innerHTML = "Hide Navigation Tree";
-		show = false;
+		showNavTree = false;
 	}
 	else
 	{
 		document.getElementById("NavTreeHideShow").innerHTML = "Show Navigation Tree";
-		show = true;
+		showNavTree = true;
 	}
+}
+
+var showAnswers = false;
+function BtnAnswerShowHide() {
+	
+	if(showAnswers == true) {
+		document.getElementById("BtnAnswerHideShow").innerHTML="Show Answers";
+		showAnswers = false;
+	}
+	else{
+		document.getElementById("BtnAnswerHideShow").innerHTML="Hide Answers";
+		showAnswers = true;
+	}
+	
+}
+
+var showComments = false;
+function BtnCommentsHideShow() {
+	
+	if(showComments == true) {
+		document.getElementById("BtnCommentsHideShow").innerHTML="Show Comments";
+		showComments = false;
+	}
+	else{
+		document.getElementById("BtnCommentsHideShow").innerHTML="Hide Comments";
+		showComments = true;
+	}
+	
+	
 }
