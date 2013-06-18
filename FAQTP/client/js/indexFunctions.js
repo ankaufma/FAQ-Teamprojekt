@@ -1,19 +1,22 @@
+
 $(function ()  
 		{ 
 			$("#aboutPopover").popover();  
-		});  
+	});  
 
 
-function hideShowNavTree() {
-	
-	if(document.getElementByID("NavTreeHide")style.visibility == 'hidden') {
-		document.getElementByID("NavTreeHide")style.visibility == 'show';
-		document.getElementByID("NavTreeShow")style.visibility == 'hidden';
+var show = false;
+
+function NavTreeShowHide()
+{
+	if(show == true)
+	{
+		document.getElementById("NavTreeHideShow").innerHTML = "Hide Navigation Tree";
+		show = false;
 	}
-	else {
-		document.getElementByID("NavTreeHide")style.visibility == 'hidden';
-		document.getElementByID("NavTreeShow")style.visibility == 'show';
+	else
+	{
+		document.getElementById("NavTreeHideShow").innerHTML = "Show Navigation Tree";
+		show = true;
 	}
-		
-	
 }
