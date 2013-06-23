@@ -23,7 +23,7 @@
 					
 					<div class = \"row-fluid questionFooter\">
 						<div class=\" span2 offset1 \">
-							<a id=\"BtnAnswerHideShow\" onClick=\"BtnAnswerShowHide()\" class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
+							<a id=\"BtnAnswerHideShow\" onClick=\"BtnAnswerShowHide()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
   								Show Answers
 							</a>
 						</div>
@@ -58,7 +58,7 @@
 
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
-								<a id=\"BtnCommentsHideShow\" onClick=\"BtnCommentsHideShow()\" class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#comments\">
+								<a id=\"BtnCommentsHideShow\" onClick=\"BtnCommentsHideShow()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#comments\">
   									Show Comments
 								</a>
 							</div>
@@ -73,7 +73,7 @@
 							<div class=\"span2 offset1\">
 								
 					
-								<a href=\"#myModal\" role=\"button\" class=\"btn btn-mini btn-primary\" data-toggle=\"modal\">Leave Comment</a>
+								<a href=\"#myModal\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
 								
 								<!-- Modal -->
 								<form name=\"CommentFormular\">

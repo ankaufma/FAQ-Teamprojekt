@@ -117,8 +117,9 @@ h2.headersContainers{
 	background-color: #F8F8F8;
 	margin-bottom:10px;
 	padding-bottom:1%;
-
 }
+
+
 .question {
 	margin-top:10px;
 	padding-left: 2%;
@@ -136,6 +137,13 @@ h2.headersContainers{
 	font-style:italic;
 	color:#C0C0C0;	
 	font-size:11px;
+}
+
+.linksAnswerAndComment {
+	color: #585858;
+	font-size: 12px;	
+	font-style: italic;
+	
 }
 
 .answer{
