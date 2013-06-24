@@ -6,7 +6,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>FAQ-System</title>
+<title>FAQ-Manager | Home</title>
 <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
 <script type="text/javascript" src="../client/js/buildTree.js"></script>
@@ -28,105 +28,91 @@
 
 
 </head>
-
-<!-- ============================================================================ -->
-<!-- 									Header
-<!-- ============================================================================ -->
-<div class="row-fluid top-buffer">
-	<div class="span4"></div>
-
-	<div class="span4">
-		<h1 class="headline">FAQ Manager</h1>
-	</div>
-	<!-- Header-Functions-->
-	
+<body>
+	<!-- ============================================================================ -->
+	<!-- 									Header
+	<!-- ============================================================================ -->
 	<?php 
-		include('/../server/HeaderInfos.php');
-	?>	
+	  	include('..\server\Header.php');
+	?>
 
-<!-- ============================================================================ -->
-<!-- 									Content
-		<!-- ============================================================================ -->
-<div class="row-fluid">
-	<div class="span12 content">
-
-		<!-- ============================================================================ -->
-		<!-- 							NavigationTree
+	<!-- ============================================================================ -->
+	<!-- 									Content
+	<!-- ============================================================================ -->
+	<div class="row-fluid">
+		<div class="span12 content">
+	
 			<!-- ============================================================================ -->
-		<div class="accordion navAccordeon" id="accordion2">
-			<div class="accordion-group">
-				<div class="accordion-heading">
-				
-					<a class="accordion-toggle navAccordLink btn-link"
-						data-toggle="collapse" data-parent="#accordion2"
-						href="#collapseOne" onClick="NavTreeShowHide()">
-						<p id="NavTreeHideShow">Hide Navigation Tree</p>
-					</a>
-				
-				</div>
-				<div id="collapseOne" class="accordion-body collapse in">
-					<div class="accordion-inner">
-						<?php 
-							include('/../server/tree.php');
-						?>
+			<!-- 							NavigationTree
+				<!-- ============================================================================ -->
+			<div class="accordion navAccordeon" id="accordion2">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+					
+						<a class="accordion-toggle navAccordLink btn-link"
+							data-toggle="collapse" data-parent="#accordion2"
+							href="#collapseOne" onClick="NavTreeShowHide()">
+							<p id="NavTreeHideShow">Hide Navigation Tree</p>
+						</a>
+					
+					</div>
+					<div id="collapseOne" class="accordion-body collapse in">
+						<div class="accordion-inner">
+							<?php 
+								include('/../server/tree.php');
+							?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="container-fluid">
-			<!-- ============================================================================ -->
-			<!-- 								"Search Bar"
+	
+			<div class="container-fluid">
 				<!-- ============================================================================ -->
-
-			<input id="search" name="search" type="text" list="searchResults"
-				class="input-medium search-query input-xxlarge"
-				onkeyup="findQuestion(this.value)" placeholder="Search"> <datalist
-					id="searchResults" name="searchResults"></datalist>
-				<button class="btn btn-success"
-					onclick="loadQuestionsByText(search.value)">Search</button>
-				<div class="row-fluid">
-				<!-- ============================================================================ -->
-				<!-- 								ResultList
-				<!-- ============================================================================ -->
-
-					<?php 
-					include('/../server/ResultList.php');
-					?>
-
-
+				<!-- 								"Search Bar"
 					<!-- ============================================================================ -->
-					<!-- 				"Ask New Question"
+	
+				<input id="search" name="search" type="text" list="searchResults"
+					class="input-medium search-query input-xxlarge"
+					onkeyup="findQuestion(this.value)" placeholder="Search"> <datalist
+						id="searchResults" name="searchResults"></datalist>
+					<button class="btn btn-success"
+						onclick="loadQuestionsByText(search.value)">Search</button>
+					<div class="row-fluid">
+					<!-- ============================================================================ -->
+					<!-- 								ResultList
+					<!-- ============================================================================ -->
+	
+						<?php 
+							include('/../server/ResultList.php');
+						?>
+	
+	
 						<!-- ============================================================================ -->
-					<div class="span3 contAskNewQuestion" align="center">
-						<h2 class="headersContainers">Ask New Question</h2>
-						<div class="textNewQuestion">
-							<p class="text-center">We are deligthed to give you answers
-								related to questions related to software development</p>
+						<!-- 				"Ask New Question"
+							<!-- ============================================================================ -->
+						<div class="span3 contAskNewQuestion" align="center">
+							<h2 class="headersContainers">Ask New Question</h2>
+							<div class="textNewQuestion">
+								<p class="text-center">We are deligthed to give you answers
+									related to questions related to software development</p>
+							</div>
+							<button class="btn btn-danger" " onclick="askQuestion()"
+								type="button">Ask New Question</button>
 						</div>
-						<button class="btn btn-danger" " onclick="askQuestion()"
-							type="button">Ask New Question</button>
 					</div>
-				</div>
-		
+			
+			</div>
 		</div>
 	</div>
-</div>
-
-
-
-<!-- ============================================================================ -->
-<!-- 									FOOTER
-		<!-- ============================================================================ -->
-<div class="row footer" align="center">
-	<div class="span12">
-		<h3>FAQ Manager</h3>
-		<p>Lovely programming by Andreas Kaufmann, Gian-Lucas Piras, Hasancan
-			Cifci and Thomas Winter</p>
-		<a href="http://www.google.de">Further Information -> Google weiss
-			alles</a>
-	</div>
-</div>
+	
+	
+	
+	<!-- ============================================================================ -->
+	<!-- 									FOOTER
+	<!-- ============================================================================ -->
+	<?php 
+		include('/../server/Footer.php');
+	?>
 </body>
 
 
