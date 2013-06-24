@@ -10,7 +10,7 @@
 			include('/../server/HeaderInfos.php');
 		?>	
 	
-
+</div>
 
 <?php
 ?>

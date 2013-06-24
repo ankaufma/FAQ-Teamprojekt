@@ -54,7 +54,7 @@
 						<div class="row">
 							<div class="span8">
 															
-								<select size="20" class="selectQuestion input-xxlarge  id="select" name="auswahl_frage" multiple="multiple">
+								<select size="20" class="selectQuestion input-xxlarge"  id="select" name="auswahl_frage" multiple="multiple">
 									<?php
 										include('..\server\QuestionNoAnswer.php');	
 									?>

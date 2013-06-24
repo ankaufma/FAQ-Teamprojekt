@@ -44,10 +44,34 @@
 	font-size:28px;
 }
 
-.subHeaders{
-	
+h2{
+	font-size:22px;		
+}
+
+.answerAndRelated {
+	background-color:red;
+	padding:1%;
 	
 }
+
+.textareas{
+	resize:vertical;
+}
+.searchExistingAnswer {
+	margin-bottom:5px;
+}
+
+.rowQuestAsk{
+	background-color:#D1FFC2;
+	padding:1%;
+}
+
+.relatedQuestionsAndCats{
+	background-color:#D1FFC2;	
+}
+
+
+
 
 .selectQuestion{
 
