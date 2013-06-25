@@ -1,7 +1,7 @@
 
-
 <?php
-	
+	session_start();	
+
 	include('/../business/fascade/fascade.php');
 	$cat = $_POST['cat'];
 	$fassi = new Fascade();
@@ -53,10 +53,12 @@
 							<p class = \"answerFont\">".$myA->getAnswer()."</p>
 						</div>
 						
-						<!-- RATING -->
-						<div class = \"span1 offset1\">
-							<div id=\"star\">Rating</div>
-							".$fassi->showRatingByAnswer($myA)."
+						<!-- RATING -->	
+						<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
+						<script type=\"text/javascript\" src=\"../client/js/ratyFunctions.js\"></script>
+						
+						<div class = \"span1\">
+							<div id=\"score-callback\" data-score=\"".$fassi->showRatingByAnswer($myA)."\"></div>
 						</div>
 
 						<div class = \"row-fluid questionFooter\">
