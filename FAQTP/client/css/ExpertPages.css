@@ -61,20 +61,19 @@ h2{
 	margin-bottom:5px;
 }
 
-.rowQuestAsk{
-	background-color:#D1FFC2;
+.question{
+	background-color:#FFE0B2;
 	padding:1%;
+	border-radius:15px;
 }
 
 .relatedQuestionsAndCats{
 	background-color:#D1FFC2;	
+	padding: 1%;
 }
 
-
-
-
 .selectQuestion{
-
+	
 }
 
 

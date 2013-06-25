@@ -24,7 +24,7 @@
 		<!-- ============================================================================ -->
 
 	<?php 
-	include('..\server\Header.php');
+		include('..\server\Header.php');
 	?>
 
 	<!-- ============================================================================ -->
@@ -36,67 +36,72 @@
 			<form id="AdminAnswer" name="AdminAnswer" method="post"
 				action="/../server/StoreAnswer.php">
 
-				<div class="row-fluid">
+				
+				<div class="container-fluid">
 					<div class="row-fluid">
-						<div class="span1"></div>
-
-
-						<div class="span4 rowQuestAsk">
-							<?php
-							include('/../server/ThisQuestion.php');
-							?>
+					
+				    	<!-- ============================================== -->
+				    	<!-- 			Container Question					-->
+				    	<!-- ============================================== -->					
+						<div class="span4 question">
+							<h2>Frage</h2>
+							<div>
+								<?php
+									include('..\server\QuestionById.php');
+								?>
+							</div>
+				    	</div>
+				    	
+				    	<!-- ============================================== -->
+				    	<!-- Container Answer, Select Answer, Related Cat.  -->
+				    	<!-- ============================================== -->
+				   		<div class="span8 relatedQuestionsAndCats">
+				    		
+				    		<div class="row-fluid">
+				    			<div class="span12">
+									<h2>Antwort eingeben</h2>
+									<textarea name="AnswerText" class="span10 textareas" rows="6" id="AnswerText"></textarea>	
+								</div>			    		
+				    		</div>
+				    		
+				    		
+				    		<div class="row-fluid">
+				    			<div class="span12">
+					    			<?php 
+										include('/../server/ChooseAvailableAnswer.php');
+									?>
+				    			</div>
+				    		</div>
 						</div>
-						<div class="span6 rowQuestAsk">
-							<?php 
-							include('/../server/MainAnswer.php');
-							?>
-						</div>
-						<div class="span1"></div>
+						
+						<div class="row-fluid">
+							<div class="span4"></div>
+							<div class="span8 relatedQuestionsAndCats">
+						    	<div class="row-fluid">
+						    		<div class="span12">
+							    		<?php 
+											include('/../server/selectAllKategories.php');
+										?>
+						    		</div>
+						    	</div>
+							    	
+							    	
+							   	<div class="row-fluid">
+						    		<div class="span12">
+							   			<button class="btn btn-primary" type="submit" value="Antworten">Antworten</button>
+						    		</div>
+						    	</div>			    		
+								
+					    		
+					  		</div>
+					  		
+				  		</div>
+				  		
 					</div>
 				</div>
-
-
-				<div class="row-fluid">
-					<div class="span5"></div>
-					<div class="span4 answerAndRelated">
-						<?php 
-						include('/../server/ChooseAvailableAnswer.php');
-						?>
-					</div>
-					<div class="span2"></div>
-				</div>
-
-				<div class="row-fluid">
-					<div class="span5"></div>
-					<div class="span4 answerAndRelated">
-						<?php 
-						include('/../server/selectAllKategories.php');
-						?>
-					</div>
-					<div class="span1"></div>
-				</div>
-		
+			</form>
 		</div>
-
-
-
-
-
-
-		</form>
 	</div>
-	</div>
-
-
-
-
-
-
-
-	<div>
-		<button type="submit" value="Antworten">Antworten</button>
-	</div>
-
 
 
 
@@ -104,7 +109,7 @@
 
 	<!-- ============================================================================ -->
 	<!-- 									FOOTER
-		<!-- ============================================================================ -->
+	<!-- ============================================================================ -->
 	<?php 
 	include('/../server/Footer.php');
 	?>
