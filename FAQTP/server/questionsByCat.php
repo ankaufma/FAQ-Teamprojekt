@@ -1,4 +1,7 @@
+
+
 <?php
+	
 	include('/../business/fascade/fascade.php');
 	$cat = $_POST['cat'];
 	$fassi = new Fascade();
@@ -30,7 +33,7 @@
 					
 					
 						<div class=\" span8\"> 
-					       <p class=\"questionFooterText\">(Autor, Datum)</p>
+					       <p class=\"questionFooterText\" id=\"autorDateQuestion\">(".$myQs->getUsername().", ".$myQs->getQDate().")</p>
 						</div>
 					</div>
 					
@@ -111,7 +114,7 @@
 						</div>
 						
 						<div class=\"span4 offset6 commentFooter\"> 
-					       <p class=\"commentFooterFont\">(Autor, Datum)</p>
+					       <p class=\"commentFooterFont\" id=\"autorDateComment\">(".$myC->getUser()->getUsername().", ".$myC->getCDate().")</p>
 						</div>
 						");
 			}	

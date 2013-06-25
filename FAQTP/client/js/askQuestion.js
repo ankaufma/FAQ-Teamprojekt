@@ -1,5 +1,5 @@
 function askQuestion() {
-	console.log('hhihi');
+
 	$("#QContainer").html("<div> </div>");
 	$.ajax({
 		type: 		"POST",
