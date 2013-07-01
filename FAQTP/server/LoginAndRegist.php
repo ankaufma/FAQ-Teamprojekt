@@ -5,7 +5,7 @@
 						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">x</button>
+								aria-hidden="true">X</button>
 							<h3 id="myModalLabel">User Login</h3>
 						</div>
 
