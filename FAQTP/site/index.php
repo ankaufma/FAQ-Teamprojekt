@@ -22,8 +22,9 @@
 <script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
 
 
-<link rel="stylesheet" href="../client/css/bootstrap.min.css">
-<link rel="stylesheet" href="../client/css/HomeCSS.css">
+<link rel="stylesheet" href="../client/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="../client/css/HomeCSS.css"></link>
+<link rel="stylesheet" href="../client/css/ExpertPages.css"></link>
 
 
 
@@ -96,6 +97,10 @@
 							</div>
 							<button class="btn btn-danger" " onclick="askQuestion()"
 								type="button">Ask New Question</button>
+								
+								<?php 
+									include('/../server/ExperteButton.php');
+								?>
 						</div>
 					</div>
 			

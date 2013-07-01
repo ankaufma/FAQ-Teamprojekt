@@ -17,39 +17,38 @@ if($_SESSION['angemeldet'] == 0){
 
 	echo("
 			</td>
-
-			<td width=\"60px\">
-
-			<!-- ---------------------------------------------------- -->
-			<!-- HART REINCODIERTER NAME -->
-			<!-- ---------------------------------------------------- -->
-				<a href=\"#contactModal\" role=\"button\" class=\"btn btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
-				<!-- Modal -->
-				<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
-				<form id=\"FeedbackFormular\">
-						
-					<div id=\"contactModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-						<div class=\"modal-header\">
-							<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>
-							<h3 id=\"myModalLabel\">Contact us</h3>
-							</div>
-							<div class=\"modal-body\">
-								<p>Write message...</p>
-							<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
-							</div>
-							<div class=\"modal-footer\">
-							<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-							<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
-						</div>
-					</div>
-				</form>
 				
+
+			
+			<td width=\"60px\">
+			<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
+			
+			<!-- ---------------------------------------------------- -->
+			<!-- Contact Modal -->
+			<!-- ---------------------------------------------------- -->
+				<a href=\"#contactModal\" role=\"button\" class=\" btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
+					<!-- Modal -->
+				
+						<div id=\"contactModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+							<div class=\"modal-header\">
+								<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>
+								<h3 id=\"myModalLabel\">Contact us</h3>
+								</div>
+								<div class=\"modal-body\">
+									<p>Write message...</p>
+								<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
+								</div>
+								<div class=\"modal-footer\">
+								<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+								<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
+							</div>
+						</div>
+					
+				</div>
 			</td>
-
-
-
-			</td>
-			<td width=\"60px\"><a href=\"#\" id=\"aboutPopover\"
+			
+			<td width=\"60px\">
+			<a href=\"#\" id=\"aboutPopover\"
 			class=\"headerLinks btn-links\" rel=\"popover\" data-placement=\"bottom\"
 			data-html=\"true\" data-content=\"<strong> FAQ Manager</strong> <br/>
 			No Rights Reserved!!!\" data-original-title=\"About\">About</a></td>
@@ -89,38 +88,40 @@ if($_SESSION['angemeldet'] == 0){
 			
 			
 			<td width=\"60px\">
-
-			<!-- ---------------------------------------------------- -->
-			<!-- HART REINCODIERTER NAME -->
-			<!-- ---------------------------------------------------- -->
 			
-				<a href=\"#contactModal\" role=\"button\" class=\"btn btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
-				<!-- Modal -->
-				<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
-				<form id=\"FeedbackFormular\">
-						
-					<div id=\"contactModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-						<div class=\"modal-header\">
-							<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>
-							<h3 id=\"myModalLabel\">Contact us</h3>
+			<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
+			
+			
+			
+			<!-- ---------------------------------------------------- -->
+			<!-- Contact Modal -->
+			<!-- ---------------------------------------------------- -->
+				<a href=\"#contactModal2\" role=\"button\" class=\"btn btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
+					<!-- Modal -->
+				
+						<div id=\"contactModal2\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+							<div class=\"modal-header\">
+								<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>
+								<h3 id=\"myModalLabel2\">Contact us</h3>
+								</div>
+								<div class=\"modal-body\">
+									<p>Write message...</p>
+								<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
+								</div>
+								<div class=\"modal-footer\">
+								<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+								<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
 							</div>
-							<div class=\"modal-body\">
-								<p>Write message...</p>
-							<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
-							</div>
-							<div class=\"modal-footer\">
-							<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-							<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
 						</div>
-					</div>
-				</form>
+					
+				</div>
 			</td>
 			
 			
 			
 			
 			<td width=\"60px\"><a href=\"#\" id=\"aboutPopover\"
-			class=\"headerLinks btn-links\" rel=\"popover\" data-placement=\"bottom\"
+			class=\" headerLinks btn-links\" rel=\"popover\" data-placement=\"bottom\"
 			data-html=\"true\" data-content=\"<strong> FAQ Manager</strong> <br/>
 			No Rights Reserved!!!\" data-original-title=\"About\">About</a></td>
 			</tr>
@@ -145,6 +146,10 @@ if($_SESSION['angemeldet'] == 0){
 			</div>
 			</div>
 
+			
+			
+			
+			
 			");
 }
 ?>

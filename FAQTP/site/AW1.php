@@ -24,35 +24,30 @@
 
   </head>
   <body>
-	    
-	<!-- ============================================================================ -->
-	<!-- 									Header
-	<!-- ============================================================================ -->
-	<?php 
-	  	include('..\server\Header.php');
-	?>
+
+	
 		<!-- ============================================================================ -->
 		<!-- 									Content
 		<!-- ============================================================================ -->
 		<div class="row-fluid">
 			<div class="span12 ">
 				<div class="row">
-					<div class="span4"></div>	
-						<div class="span4">
+					<div class="span2"></div>	
+						<div class="span8">
 							<p class="lead textForSelect">Select Question to answer</p>
 						</div>
-					<div class="span4"></div>	
+					<div class="span2"></div>	
 				</div>
 			</div>
 					
 					
 					
-				<div class ="span4"></div>
-				<div class="span4">
+				<div class ="span2"></div>
+				<div class="span8">
 					
 					<form  class="form-horizontal" action="AdminAnswer.php" method="post">
 						<div class="row">
-							<div class="span8">
+							<div class="span10">
 															
 								<select size="20" class="selectQuestion input-xxlarge"  id="select" name="auswahl_frage" multiple="multiple">
 									<?php
@@ -72,17 +67,11 @@
 					
 				</div>
 		
-				<div class ="span4"></div>
+				<div class ="span2"></div>
 			</div>
 		
 		</div>
-		<!-- ============================================================================ -->
-		<!-- 									FOOTER
-		<!-- ============================================================================ -->
-		<?php 
-			include('/../server/Footer.php');
-		?>
-		
+
 	</body>
 </html>
 	

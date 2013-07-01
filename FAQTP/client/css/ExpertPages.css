@@ -37,11 +37,17 @@
 }
 
 
+.btnAnswerQuestion {
+	margin:2%;
+}
+
+
+
 .textForSelect{
 	margin-top:15px;
 	margin-bottom:10px;	
 	margin-left:2%;
-	font-size:28px;
+	font-size:26px;
 }
 
 h2{
@@ -53,7 +59,6 @@ h2{
 	padding:1%;
 	
 }
-
 .textareas{
 	resize:vertical;
 }
