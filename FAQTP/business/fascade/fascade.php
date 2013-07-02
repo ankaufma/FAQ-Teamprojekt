@@ -8,6 +8,7 @@ include('ShowAllAnswersDTO.php');
 include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
+include('ApplyCommentDTO.php');
 include('CheckUserDTO.php');
 include $pfad.'user/usermanager.php';
 include $pfad.'answer/AnswerManager.php';
@@ -128,6 +129,11 @@ include $pfad.'answer/CommentManager.php';
 				$answerId = $myA->getAnswerId();
 			} 
 			$qm->createAnswerToQuestion($answerId, $questionId);
+		}
+		
+		public function applyRelAnswer($qid, $aid) {
+			$am = new AnswerManager();
+			$am->createRelAnswer($qid,$aid);
 		}
 		
 		

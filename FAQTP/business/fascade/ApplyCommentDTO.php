@@ -17,17 +17,16 @@ class ApplyCommentDTO {
 		$this->comment=$comment;
 	}
 	
-	
 	public function setUser($user) {
 		$this->user=$user;
 	}
 	
-	public function setAnswerId($user) {
-		$this->user=$user;
+	public function setAnswerId($answerid) {
+		$this->answerid=$answerid;
 	}
 	
 	public function getAnswerId() {
-		$this->user=$user;
+		return $this->answerid;
 	}
 	
 	public function getUser() {
@@ -39,10 +38,6 @@ class ApplyCommentDTO {
 		return $this->comment;
 	}
 	
-	
-	public function getUser() {
-		return $this->user;
-	}
 	
 }
 

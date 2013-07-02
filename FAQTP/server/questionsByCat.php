@@ -130,7 +130,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				<a href=\"#myModal\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
 
 				<!-- Modal -->
-				<form name=\"CommentFormular\">
+				<form name=\"CommentFormular\" method=\"post\" action=\"../server/postComment.php\">
 					
 				<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
 				<div class=\"modal-header\">
@@ -139,11 +139,15 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				</div>
 				<div class=\"modal-body\">
 				<p>Comment...</p>
-				<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+				<textarea name=\"comment\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+				<span hidden=\"true\">
+					<input type=\"text\" id=\"answer\" name=\"answer\" value=\"".$myA->getAnswerId()."\"></input>
+					<input type=\"text\" id=\"user\" name=\"user\" value=\"".$_SESSION['username']."\"></input>
+				</span>
 				</div>
 				<div class=\"modal-footer\">
 				<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-				<button class=\"btn btn-primary\" onClick=\"postComment()\">Post</button>
+				<button class=\"btn btn-primary\" type=\"submit\">Post</button>
 				</div>
 				</div>
 				</form>

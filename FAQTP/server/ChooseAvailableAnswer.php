@@ -8,7 +8,7 @@
 </div>
 <div class="row-fluid">
 	<div class="span12">
-		<select size="12" class="selectQuestion input-xxlarge span10" id="AnswerSelect" name="AnswerSelect" multiple>
+		<select size="12" class="selectQuestion input-xxlarge span10" id="AnswerSelect" name="AnswerSelect[]" multiple>
 
 		</select>
 	</div>

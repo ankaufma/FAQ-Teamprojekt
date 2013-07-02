@@ -16,12 +16,12 @@ class AnswerManager {
 		mysqli_close($db);
 	}
 	
-	public function createRelAnswer(Answer $answer) {
+	public function createRelAnswer($qid, $aid) {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-		$sql = "INSERT INTO Answer (answer, description, user) VALUES " .
-				"('" . $answer->getAnswer() . "'" .
-				", 'Related' " .
-				", '" . $answer->getUser()->getUserId() ."');";
+		$sql = "INSERT INTO questionanswer (question, answer, description) VALUES " .
+				"('" . $qid . "'" .
+				",'" . $aid . "'" .
+				",'Related');";
 	
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 	
