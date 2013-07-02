@@ -184,6 +184,11 @@ include $pfad.'answer/CommentManager.php';
 			return $anByText;
 		}
 		
+		public function applyCatToQuestion($catId, $qId){
+			$qm = new QuestionManager();
+			$qm->createCategoryToQuestion($catId,$qId);
+		}
+		
 		public function showCatByPreCat($id){
 			$cm = new CategoryManager();
 			$allNachfolger = Array();

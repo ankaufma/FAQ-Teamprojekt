@@ -8,7 +8,6 @@ class QuestionManager {
 	private $answers = Array();
 	
 	public function createQuestion(Question $question){
-		
 			$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 			$sql = "INSERT INTO Question (question, user) VALUES " .
 					"('" . $question->getQuestion() . "'" .
@@ -20,7 +19,6 @@ class QuestionManager {
 	}
 	
 	public function createAnswerToQuestion($answerId, $questionId){
-	
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO questionanswer (question, answer, description) VALUES " .
 				"('" . $questionId . "'" .
@@ -38,6 +36,17 @@ class QuestionManager {
 		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
 		$sql = "Update Question set Question =".$question->getQuestion()." where QuestionID =".$question->getQuestionID()." ;";
 				
+		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		
+		mysqli_close($db);
+	}
+	
+	public function createCategoryToQuestion($cid, $qid) {
+		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$sql = "INSERT INTO catquestion (CategoryID, QuestionID) VALUES " .
+				"('" . $cid . "'" .
+				", '" . $qid . "');";
+		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
 		mysqli_close($db);

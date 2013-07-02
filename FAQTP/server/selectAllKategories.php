@@ -4,7 +4,7 @@
 <?php
 	$fassi = new Fascade();
 	foreach($fassi->showAllCategories() AS $cats) {
-		echo("<option id=\"".$cats->getCategory()."\">".$cats->getCategoryName()."</option>");
+		echo("<option value=\"".$cats->getCategory()."\">".$cats->getCategoryName()."</option>");
 	}
 ?>
 </select>
