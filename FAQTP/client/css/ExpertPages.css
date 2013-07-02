@@ -1,0 +1,91 @@
+@CHARSET "ISO-8859-1";
+
+
+ a:hover {
+ cursor:pointer;
+}
+ 
+ 
+.top-buffer {  
+	background-color: #66E066;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.headline{
+	
+}
+
+.headerLinks {
+	color: #333333;
+	text-decoration: none;
+}
+.headerLinks:active{
+	color: #333333;
+	text-decoration: none;
+}
+.headerLinks:hover{
+	color: #333333;
+	text-decoration: none;
+}
+
+#myModal .modal-body {
+	max-height: 800px;
+}
+
+.languageBtn{
+	margin-top:10px;
+}
+
+
+.btnAnswerQuestion {
+	margin:2%;
+}
+
+
+
+.textForSelect{
+	margin-top:15px;
+	margin-bottom:10px;	
+	margin-left:2%;
+	font-size:26px;
+}
+
+h2{
+	font-size:22px;		
+}
+
+.answerAndRelated {
+	background-color:red;
+	padding:1%;
+	
+}
+.textareas{
+	resize:vertical;
+}
+.searchExistingAnswer {
+	margin-bottom:5px;
+}
+
+.question{
+	
+	padding:1%;
+	border-radius:15px;
+}
+
+.relatedQuestionsAndCats{
+	background-color:#D1FFC2;	
+	padding: 1%;
+}
+
+.selectQuestion{
+	
+}
+
+
+.footer {
+	background-color: #66E066;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-size: 14px;
+}
+ 

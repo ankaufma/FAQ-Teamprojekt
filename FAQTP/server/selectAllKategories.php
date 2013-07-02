@@ -1,5 +1,6 @@
-<label>Wähle Kategorie/en</label>
-<select name="Cats" size="10" multiple>
+<h2>Kategorien zuordnen</h2>
+
+<select class="span6" name="Cats" size="10" multiple>
 <?php
 	$fassi = new Fascade();
 	foreach($fassi->showAllCategories() AS $cats) {

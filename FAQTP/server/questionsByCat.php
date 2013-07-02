@@ -1,4 +1,7 @@
+
 <?php
+	session_start();	
+
 	include('/../business/fascade/fascade.php');
 	$cat = $_POST['cat'];
 	$fassi = new Fascade();
@@ -23,14 +26,14 @@
 					
 					<div class = \"row-fluid questionFooter\">
 						<div class=\" span2 offset1 \">
-							<a class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
-  								hide/show answer
+							<a id=\"BtnAnswerHideShow\" onClick=\"BtnAnswerShowHide()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
+  								Show Answers
 							</a>
 						</div>
 					
 					
 						<div class=\" span8\"> 
-					       <p class=\"questionFooterText\">(Autor, Datum)</p>
+					       <p class=\"questionFooterText\" id=\"autorDateQuestion\">(".$myQs->getUsername().", ".$myQs->getQDate().")</p>
 						</div>
 					</div>
 					
@@ -50,16 +53,18 @@
 							<p class = \"answerFont\">".$myA->getAnswer()."</p>
 						</div>
 						
-						<!-- RATING -->
-						<div class = \"span1 offset1\">
-							<div id=\"star\">Rating</div>
-							".$fassi->showRatingByAnswer($myA)."
+						<!-- RATING -->	
+						<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
+						<script type=\"text/javascript\" src=\"../client/js/ratyFunctions.js\"></script>
+						
+						<div class = \"span1\">
+							<div id=\"score-callback\" data-score=\"".$fassi->showRatingByAnswer($myA)."\"></div>
 						</div>
 
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
-								<a class=\"btn btn-mini\" data-toggle=\"collapse\" data-target=\"#comments\">
-  									hide/show comments
+								<a id=\"BtnCommentsHideShow\" onClick=\"BtnCommentsHideShow()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#comments\">
+  									Show Comments
 								</a>
 							</div>
 						</div>	
@@ -73,7 +78,7 @@
 							<div class=\"span2 offset1\">
 								
 					
-								<a href=\"#myModal\" role=\"button\" class=\"btn btn-mini btn-primary\" data-toggle=\"modal\">Leave Comment</a>
+								<a href=\"#myModal\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
 								
 								<!-- Modal -->
 								<form name=\"CommentFormular\">
@@ -85,7 +90,7 @@
 									  </div>
 									  <div class=\"modal-body\">
 									    <p>Comment...</p>
-										<textarea name=\"textfeld\" class=\"span12\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
+										<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
 									  </div>
 									  <div class=\"modal-footer\">
 									    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
@@ -111,7 +116,7 @@
 						</div>
 						
 						<div class=\"span4 offset6 commentFooter\"> 
-					       <p class=\"commentFooterFont\">(Autor, Datum)</p>
+					       <p class=\"commentFooterFont\" id=\"autorDateComment\">(".$myC->getUser()->getUsername().", ".$myC->getCDate().")</p>
 						</div>
 						");
 			}	

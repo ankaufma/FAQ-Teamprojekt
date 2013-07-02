@@ -1,6 +1,5 @@
 <!-- Button to trigger modal --> 
-					<a href="#myModal" role="button"
-					class="btn btn-link headerLinks" data-toggle="modal">Login</a> <!-- Modal -->
+					<a href="#myModal" role="button" class="btn btn-link headerLinks" data-toggle="modal">Login</a> <!-- Modal -->
 					<div id="myModal" class="modal hide fade loginModal" tabindex="-1"
 						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">
@@ -8,8 +7,6 @@
 								aria-hidden="true">x</button>
 							<h3 id="myModalLabel">User Login</h3>
 						</div>
-
-
 
 						<div class="modal-body">
 							<div class="well">
@@ -60,8 +57,7 @@
 									</div>
 									<div class="tab-pane fade" id="create">
 
-										<form class="form-horizontal"
-											action="/../server/RegisterOnServer.php" method="post">
+										<form class="form-horizontal" action="/../server/RegisterOnServer.php" method="post">
 											<div class="control-group">
 												<label class="control-label" for="inputUserName">Username</label>
 												<div class="controls">

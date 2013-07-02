@@ -10,6 +10,7 @@ class Comment {
 		$this->comment=$comment;
 		$this->user=$user;
 		$this->answer=$answer;
+		$this->cDate=$cDate;
 	}
 	
 	public function setCommentId($commentId) {

@@ -1,11 +1,9 @@
-	<html>
-	<head>
-	<meta http-equiv="refresh" content="1; URL=../site/">
-	</head>
-	<body>
-	Ihr Frage wird in Kürze beantwortet.
-	</body>
-	</html>
+<html>
+<head>
+</head>
+<body>Ihr Frage wird in Kürze beantwortet.
+</body>
+</html>
 <?php
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();

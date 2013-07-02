@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FAQ-Manager</title>
+    <title>FAQ-Manager | Select Question</title>
   
+	<script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
+	<script type="text/javascript" src="../client/js/buildTree.js"></script>
+	<script type="text/javascript" src="../client/js/askQuestion.js"></script>
+	<script type="text/javascript" src="../client/js/bootstrap.js"></script>
+	<script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
+	<script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="../client/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
+	<script type="text/javascript" src="../client/js/ratyFunctions.js"></script>
+	<script type="text/javascript" src="../client/js/indexFunctions.js"></script>
+	<script type="text/javascript" src="../client/js/PostComment.js"></script>
+	<script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
 
-    <!-- Einbinden des Bootstrap-Stylesheets -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
- 
-    <!-- optional: Einbinden der jQuery-Bibliothek -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
- 
-    <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
-    <script src="js/bootstrap.min.js"></script>
 	
-	
+	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../client/css/ExpertPages.css">
+    
 
-	
   </head>
   <body>
-    <h1>FAQ-Manager</h1>
 
-	<div class="row-fluid">
 	
-		
-	<div class="span4">
-		
-		<form  class="form-horizontal" action="AdminAnswer.php" method="post">
-			
-			
-		
-			<select id="select" name="auswahl_frage" size=5 >
-				<?php
-			
-					include('..\server\QuestionNoAnswer.php');
+		<!-- ============================================================================ -->
+		<!-- 									Content
+		<!-- ============================================================================ -->
+		<div class="row-fluid">
+			<div class="span12 ">
+				<div class="row">
+					<div class="span2"></div>	
+						<div class="span8">
+							<p class="lead textForSelect">Select Question to answer</p>
+						</div>
+					<div class="span2"></div>	
+				</div>
+			</div>
 					
-				?> 
-			
-			
-			</select>
-			
-		  	
-			
-		 <button type="submit"  class="btn">Submit</button>
-		</form>
-			
+					
+					
+				<div class ="span2"></div>
+				<div class="span8">
+					
+					<form  class="form-horizontal" action="AdminAnswer.php" method="post">
+						<div class="row">
+							<div class="span10">
+															
+								<select size="20" class="selectQuestion input-xxlarge"  id="select" name="auswahl_frage" multiple="multiple">
+									<?php
+										include('..\server\QuestionNoAnswer.php');	
+									?>
+								</select>
+								
+							</div>
+						</div>
+						<div class="span12"> </div>	
+						<div class="row">
+							<div class ="span8">
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+						</div>	
+					</form>
+					
+				</div>
+		
+				<div class ="span2"></div>
+			</div>
+		
+		</div>
 
-	</div>
-	<div class="span4"></div>
-	</div>
-</body>
+	</body>
 </html>
+	

@@ -33,11 +33,28 @@
         noRatedMsg: "I'am readOnly and I haven't rated yet!"
       });
 
-      $('#score-callback-demo').raty({
+      
+      
+      
+      
+      $('#score-callback').raty({
+    	 
+    	 
+    	 click: function(score, evt) {
+              alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt.type);
+         },
+    	  
         score: function() {
           return $(this).attr('data-score');
         }
+         
+         
       });
+      
+      
+      
+      
+      
 
       $('#halfShow-true-demo').raty({ score: 3.26 });
 

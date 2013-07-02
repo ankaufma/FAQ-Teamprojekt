@@ -3,33 +3,118 @@
 
 <head>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>FAQ-System</title>
-    <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
-    <script type="text/javascript" src="../client/js/buildTree.js"></script>
-	<script type="text/javascript" src="../client/js/bootstrap.js"></script>
-    <script type="text/javascript" src="../client/js/findQuestionsAnswers.js"></script>
-    <script tpye="text/javascript" src="../client/js/bootstrap-tooltip.js"></script>
-    <script tpye="text/javascript" src="../client/js/AdminAnswer.js"></script>
-	<script>  
-		$(function ()  
-			{ $("#example").popover();  
-		});  
-	</script>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FAQ-Manager | Answer Question</title>
+<script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script
 
-	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../client/css/HomeCSS.css">
+
+<script type="text/javascript" src="../client/js/bootstrap.js"></script>
+<script tpye="text/javascript" src="../client/js/AdminAnswer.js"></script>
+
+<link rel="stylesheet" href="../client/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../client/css/ExpertPages.css">
 
 </head>
-<form id="AdminAnswer" name="AdminAnswer" method="post" action="/../server/StoreAnswer.php">
-<?php
-include('/../server/ThisQuestion.php');
-include('/../server/MainAnswer.php');
-include('/../server/ChooseAvailableAnswer.php');
-include('/../server/selectAllKategories.php');
-?>
-<div>
-	<button type="submit" value="Antworten">Antworten</button>
-</div>
-</form>
+<body>
+
+
+	<!-- ============================================================================ -->
+	<!-- 									Header
+	<!-- ============================================================================ -->
+
+	<?php 
+		include('..\server\Header.php');
+	?>
+
+	<!-- ============================================================================ -->
+	<!-- 									Content
+		<!-- ============================================================================ -->
+	<div class="row-fluid">
+		<div class="span12">
+			<h2 class="textForSelect">Answer Selected Question:</h2>
+			<form id="AdminAnswer" name="AdminAnswer" method="post"
+				action="/../server/StoreAnswer.php">
+
+				
+				<div class="container-fluid">
+					<div class="row-fluid">
+					
+				    	<!-- ============================================== -->
+				    	<!-- 			Container Question					-->
+				    	<!-- ============================================== -->					
+						<div class="span4 question">
+							<h2>Frage</h2>
+							<div>
+								<?php
+									include('..\server\QuestionById.php');
+								?>
+							</div>
+				    	</div>
+				    	
+				    	<!-- ============================================== -->
+				    	<!-- Container Answer, Select Answer, Related Cat.  -->
+				    	<!-- ============================================== -->
+				   		<div class="span8 relatedQuestionsAndCats">
+				    		
+				    		<div class="row-fluid">
+				    			<div class="span12">
+									<h2>Antwort eingeben</h2>
+									<textarea name="AnswerText" class="span10 textareas" rows="6" id="AnswerText"></textarea>	
+								</div>			    		
+				    		</div>
+				    		
+				    		
+				    		<div class="row-fluid">
+				    			<div class="span12">
+					    			<?php 
+										include('/../server/ChooseAvailableAnswer.php');
+									?>
+				    			</div>
+				    		</div>
+						</div>
+						
+						<div class="row-fluid">
+							<div class="span4"></div>
+							<div class="span8 relatedQuestionsAndCats">
+						    	<div class="row-fluid">
+						    		<div class="span12">
+							    		<?php 
+											include('/../server/selectAllKategories.php');
+										?>
+						    		</div>
+						    	</div>
+							    	
+							    	
+							   	<div class="row-fluid">
+						    		<div class="span12">
+							   			<button class="btn btn-primary" type="submit" value="Antworten">Antworten</button>
+						    		</div>
+						    	</div>			    		
+								
+					    		
+					  		</div>
+					  		
+				  		</div>
+				  		
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- ============================================================================ -->
+	<!-- 									FOOTER
+	<!-- ============================================================================ -->
+	<?php 
+	include('/../server/Footer.php');
+	?>
+
+</body>
+</html>
+
+
