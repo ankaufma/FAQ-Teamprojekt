@@ -24,7 +24,7 @@ function NavTreeShowHide()
 var showAnswers = false;
 function btnAnswerShowHide(id) {
 	
-	console.log(id);
+	
 	
 	if(showAnswers == true) {
 		document.getElementById(id).innerHTML="Show Answers";
@@ -41,7 +41,6 @@ function btnAnswerShowHide(id) {
 var showComments = false;
 function btnCommentsHideShow(id) {
 	
-	console.log(id);
 	
 	if(showComments == true) {
 		document.getElementById(id).innerHTML="Show Comments";

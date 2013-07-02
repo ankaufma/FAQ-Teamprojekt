@@ -2,7 +2,6 @@
 <head>
 <title>FAQ-Manager</title>
 <meta http-equiv="refresh" content="3; URL= ../site/index.php">
-';
 <!-- ... andere Angaben im Dateikopf ... -->
 <!-- Einbinden des Bootstrap-Stylesheets -->
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">

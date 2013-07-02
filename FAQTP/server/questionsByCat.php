@@ -88,10 +88,14 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				<script>
 					$.fn.raty.defaults.path = '../client/img';	
 					$('#".$ratings[$r]."').raty({
-    	 
-    	 
+    	    	 
     	 				click: function(score, evt) {
-             				
+
+							console.log(\"Answwer-ID: ". $myA->getAnswerId()."\");
+							console.log(\"clicked Score: \" + score);
+							console.log(\"Username: ".$_SESSION['angemeldet']." \");	
+													
+				
 	     				},
 	    	  
 	       				 score: function() {
@@ -105,7 +109,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 					<div id=\"".$ratings[$r]."\" data-score=\"".$fassi->showRatingByAnswer($myA)."\"></div>
 				</div>
 				
-				
+					
 
 				<div class = \"row-fluid questionFooter\">
 				<div class=\"span3 offset1 \">
