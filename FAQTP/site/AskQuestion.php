@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ( $_SESSION['angemeldet']== false) { 
+if ( $_SESSION['angemeldet']== true) { 
 	echo(
 	"<form name=\"questionForm\" id=\"questionForm\" method=\"post\" action=\"../server/applyQuestion.php\">	
 		<div>
