@@ -1,6 +1,5 @@
 <?php
 session_start();
-if($_SESSION['angemeldet']==0){
 	if(trim($_POST['username']) != ""){
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			include('/../business/fascade/fascade.php');
@@ -32,7 +31,4 @@ if($_SESSION['angemeldet']==0){
 	}else{
 		header("Location: errorpage.php");
 	}
-}else{
-	header("Location: errorpage.php");
-}
 ?>

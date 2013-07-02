@@ -74,8 +74,8 @@
 	
 				<input id="search" name="search" type="text" list="searchResults"
 					class="input-medium search-query input-xxlarge"
-					onkeyup="findQuestion(this.value)" placeholder="Search"> <datalist
-						id="searchResults" name="searchResults"></datalist>
+					onkeyup="findQuestion(this.value)" placeholder="Search"> 
+					<datalist id="searchResults" name="searchResults"></datalist>
 					<button class="btn btn-success"
 						onclick="loadQuestionsByText(search.value)">Search</button>
 					<div class="row-fluid">
