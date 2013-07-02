@@ -1,13 +1,14 @@
 <?php
+include('/../business/fascade/fascade.php');
+$fassi = new Fascade();
 $zubeantwortendeFrage = $_POST['qid'];
 $eingetippteAntwort = $_POST['AnswerText'];
 $categoryId = $_POST['Cats'];
-$relatedAnswer = $_POST['AnswerSelect'];
-
-echo($relatedAnswer);
-
-include('/../business/fascade/fascade.php');
-$fassi = new Fascade();
+if(isset($_POST['AnswerSelect'])) {
+	foreach($_POST['AnswerSelect'] AS $relatedAnswer) {
+		$fassi->applyRelAnswer($zubeantwortendeFrage,$relatedAnswer);
+	}
+}
 session_start();
 $fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
 $fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);

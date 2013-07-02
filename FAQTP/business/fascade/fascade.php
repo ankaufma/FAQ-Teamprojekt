@@ -130,6 +130,11 @@ include $pfad.'answer/CommentManager.php';
 			$qm->createAnswerToQuestion($answerId, $questionId);
 		}
 		
+		public function applyRelAnswer($qid, $aid) {
+			$am = new AnswerManager();
+			$am->createRelAnswer($qid,$aid);
+		}
+		
 		
 		public function showQuestionById($id) {
 			$qm = new QuestionManager();
