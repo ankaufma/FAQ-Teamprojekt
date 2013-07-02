@@ -8,8 +8,8 @@
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 session_start();
-print_r($_POST['question']);
-print_r($_SESSION['username']);
-print_r($_POST['veroeffentlichung']);
+echo($_POST['question']);
+echo($_SESSION['username']);
+echo($_POST['veroeffentlichung']);
 $fassi->applyQuestion($_POST['question'],$_POST['veroeffentlichung'],$_SESSION['username']);
 ?>

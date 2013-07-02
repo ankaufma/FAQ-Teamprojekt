@@ -38,6 +38,7 @@ function buildTree(level, precat) {
 }
 
 function loadRootCats() {
+	$('.nav-tabs').button();
 	$.getJSON('../server/rootCats.php', function(data) {
 		for(var i=0; i<data.length; i++) {
 			$("#level1").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('1', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));

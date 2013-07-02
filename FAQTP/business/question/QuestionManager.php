@@ -9,9 +9,10 @@ class QuestionManager {
 	
 	public function createQuestion(Question $question){
 			$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
-			$sql = "INSERT INTO Question (question, user) VALUES " .
+			$sql = "INSERT INTO Question (question, user, publicityState) VALUES " .
 					"('" . $question->getQuestion() . "'" .
-					", '" . $question->getUser()->getUserId() ."');";
+					", '" . $question->getUser()->getUserId() . "'" .
+					", '" . $question->getPublicityState() . "');";
 		
 			$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
