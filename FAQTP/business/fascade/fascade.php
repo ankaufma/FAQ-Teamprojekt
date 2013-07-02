@@ -17,8 +17,7 @@ include $pfad.'question/CategoryManager.php';
 include $pfad.'answer/CommentManager.php';
 
 
-	class Fascade {
-		
+	class Fascade {		
 		public function userByUsername($username) {
 			$usermanager = new Usermanager();
 			$user = $usermanager->loadUserByUsername($username);
