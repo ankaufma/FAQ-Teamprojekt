@@ -56,7 +56,6 @@ if($_SESSION['angemeldet'] == 0){
 			</table>
 				
 
-
 			<!-- Language Selection -->
 			<div class=\"btn-group languageBtn\">
 			<a class=\"btn dropdown-toggle btn-success btn-mini\"

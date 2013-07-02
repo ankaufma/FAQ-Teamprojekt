@@ -1,9 +1,9 @@
 <?php
 
 
-if($_SESSION['angemeldet']!= 0){
+if($_SESSION['angemeldet']== 1){
 	
-	echo("Session != 0 ");
+	echo("Session == 1");
 	
 	if($_SESSION['userRole']=='Experte'){
 		
