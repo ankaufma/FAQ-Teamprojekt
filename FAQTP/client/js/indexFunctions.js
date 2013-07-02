@@ -22,7 +22,7 @@ function NavTreeShowHide()
 }
 
 var showAnswers = false;
-function BtnAnswerShowHide(id) {
+function btnAnswerShowHide(id) {
 	
 	console.log(id);
 	
@@ -39,7 +39,7 @@ function BtnAnswerShowHide(id) {
 }
 
 var showComments = false;
-function BtnCommentsHideShow(id) {
+function btnCommentsHideShow(id) {
 	
 	console.log(id);
 	
