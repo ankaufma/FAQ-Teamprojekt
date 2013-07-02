@@ -1,9 +1,10 @@
 function findAnswers(text) {
-
-
+		console.log(text);
+		$("#AnswerSelect").empty();
 		//select feld muss noch gelöscht werden
 		
 		$.ajax({
+			async: 		false,
 			type: 		"POST",
 			url: 		"../server/AnswersByText.php",
 			data: {		"text" : text,	},
@@ -22,6 +23,7 @@ function findAnswers(text) {
 		//select feld muss noch gelöscht werden
 		
 		$.ajax({
+			async: 		false,
 			type: 		"POST",
 			url: 		"../server/AnswersByText.php",
 			data: {		"text" : text,	},
@@ -40,6 +42,7 @@ function findAnswers(text) {
 		//select feld muss noch gelöscht werden
 		
 		$.ajax({
+			async: 		false,
 			type: 		"POST",
 			url: 		"../server/selectAllKategories.php",
 			data: {		"text" : text,	},

@@ -1,16 +1,3 @@
-function findAnswers(text) {
-	$("#AnswerSelect").append("");
-	$.ajax({
-		type: 		"POST",
-		url: 		"../server/AnswersByText.php",
-		data: {		"text" : text,	},
-		dataType: 	"html",
-		success: 	function(answers){
-				$("#AnswerSelect").append($(answers));
-		}  
-	});
-}
-
 function findQuestion(text) {
 	$("#searchResults").empty();
 	$.ajax({

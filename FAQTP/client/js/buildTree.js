@@ -1,6 +1,7 @@
 function buildTree(level, precat) {
 	loadQuestionsByCat(precat);
 	$.ajax({
+			async: 		false,
 			type: 		"POST",
 			url: 		"../server/catByPreCat.php",
 			data: {  
@@ -48,6 +49,7 @@ function loadRootCats() {
 function loadQuestionsByCat(catId) {
 	$("#QContainer").html($(""));
 	$.ajax({
+		async: 		false,
 		type: 		"POST",
 		url: 		"../server/questionsByCat.php",
 		data: {		"cat" : catId,	},
@@ -60,6 +62,7 @@ function loadQuestionsByCat(catId) {
 
 function loadQuestions() {
 	$.ajax({
+		async: 		false,
 		type: 		"POST",
 		url: 		"../server/allQuestions.php",
 		dataType: 	"html",
