@@ -1,5 +1,5 @@
 function findAnswers(text) {
-	$("#AnswerSelect").empty();
+	$("#AnswerSelect").append("");
 	$.ajax({
 		type: 		"POST",
 		url: 		"../server/AnswersByText.php",

@@ -2,6 +2,9 @@
 $zubeantwortendeFrage = $_POST['qid'];
 $eingetippteAntwort = $_POST['AnswerText'];
 $categoryId = $_POST['Cats'];
+$relatedAnswer = $_POST['AnswerSelect'];
+
+echo($relatedAnswer);
 
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
