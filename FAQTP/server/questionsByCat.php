@@ -12,6 +12,9 @@
 	$btnIdComment = array();
 	$j = 0;	
 	
+	$divTargetComments = array();
+	$k = 0;
+	
 	echo("<h2 class=\"headersContainers\">Result List</h2>
 			<div class = \"row-fluid\">
 				<div class =\"span12 qacContainer\">
@@ -21,10 +24,8 @@
 // 	<!-- 							Question
 // 	<!-- ============================================================================ -->	
 	foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
-
 		
 		$btnIdAnswer[] = "btnAnswerHideShow" . $i;
-		
 		
 		echo("
 					
@@ -37,8 +38,7 @@
 					
 					<div class = \"row-fluid questionFooter\">
 						<div class=\" span2 offset1 \">
-							<a id=\"".$btnIdAnswer[$i]."\" onClick=\"BtnAnswerShowHide('$btnIdAnswer[$i]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
-  								
+							<a id=\"".$btnIdAnswer[$i]."\" onClick=\"btnAnswerShowHide('$btnIdAnswer[$i]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
 								Show Answers
 							</a>
 						</div>
@@ -59,8 +59,11 @@
 // 	<!-- ============================================================================ -->			
 		foreach($myQs->getAnswers() as $myA) {
 					
-			
+						
 			$btnIdComment[] = "btnCommentHideShow" . $j;
+			
+			$divTargetComments[] = "divTargetComments" . $k;
+			
 			
 			echo("
 					<!-- bsp. ANSWER -->
@@ -79,16 +82,15 @@
 
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
-								<a id=".$btnIdComment[$j]." onClick=\"BtnCommentsHideShow('$btnIdComment[$j]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#comments\">
+								<a id=".$btnIdComment[$j]." onClick=\"btnCommentsHideShow('$btnIdComment[$j]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$divTargetComments[$k]."\">
   									Show Comments
 								</a>
 							</div>
 						</div>	
 							
 					</div>
-							
 				<!-- Container begin for comments-->							
-					<div id=\"comments\" class =\"row-fluid collapse\">
+					<div id=\"".$divTargetComments[$k]."\" class =\"row-fluid collapse\">
 
 						<div class =\"row-fluid\">		
 							<div class=\"span2 offset1\">
@@ -119,7 +121,7 @@
 							</div> 
 						</div>
 			");
-
+			$k++;
 			$j++;
 			
 // 	<!-- ============================================================================ -->
