@@ -6,6 +6,12 @@
 	$cat = $_POST['cat'];
 	$fassi = new Fascade();
 	
+	$btnIdAnswer = array();
+	$i = 0;
+	
+	$btnIdComment = array();
+	$j = 0;	
+	
 	echo("<h2 class=\"headersContainers\">Result List</h2>
 			<div class = \"row-fluid\">
 				<div class =\"span12 qacContainer\">
@@ -15,7 +21,12 @@
 // 	<!-- 							Question
 // 	<!-- ============================================================================ -->	
 	foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
-			echo("
+
+		
+		$btnIdAnswer[] = "btnAnswerHideShow" . $i;
+		
+		
+		echo("
 					
 				<!-- bsp. QUESTTION -->	
 				<div class = \"row-fluid questionObject\">
@@ -26,8 +37,9 @@
 					
 					<div class = \"row-fluid questionFooter\">
 						<div class=\" span2 offset1 \">
-							<a id=\"BtnAnswerHideShow\" onClick=\"BtnAnswerShowHide()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
-  								Show Answers
+							<a id=\"".$btnIdAnswer[$i]."\" onClick=\"BtnAnswerShowHide('$btnIdAnswer[$i]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#".$myQs->getQuestionId()."\">
+  								
+								Show Answers
 							</a>
 						</div>
 					
@@ -40,13 +52,17 @@
 				<!-- Container begin for answers-->
 					<div id=".$myQs->getQuestionId()." class = \"row-fluid  collapse\">
 				");
-		
+		$i++;
 			
 // 	<!-- ============================================================================ -->
 // 	<!-- 						Answers
 // 	<!-- ============================================================================ -->			
 		foreach($myQs->getAnswers() as $myA) {
-					echo("
+					
+			
+			$btnIdComment[] = "btnCommentHideShow" . $j;
+			
+			echo("
 					<!-- bsp. ANSWER -->
 					<div id=\"answer\" class =\"row-fluid\">
 						<div class = \"span10 answer\">
@@ -63,7 +79,7 @@
 
 						<div class = \"row-fluid questionFooter\">
 							<div class=\"span3 offset1 \">
-								<a id=\"BtnCommentsHideShow\" onClick=\"BtnCommentsHideShow()\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#comments\">
+								<a id=".$btnIdComment[$j]." onClick=\"BtnCommentsHideShow('$btnIdComment[$j]')\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"collapse\" data-target=\"#comments\">
   									Show Comments
 								</a>
 							</div>
@@ -104,6 +120,7 @@
 						</div>
 			");
 
+			$j++;
 			
 // 	<!-- ============================================================================ -->
 // 	<!-- 							Comments
