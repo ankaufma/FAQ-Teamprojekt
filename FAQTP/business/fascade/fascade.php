@@ -8,6 +8,7 @@ include('ShowAllAnswersDTO.php');
 include('ShowQuestionAnswerDTO.php');
 include('ApplyUserDTO.php');
 include('ApplyRatingDTO.php');
+include('ApplyCommentDTO.php');
 include('CheckUserDTO.php');
 include $pfad.'user/usermanager.php';
 include $pfad.'answer/AnswerManager.php';
