@@ -10,9 +10,9 @@ if ( $_SESSION['angemeldet']== true) {
 			</div>		
 			<div>
 				<div class=\"btn-group\" data-toggle=\"buttons-radio\">
-					<button type=\"button\" class=\"btn active\" name=\"veroeffentlichung\" value=\"public\">Public</button>
-					<button type=\"button\" class=\"btn\" name=\"veroeffentlichung\" value=\"users only\">Users Only</button>
-					<button type=\"button\" class=\"btn\" name=\"veroeffentlichung\" value=\"private\">Private</button>
+					<button class=\"btn active\" name=\"veroeffentlichung\" value=\"public\">Public</button>
+					<button class=\"btn\" name=\"veroeffentlichung\" value=\"users only\">Users Only</button>
+					<button class=\"btn\" name=\"veroeffentlichung\" value=\"private\">Private</button>
 				</div>
 				<button class = \"offset1 btn btn-primary\" type=\"submit\">Submit</button>
 			</div>
