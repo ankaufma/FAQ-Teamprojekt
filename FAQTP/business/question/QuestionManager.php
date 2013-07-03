@@ -313,8 +313,6 @@ class QuestionManager {
 		mysqli_close($db);
 		
 		return $this->questions;
-	}
-	
-	
+	}	
 }
 ?>

@@ -6,6 +6,8 @@ INSERT INTO User (username, email, firstname, lastname, password, userrole) VALU
 	('thwinter', 'thwinter@htwg-konstanz.de', 'Thomas', 'Winter', 'Test', 'User');
 INSERT INTO User (username, email, firstname, lastname, password, userrole) VALUES 
 	('hacifci', 'hacifci@htwg-konstanz.de', 'Hasan', 'Civci', 'Test', 'User');
+INSERT INTO User (username, email, firstname, lastname, password, userrole) VALUES 
+	('Anonymous', 'giveme@rating.com', 'Anonymous', 'Anonymous', 'Anonymous', 'User');
 
 INSERT INTO Answer (Answer, User) VALUES 
 	('Das ist die beste Antowrt überhaupt...', (SELECT userid from user where username='ankaufma'));
