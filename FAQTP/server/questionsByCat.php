@@ -18,6 +18,11 @@ $k = 0;
 $ratings = array();
 $r = 0;
 
+$commentModals = array();
+$c = 0;
+
+$commentFormular = array();
+$f = 0;
 
 echo("	<!-- RATING -->
 		<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
@@ -74,6 +79,9 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 			
 		$ratings[] = "score-callback" . $r;
 			
+		$commentModals[] = "commentModal" . $c;
+		$commentFormular[] = "commentFormular" . $f;
+		
 		echo("
 				<!-- bsp. ANSWER -->
 				<div id=\"answer\" class =\"row-fluid\">
@@ -136,13 +144,16 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				<div class =\"row-fluid\">
 				<div class=\"span2 offset1\">
 
-					
-				<a href=\"#myModal\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
+
+				
+				
+				
+				<a href=\"#".$commentModals[$c]."\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
 
 				<!-- Modal -->
-				<form name=\"CommentFormular\" method=\"post\" action=\"../server/postComment.php\">
+				<form name=\"$commentFormular[$f]\" method=\"post\" action=\"../server/postComment.php\">
 					
-				<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+				<div id=\"".$commentModals[$c]."\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
 				<div class=\"modal-header\">
 				<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
 				<h3 id=\"myModalLabel\">Leave Comment</h3>
@@ -151,7 +162,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				<p>Comment...</p>
 				<textarea name=\"comment\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
 				<span hidden=\"true\">
-					<input type=\"text\" id=\"answer\" name=\"answer\" value=\"".$myA->getAnswerId()."\"></input>
+					<input type=\"text\" id=\"answer\" name=\"answer\" value=\"".$myA->getAnswerId()."\"></input>				
 					<input type=\"text\" id=\"user\" name=\"user\" value=\"".$_SESSION['username']."\"></input>
 				</span>
 				</div>
@@ -169,6 +180,8 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 		$k++;
 		$j++;
 		$r++;
+		$c++;
+		$f++;
 			
 		// 	<!-- ============================================================================ -->
 		// 	<!-- 							Comments
