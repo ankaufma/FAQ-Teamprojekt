@@ -77,8 +77,7 @@ if($_SESSION['angemeldet'] == 0){
 			<tr align=\"center\">
 			<td width=\"60px\">
 
-			<a class=\"headerLinks btn-Links\" onClick=\"location.reload()\">Logout</a>
-			".session_destroy()."
+			<a href=\"../server/logout.php\" class=\"headerLinks btn-Links\">Logout</a>
 			
 
 
