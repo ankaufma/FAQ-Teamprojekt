@@ -1,3 +1,22 @@
+<html>
+<head>
+<title>FAQ-Manager</title>
+<meta http-equiv="refresh" content="0; URL= ../site/index.php">
+
+<script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../client/js/bootstrap.js"></script>
+<script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
+
+<link rel="stylesheet" href="../client/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="../client/css/MessageBoxes.css"></link>
+<link rel="stylesheet" href="../client/css/HomeCSS.css"></link>
+
+</head>
+<body>
+</body>
+</html>
+
 <?php
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();

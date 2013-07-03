@@ -1,5 +1,5 @@
 <!-- Button to trigger modal --> 
-					<a href="#myModal" role="button" class="btn btn-link headerLinks" data-toggle="modal">Login</a> <!-- Modal -->
+					<a href="#myModal" role="button" class="btn-link headerLinks" data-toggle="modal">Login</a> <!-- Modal -->
 					<div id="myModal" class="modal hide fade loginModal" tabindex="-1"
 						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<div class="modal-header">

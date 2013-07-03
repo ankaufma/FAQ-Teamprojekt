@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <head>
 <title>FAQ-Manager</title>
-<meta http-equiv="refresh" content="3; URL= ../site/index.php">
-<!-- ... andere Angaben im Dateikopf ... -->
-<!-- Einbinden des Bootstrap-Stylesheets -->
-<link rel="stylesheet" href="../client/css/bootstrap.min.css">
+<html>
+<head>
+<title>FAQ-Manager</title>
+<meta http-equiv="refresh" content="4; URL= ../site/index.php">
 
-<!-- optional: Einbinden der jQuery-Bibliothek -->
-<script type="text/javascript"
-	src="../client/js/jquery-2.0.0.min></script>
- 
-    <!-- optional: Einbinden der Bootstrap-JavaScript-Plugins -->
-    <script 
-	
-	
-	
-	type="text/javascript" src="../client/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../client/js/buildTree.js"></script>
+<script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="../client/js/bootstrap.js"></script>
+<script type="text/javascript" src="../client/js/jquery.raty.min.js"></script>
+
+<link rel="stylesheet" href="../client/css/bootstrap.min.css"></link>
+<link rel="stylesheet" href="../client/css/MessageBoxes.css"></link>
+<link rel="stylesheet" href="../client/css/HomeCSS.css"></link>
+
 </head>
 <body>
-	<div class="row-fluid"></div>
-	<div class="row-fluid"></div>
-	<div class="row-fluid">
+	<div class="row-fluid top-buffer">
 		<div class="span4"></div>
+
 		<div class="span4">
-			<h3><p class="text-error">Passwort und Nutzername</p></h3>
+			<h1 class="headline">FAQ Manager</h1>
 		</div>
 		<div class="span4"></div>
 	</div>
+
 	<div class="row-fluid">
-	<div class="span4"></div>
-	<div class="span4"><h3><p class="text-error">... stimmen nicht überein!</p></h3></div>
-	<div class="span4"></div>
+		<div class="span12">
+
+			<div class="row-fluid">
+				<div class="span12 applyQuestionBox">
+					<div class="row-fluid">
+						<div class="span2"></div>
+
+						<div class="row-fluid">
+							<div class="span3"></div>
+							<div class="span6 errorBlocks">
+								<div class="span8 errorMessage"> 
+									<p class="lead text-error">Login failed</p>
+									<p class="text text-error">Username and Password do not match</p>
+								</div>	
+							</div>
+							<div class="span3"></div>
+						</div>
+							
+							
+						<div class="span2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<div class="row-fluid">
+		<div class="span12 lastFooter"></div>
+	</div>
+</body>
+</html>
 </body>
 </html>

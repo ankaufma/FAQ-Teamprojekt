@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+.applyQuestionBox {
+	background-color: #FFFF99;
+}
+
+.applyQuestionText {
+	margin-top:3%;
+	margin-bottom:3%;
+	padding: 5%;
+	
+}
+
+.text {
+	font-size:16px;
+}
+
+.lastFooter {
+	background-color: #66E066;
+	padding:4%;
+}
+
+.errorMessage {
+	margin-top:3%;
+	margin-bottom:3%;
+	padding: 5%;	
+}
+
+.errorBlocks {
+	margin-top:10px;
+	border-width:1px;
+	border-color:#CC0000;
+	padding:2.5em;
+	text-align:justify;
+}
