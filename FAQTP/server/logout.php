@@ -42,7 +42,7 @@ session_destroy();
 							<div class="span3"></div>
 							<div class="span6 errorBlocks">
 								<div class="span8 errorMessage"> 
-									<p class="lead text-error">Successfully Loged out!</p>
+									<p class="lead text-error">Successfully Logged out!</p>
 								</div>	
 							</div>
 							<div class="span3"></div>

@@ -1,7 +1,6 @@
 <html>
 <head>
 <title>FAQ-Manager</title>
-<meta http-equiv="refresh" content="4; URL= ../site/index.php">
 
 <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
@@ -56,5 +55,5 @@ include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 session_start();
 $fassi->applyQuestion($_POST['question'],$_POST['veroeffentlichung'],$_SESSION['username']);
-
+header("Location: ../site/index.php");
 ?>
