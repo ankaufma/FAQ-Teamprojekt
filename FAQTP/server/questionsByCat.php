@@ -105,7 +105,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 											'user':		'".$_SESSION['username']."',
 											},
 								success: function() {
-										console.log('Juhu');
+										
 								}
 							});	
 	     				},

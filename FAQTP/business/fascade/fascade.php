@@ -43,7 +43,7 @@ include $pfad.'answer/CommentManager.php';
 			$ratingmanager = new RatingManager();
 			$ratingmanager->createRating(
 					new Rating(
-							$usermanager->loadUserByUsername($ardto->getUser()), $answermanager->loadAnswerById($ardto->getAnswer()), $ardto->getRating())
+							$usermanager->loadUserByUsername($ardto->getUser()), $answermanager->loadAnswersById($ardto->getAnswer()), $ardto->getRating())
 					);
 		}
 		

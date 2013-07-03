@@ -98,18 +98,16 @@ class AnswerManager {
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
 			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
 			$userRow = mysqli_fetch_row($result2);
-			array_push($this->answers,
-					new Answer($row[0],
+			$myAnswer =  new Answer($row[0],
 							$row[1],
 							$row[2],
 							new User($userRow[0],$userRow[1],$userRow[2],$userRow[3],$userRow[4],$userRow[5],$userRow[6])
-							)
-			);
+							);
 		}
 		mysqli_free_result($result);
 		mysqli_free_result($result2);
 		mysqli_close($db);
-		return $this->answers;
+		return $myAnswer;
 	}
 	
 
