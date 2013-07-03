@@ -94,10 +94,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 							console.log(\"Answwer-ID: ". $myA->getAnswerId()."\");
 							console.log(\"clicked Score: \" + score);
 							console.log(\"Username: ".$_SESSION['angemeldet']." \");	
-													
-				
 	     				},
-	    	  
 	       				 score: function() {
 	        			 	return $(this).attr('data-score');
 	       				 }

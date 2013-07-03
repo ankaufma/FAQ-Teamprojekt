@@ -17,9 +17,7 @@ if($_SESSION['angemeldet'] == 0){
 
 	echo("
 			</td>
-				
-
-			
+					
 			<td width=\"60px\">
 			<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
 			
@@ -95,7 +93,7 @@ if($_SESSION['angemeldet'] == 0){
 			<!-- ---------------------------------------------------- -->
 			<!-- Contact Modal -->
 			<!-- ---------------------------------------------------- -->
-				<a href=\"#contactModal2\" role=\"button\" class=\"btn btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
+				<a href=\"#contactModal2\" role=\"button\" class=\"btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
 					<!-- Modal -->
 				
 						<div id=\"contactModal2\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
