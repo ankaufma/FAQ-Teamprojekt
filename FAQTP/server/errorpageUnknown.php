@@ -40,6 +40,7 @@
 								<div class="span8 errorMessage"> 
 									<p class="lead text-error">Error</p>
 									<p class="text text-error">An unknown error occured!</p>
+									<p class="text text-error">It is very possible that a mandatory item wasn't filled!</p>
 								</div>	
 							</div>
 							<div class="span3"></div>

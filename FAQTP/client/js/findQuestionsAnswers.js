@@ -21,7 +21,12 @@ function loadQuestionsByText(text) {
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(questions){
-			$("#QContainer").append($("<div>"+questions+"</div>"));
+			console.log(questions);
+			if(questions==""){
+				$("#QContainer").append($("<div>NO TOPICS WITH THAT CONTENT FOUND</div>"));
+			} else {
+				$("#QContainer").append($("<div>"+questions+"</div>"));
+			}
 		}
 	});
 }
