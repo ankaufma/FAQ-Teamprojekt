@@ -7,7 +7,7 @@ class ShowQuestionAnswerDTO {
 	private $username;
 	private $answers = Array();
 	
-	public function __construct ($questionId, $question, $qDate, $qState, $username,Array $answers) {
+	public function __construct ($questionId, $question, $qDate, $qState, $username, Array $answers) {
 		$this->questionId=$questionId;
 		$this->question=$question;
 		$this->qDate=$qDate;

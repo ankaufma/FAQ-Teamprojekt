@@ -141,7 +141,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionById($id) AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getPublicityState(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
 		}
@@ -150,7 +150,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionsByNoAnswer() AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));			}
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getPublicityState(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));			}
 			return $allQAs;
 		}
 		
@@ -158,7 +158,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionByText($text) AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getPublicityState(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
 		}
@@ -167,7 +167,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadQuestionByCategory(new Category($catId, "Mock", 1)) AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getPublicityState(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
 		}
