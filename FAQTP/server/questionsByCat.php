@@ -24,6 +24,9 @@ $c = 0;
 $commentFormular = array();
 $f = 0;
 
+$myC = null;
+
+
 echo("	<!-- RATING -->
 		<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
 		
@@ -186,7 +189,11 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 		// 	<!-- ============================================================================ -->
 		// 	<!-- 							Comments
 		// 	<!-- ============================================================================ -->
-		foreach($fassi->showCommentsByAnswer($myA) as $myC) {
+		for($t = count($fassi->showCommentsByAnswer($myA)); $t >= 0; $t--) {
+				
+			
+			$myC = $fassi->showCommentsByAnswer($myA)[$t];
+			
 			echo("
 
 					<div class=\"comment in span8 offset1\">
