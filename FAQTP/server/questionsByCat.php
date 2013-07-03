@@ -24,7 +24,7 @@ $c = 0;
 $commentFormular = array();
 $f = 0;
 
-$myC = null;
+
 
 $username='Anonymous';
 if(isset($_SESSION['username'])) {
@@ -194,10 +194,8 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 		// 	<!-- ============================================================================ -->
 		// 	<!-- 							Comments
 		// 	<!-- ============================================================================ -->
-		for($t = count($fassi->showCommentsByAnswer($myA)); $t >= 0; $t--) {
+		foreach($fassi->showCommentsByAnswer($myA) as $myC) {
 				
-			
-			$myC = $fassi->showCommentsByAnswer($myA)[$t];
 			
 			echo("
 
