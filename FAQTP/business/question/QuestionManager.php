@@ -71,7 +71,7 @@ class QuestionManager {
 		."	left join category c4 on c3.categoryid=c4.precategory"
 		."	WHERE c1.categoryid=".$category->getCatId().") as cats"
 		." ON "
-		."cq.categoryid = cats.child1 or cq.categoryid = cats.child2 or cq.categoryid = cats.child3 or cq.categoryid=".$category->getCatId()." WHERE q.QuestionID = cq.QuestionId and q.PublicityState='public';";
+		."cq.categoryid = cats.child1 or cq.categoryid = cats.child2 or cq.categoryid = cats.child3 or cq.categoryid=".$category->getCatId()." WHERE q.QuestionID = cq.QuestionId;";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! CatQuest');
 		

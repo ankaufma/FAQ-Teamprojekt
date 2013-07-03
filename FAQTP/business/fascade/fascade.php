@@ -95,7 +95,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm = new QuestionManager();
 			$allQAs = Array();
 			foreach($qm->loadAllQuestions() AS $myQ) {
-				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
+				array_push($allQAs,new ShowQuestionAnswerDTO($myQ->getQuestionId(), $myQ->getQuestion(), $myQ->getqDate(), $myQ->getPublicityState(), $myQ->getUser()->getUsername(), $myQ->getAnswers()));
 			}
 			return $allQAs;
 		}
