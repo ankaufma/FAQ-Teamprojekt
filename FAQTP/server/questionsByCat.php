@@ -93,7 +93,6 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 
 							console.log(\"Answwer-ID: ".$myA->getAnswerId()."\");
 							console.log(\"clicked Score: \" + score);
-<<<<<<< HEAD
 							console.log(\"Username: ".$_SESSION['username']." \");
 							$.ajax({
 								async: 		true,
@@ -106,21 +105,6 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 											},
 								success: function() {
 										console.log('Juhu');
-=======
-							console.log(\"Username: ".$_SESSION['angemeldet']." \");	
-							console.log(\"Username: ".$_SESSION['username']." \");
-							$.ajax({
-								async: 		true,
-								type: 		\"POST\",
-								url: 		\"../server/applyRaty.php\",
-								data: 		{ 
-											'answer' :	'".$myA->getAnswerId()."',
-											'score':	score,
-											'user':		'".$_SESSION['username']."',
-											},
-								success: function() {
-										
->>>>>>> branch 'master' of https://github.com/ankaufma/FAQ-Teamprojekt.git
 								}
 							});	
 	     				},
