@@ -18,6 +18,9 @@
 </html>
 
 <?php
+if(trim($_POST['qid'])=="" || trim($_POST['AnswerText'])=="" || trim($_POST['Cats'])=="") {
+	header("Location: errorpageUnknown.php");
+}
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 $zubeantwortendeFrage = $_POST['qid'];
