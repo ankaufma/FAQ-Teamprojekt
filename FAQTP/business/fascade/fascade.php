@@ -238,7 +238,7 @@ include $pfad.'answer/CommentManager.php';
 			$cudto = new CheckUserDTO($username, $password);
 			$user = new User(1, $cudto->getUsername(), $cudto->getPassword(), "Mock", "Mock", "Mock", "Mock");
 			$um = new Usermanager();
-			if($um->validatePassword($user) && $um->validateUsername($password)) {
+			if($um->validatePassword($user)==true && $um->validateUsername($user)==true) {
 				return true;
 			} else {
 				return false;

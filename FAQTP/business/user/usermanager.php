@@ -17,11 +17,11 @@ class Usermanager {
 		mysqli_close($db);
 		
 		foreach($this->users AS $searchUser) {
-			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $searchUser->getUsername()) {
-				return false;
+			if($searchUser->getPassword() == $user->getPassword() && $searchUser->getUsername() == $user->getUsername()) {
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public function validateUsername(User $user) {
@@ -37,7 +37,9 @@ class Usermanager {
 		mysqli_close($db);
 	
 		foreach($this->users AS $searchUser) {
-			if($searchUser->getUsername() == $searchUser->getUsername()) {
+			echo($searchUser->getUsername());
+			echo($user->getUsername());
+			if($searchUser->getUsername() == $user->getUsername()) {
 				return true;
 			}
 		}
