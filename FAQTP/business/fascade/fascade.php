@@ -55,7 +55,7 @@ include $pfad.'answer/CommentManager.php';
 			$comdto = new ApplyCommentDTO($usermanager->loadUserByUsername($username), $answerid,$comment);		
 			$CommentManager->createComment(
 					new Comment(
-					0,$comdto->getComment(), 'date',$comdto->getuser(),$answermanager->loadAnswersById($comdto->getAnswerId())[0]
+					0,$comdto->getComment(), 'date',$comdto->getuser(),$answermanager->loadAnswersById($comdto->getAnswerId())
 					));
 			//($commentId, $comment, $cDate, User $user, Answer $answer)
 		}
