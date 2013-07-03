@@ -17,10 +17,7 @@ $k = 0;
 
 $ratings = array();
 $r = 0;
-$username = 'Anonymous';
-if(isset($_SESSION['username'])) {
-	$username=$_SESSION['username'];
-}
+
 
 echo("	<!-- RATING -->
 		<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
@@ -96,7 +93,21 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 
 							console.log(\"Answwer-ID: ". $myA->getAnswerId()."\");
 							console.log(\"clicked Score: \" + score);
-							console.log(\"Username: ".$_SESSION['test']." \");	
+							console.log(\"Username: ".$_SESSION['angemeldet']." \");	
+							console.log(\"Username: ".$_SESSION['username']." \");
+							$.ajax({
+								async: 		true,
+								type: 		\"POST\",
+								url: 		\"../server/applyRaty.php\",
+								data: 		{ 
+											'answer' :	'".$myA->getAnswerId()."',
+											'score':	score,
+											'user':		'".$_SESSION['username']."',
+											},
+								success: function() {
+										console.log('Juhu');
+								}
+							});	
 	     				},
 	       				 score: function() {
 	        			 	return $(this).attr('data-score');
@@ -142,7 +153,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 				<textarea name=\"comment\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your comment\"></textarea>
 				<span hidden=\"true\">
 					<input type=\"text\" id=\"answer\" name=\"answer\" value=\"".$myA->getAnswerId()."\"></input>
-					<input type=\"text\" id=\"user\" name=\"user\" value=\"".$username."\"></input>
+					<input type=\"text\" id=\"user\" name=\"user\" value=\"".$_SESSION['username']."\"></input>
 				</span>
 				</div>
 				<div class=\"modal-footer\">
