@@ -5,7 +5,7 @@ class Usermanager {
 	private $users = Array(); 
 	
 	public function validatePassword(User $user) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM USER";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
@@ -25,7 +25,7 @@ class Usermanager {
 	}
 	
 	public function validateUsername(User $user) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM USER";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 	
@@ -45,7 +45,7 @@ class Usermanager {
 	}
 	
 	public function createUser(User $user) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO User (username, email, firstname, lastname, password, userrole) VALUES " .
 		"('" . $user->getUsername() . "'" .
 		", '" . $user->getEmail() ."'" .
@@ -59,7 +59,7 @@ class Usermanager {
 	}
 	
 	public function loadUserByUsername($username) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM User WHERE Username='".$username."';";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {

@@ -3,7 +3,7 @@ class CategoryManager {
 	private $categories = Array();
 	
 	public function loadCategoryByCatId ($catId) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM Category WHERE PRECATEGORY=".$catId.";";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {
@@ -15,7 +15,7 @@ class CategoryManager {
 	}
 	
 	public function loadAllCategories () {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM Category";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {
@@ -27,7 +27,7 @@ class CategoryManager {
 	}
 	
 	public function loadRoots () {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM Category WHERE PreCategory IS NULL";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		while ($row = mysqli_fetch_array($result)) {
