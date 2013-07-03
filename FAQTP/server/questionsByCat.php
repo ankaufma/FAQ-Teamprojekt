@@ -94,9 +94,22 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
     	    	 
     	 				click: function(score, evt) {
 
-							console.log(\"Answwer-ID: ". $myA->getAnswerId()."\");
+							console.log(\"Answwer-ID: ".$myA->getAnswerId()."\");
 							console.log(\"clicked Score: \" + score);
-							console.log(\"Username: ".$_SESSION['test']." \");	
+							console.log(\"Username: ".$_SESSION['username']." \");
+							$.ajax({
+								async: 		true,
+								type: 		\"POST\",
+								url: 		\"../server/applyRaty.php\",
+								data: 		{ 
+											'answer' :	'".$myA->getAnswerId()."',
+											'score':	score,
+											'user':		'".$_SESSION['username']."',
+											},
+								success: function() {
+										console.log('Juhu');
+								}
+							});	
 	     				},
 	       				 score: function() {
 	        			 	return $(this).attr('data-score');

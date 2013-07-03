@@ -6,30 +6,22 @@ class Rating
 	private $answer;
 	private $user;
 
-	public function __construct($user, $answer, $rating) {
+	public function __construct(User $user, Answer $answer, $rating) {
 		$this->answer = $answer;
 		$this->user = $user;
 		$this->rating = $rating;
 	}
 
-	public function setBwID($answer) {
+	public function setAnswer(Answer $answer) {
 		$this->answer = $answer;
 	}
 
-	public function setAnswer($answer) {
-		$this->answer = $answer;
-	}
-
-	public function setUser($user) {
+	public function setUser(User $user) {
 		$this->user = $user;
 	}
 
 	public function setRating($rating) {
 		$this->rating = $rating;
-	}
-
-	public function getBwID() {
-		return $this->bwID;
 	}
 
 	public function getAnswer() {
