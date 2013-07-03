@@ -28,7 +28,7 @@ $myC = null;
 
 $username='Anonymous';
 if(isset($_SESSION['username'])) {
-	$username=$_SESSION[username];
+	$username=$_SESSION['username'];
 }
 
 
