@@ -6,7 +6,7 @@ class AnswerManager {
 	private $relatedAnswers = Array();
 	
 	public function createMainAnswer(Answer $answer) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO Answer (answer, user) VALUES " .
 				"('" . $answer->getAnswer() . "'" .
 				", '" . $answer->getUser()->getUserId() ."');";
@@ -17,7 +17,7 @@ class AnswerManager {
 	}
 	
 	public function createRelAnswer($qid, $aid) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO questionanswer (question, answer, description) VALUES " .
 				"('" . $qid . "'" .
 				",'" . $aid . "'" .
@@ -29,7 +29,7 @@ class AnswerManager {
 	}
 	
 	public function loadRelAnswerByQuestion($questionId) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		/*
 		 * Gib alle Antworten zurück
 		*/
@@ -57,7 +57,7 @@ class AnswerManager {
 	}
 	
 	public function loadMainAnswerByQuestion($questionId) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		/*
 		 * Gib alle Antworten zurück
 		*/
@@ -85,7 +85,7 @@ class AnswerManager {
 	}
 	
 	public function loadAnswersById($AnswerId) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		/*
 		 * Gib alle Antworten zurück
 		*/
@@ -115,7 +115,7 @@ class AnswerManager {
 
 	
 	public function loadAnswersByText($text) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		/*
 		 * Gib alle Antworten zurück
 		 */
@@ -143,7 +143,7 @@ class AnswerManager {
 	}
 	
 	public function loadAnswerByQuestion($question) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		
 		/*
 		 * Gib alle Antworten zu einer Frage zurück
@@ -168,7 +168,7 @@ class AnswerManager {
 	}
 	
 	public function loadAllAnswers() {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 	
 		/*
 		 * Gib alle Antworten zurück (Antwort hat Question-Collection, Question hat Category-Collection)
@@ -194,7 +194,7 @@ class AnswerManager {
 	}
 	
 	public function loadRelatedAnswers(Answer $answer) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		
 		/*
 		 * Gib alle Related Antworten zurück
@@ -221,7 +221,7 @@ class AnswerManager {
 	}
 	
 	public function setRelatedAnswer(Answer $answer, Answer $relAnswer, $description){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO RelatedAnswer VALUES (".$answer->getAnswerID().",".$relAnswer->getAnswerID().",'".$description."');";
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		mysqli_free_result($result);

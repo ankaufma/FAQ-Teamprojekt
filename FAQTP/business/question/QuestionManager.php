@@ -8,7 +8,7 @@ class QuestionManager {
 	private $answers = Array();
 	
 	public function createQuestion(Question $question){
-			$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+			$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 			$sql = "INSERT INTO Question (question, user, publicityState) VALUES " .
 					"('" . $question->getQuestion() . "'" .
 					", '" . $question->getUser()->getUserId() . "'" .
@@ -20,7 +20,7 @@ class QuestionManager {
 	}
 	
 	public function createAnswerToQuestion($answerId, $questionId){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO questionanswer (question, answer, description) VALUES " .
 				"('" . $questionId . "'" .
 				", '" . $answerId . "'" .
@@ -34,7 +34,7 @@ class QuestionManager {
 	
 	Public function updateQuestion(Question $question){
 	
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "Update Question set Question =".$question->getQuestion()." where QuestionID =".$question->getQuestionID()." ;";
 				
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
@@ -43,7 +43,7 @@ class QuestionManager {
 	}
 	
 	public function createCategoryToQuestion($cid, $qid) {
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO catquestion (CategoryID, QuestionID) VALUES " .
 				"('" . $cid . "'" .
 				", '" . $qid . "');";
@@ -55,7 +55,7 @@ class QuestionManager {
 	
 	Public function loadQuestionByCategory(Category $category){
 		
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = 
 		
 		"SELECT * FROM QUESTION q, CATQUESTION cq inner join "
@@ -119,7 +119,7 @@ class QuestionManager {
 	
 	Public function loadAllQuestions(){
 		
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE PublicityState='public';";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
@@ -172,7 +172,7 @@ class QuestionManager {
 
 	Public function loadQuestionById($id){
 	
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE QuestionId=".$id.";";
 	
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
@@ -220,7 +220,7 @@ class QuestionManager {
 	}
 	
 	Public function loadQuestionsByNoAnswer(){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROm Question q left join Questionanswer qa on q.questionid=qa.question where qa.question IS NULL;";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
@@ -268,7 +268,7 @@ class QuestionManager {
 	}
 	
 	Public function loadQuestionByText($text){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE Question like '%".$text."%';";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');

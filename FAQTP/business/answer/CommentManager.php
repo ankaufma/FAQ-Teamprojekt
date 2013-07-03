@@ -4,7 +4,7 @@ class CommentManager {
 	private $comments = Array();
 	
 	public function createComment(Comment $comment){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO Comment (comment, user, answer) VALUES " .
 				"('" . $comment->getComment() . "'" .
 				", '" . $comment->getUser()->getUserId() ."'" .
@@ -16,7 +16,7 @@ class CommentManager {
 	}
 	
 	public function loadCommentsByAnswer(Answer $answer){
-		$db = mysqli_connect('localhost', 'root', '', 'tpfaq');
+		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql1 = "SELECT * FROM COMMENT WHERE Answer='". $answer->getAnswerId() ."';";
 		$result1 = mysqli_query($db, $sql1) or die ('Fucking Nightmare!');
 		
