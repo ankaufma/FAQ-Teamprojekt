@@ -1,6 +1,6 @@
 <?php
 session_start();
-	if(trim($_POST['username']) != ""){
+	if(trim($_POST['username']) != ""|| trim($_POST['password']!="")){
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			include('/../business/fascade/fascade.php');
 			$fassi = new Fascade();
@@ -14,6 +14,7 @@ session_start();
 			// Benutzername und Passwort werden überprüft
 			if ($fassi->checkUser($_SESSION['username'],$passwort) == 0) {
 				$_SESSION['angemeldet'] = true;
+				$_SESSION['test'] = $_SESSION['angemeldet'];
 				header("Location: ../site/index.php");
 				// Weiterleitung zur geschützten Startseite
 				if ($_SERVER['SERVER_PROTOCOL'] == 'HTTP/1.1') {
@@ -26,6 +27,7 @@ session_start();
 				}
 			}else{
 				$_SESSION['angemeldet'] = false;
+				$_SESSION['test'] = $_SESSION["angemeldet"];
 			}
 		}
 	}else{
