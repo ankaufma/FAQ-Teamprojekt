@@ -2,6 +2,7 @@
 session_start();
 if(!isset($_SESSION["angemeldet"])){
 	$_SESSION['angemeldet']= false;
+	$_SESSION['test'] = $_SESSION['angemeldet'];
 }
 
 if($_SESSION['angemeldet'] == 0){
