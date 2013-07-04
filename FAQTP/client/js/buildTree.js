@@ -1,4 +1,5 @@
 function buildTree(level, precat) {
+	document.getElementById("style"+precat).style.fontWeight = "bold";
 	loadQuestionsByCat(precat);
 	$.ajax({
 			async: 		false,
@@ -23,13 +24,13 @@ function buildTree(level, precat) {
 							}
 							for(var i=0; i<data.length; i++) {
 								if(level==1) {
-									$("#level2").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('2', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level2").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('2', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}		
 								if(level==2) {
-									$("#level3").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level3").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								if(level==3) {
-									$("#level4").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level4").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								i++;
 							}
@@ -41,7 +42,7 @@ function loadRootCats() {
 	$('.nav-tabs').button();
 	$.getJSON('../server/rootCats.php', function(data) {
 		for(var i=0; i<data.length; i++) {
-			$("#level1").append($("<div class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('1', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+			$("#level1").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('1', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 			i++;
 		}
 	});
