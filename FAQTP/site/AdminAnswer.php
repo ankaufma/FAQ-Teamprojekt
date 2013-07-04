@@ -88,7 +88,7 @@
 							    	
 							   	<div class="row-fluid">
 						    		<div class="span12">
-							   			<button class="btn btn-primary" type="submit" value="Answer">Antworten</button>
+							   			<button class="btn btn-primary" type="submit" value="Answer">Answer</button>
 						    		</div>
 						    	</div>			    		
 								
