@@ -47,9 +47,10 @@ echo("	<!-- RATING -->
 foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 
 	$btnIdAnswer[] = "btnAnswerHideShow" . $i;
-
-	echo("
-				
+	
+	echo("Status:  ".$myQs->getQState()."");
+	
+	echo("			
 			<!-- bsp. QUESTTION -->
 			<div class = \"row-fluid questionObject\">
 				

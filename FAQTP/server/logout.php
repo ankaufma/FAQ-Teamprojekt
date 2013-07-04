@@ -36,20 +36,18 @@ session_destroy();
 			<div class="row-fluid">
 				<div class="span12 applyQuestionBox">
 					<div class="row-fluid">
-						<div class="span2"></div>
+						<div class="span12"></div>
 
 						<div class="row-fluid">
-							<div class="span3"></div>
-							<div class="span6 errorBlocks">
+							<div class="span4"></div>
+							<div class="span4 errorBlocks">
 								<div class="span8 errorMessage"> 
 									<p class="lead text-error">Successfully Logged out!</p>
 								</div>	
 							</div>
-							<div class="span3"></div>
+							<div class="span4"></div>
 						</div>
-							
-							
-						<div class="span2"></div>
+
 					</div>
 				</div>
 			</div>
