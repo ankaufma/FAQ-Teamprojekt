@@ -33,10 +33,11 @@ if(isset($_SESSION['username'])) {
 }
 
 if(isset($_SESSION['userRole'])) {
-
 	$userrole = $_SESSION['userRole'];
 }
-
+else {
+	$userrole = "NoAdmin";
+}
 
 echo("	<!-- RATING -->
 		<script type=\"text/javascript\" src=\"../client/js/jquery.raty.min.js\"></script>
@@ -63,10 +64,6 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 	// ===================================================
 	// User ist nicht angemeldet und kann nur die Fragen sehen mit status "public"
 	if($myQs->getQState() == "public") {
-	
-	
-		echo("".$myQs->getQState()."");
-	
 	
 		$btnIdAnswer[] = "btnAnswerHideShow" . $i;
 	
@@ -220,7 +217,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 	
 						echo("
 	
-			<div class=\"comment in span8 offset1\">
+						<div class=\"comment in span8 offset1\">
 						<p class=\"commentText\">  ".$myC->getComment()."</p>
 						</div>
 	
@@ -244,8 +241,6 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 	// ===================================================
 	// User ist angemeldet und kann die Fragen sehen mit status "public" und "users only"
 	if ($_SESSION['angemeldet'] == "1" && $myQs->getQState() == "users only") {
-
-		echo("".$myQs->getQState()."");
 	
 		$btnIdAnswer[] = "btnAnswerHideShow" . $i;
 		
@@ -422,12 +417,9 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 	// 				Publicity State = private
 	// ===================================================
 	// User ist angemeldet und kann nur die Fragen sehen mit status "private" (= die eigenen Fragen) und "users only" und "public"
-	if($_SESSION['angemeldet'] == "1" && $myQs->getUsername() == $_SESSION['username'] || $username='Admin') {
+	if($_SESSION['angemeldet'] == "1" && $myQs->getUsername() == $_SESSION['username'] || $userrole == 'Admin') {
 	
 		$btnIdAnswer[] = "btnAnswerHideShow" . $i;
-
-		echo("".$myQs->getQState()."");
-
 	
 		echo("
 				<!-- bsp. QUESTTION -->
@@ -600,10 +592,7 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 	
 	else {
 		// user is not authorisiezed to see this question
-		
 	}
-	
-	
 }
 
 echo("
