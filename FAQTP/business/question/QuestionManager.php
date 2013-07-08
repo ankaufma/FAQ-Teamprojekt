@@ -71,7 +71,8 @@ class QuestionManager {
 		."	left join category c4 on c3.categoryid=c4.precategory"
 		."	WHERE c1.categoryid=".$category->getCatId().") as cats"
 		." ON "
-		."cq.categoryid = cats.child1 or cq.categoryid = cats.child2 or cq.categoryid = cats.child3 or cq.categoryid=".$category->getCatId()." WHERE q.QuestionID = cq.QuestionId;";
+		."cq.categoryid = cats.child1 or cq.categoryid = cats.child2 or cq.categoryid = cats.child3 or cq.categoryid=".$category->getCatId()." WHERE q.QuestionID = cq.QuestionId"
+		." Order By q.QuestionId DESC;";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! CatQuest');
 		
@@ -120,7 +121,7 @@ class QuestionManager {
 	Public function loadAllQuestions(){
 		
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
-		$sql = "SELECT * FROM QUESTION WHERE PublicityState='public';";
+		$sql = "SELECT * FROM QUESTION WHERE PublicityState='public' ORDER BY QuestionID DESC;";
 		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
 		
@@ -173,7 +174,7 @@ class QuestionManager {
 	Public function loadQuestionById($id){
 	
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
-		$sql = "SELECT * FROM QUESTION WHERE QuestionId=".$id.";";
+		$sql = "SELECT * FROM QUESTION WHERE QuestionId=".$id." ORDER BY QuestionID DESC;";
 	
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
 	

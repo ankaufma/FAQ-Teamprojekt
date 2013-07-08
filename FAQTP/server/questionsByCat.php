@@ -4,6 +4,7 @@ session_start();
 
 include('/../business/fascade/fascade.php');
 $cat = $_POST['cat'];
+$multiple = null;
 $fassi = new Fascade();
 
 $btnIdAnswer = array();
@@ -45,7 +46,11 @@ echo("	<!-- RATING -->
 // 	<!-- 							Question
 // 	<!-- ============================================================================ -->
 foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
-
+	// Bug in SQL - get Questions in morge ChildCategories just one Time --> Same Like Distinct
+	if($multiple == $myQs->getQuestionId()) {
+		continue;
+	}
+	$multiple = $myQs->getQuestionId();
 //	echo("Question User: ".$myQs->getUsername()."");
 //	echo("Session User: ".$_SESSION['username']."");
 	

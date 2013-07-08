@@ -1,5 +1,12 @@
+var oldlevel = null;
+var oldStyle = null;
 function buildTree(level, precat) {
-	document.getElementById("style"+precat).style.fontWeight = "bold";
+	if(oldlevel==level) {
+		$("#style"+oldStyle).css("font-weight","normal");
+	}
+	oldlevel = level; 
+	$("#style"+precat).css("font-weight","bold");
+	oldStyle = precat;
 	loadQuestionsByCat(precat);
 	$.ajax({
 			async: 		false,
