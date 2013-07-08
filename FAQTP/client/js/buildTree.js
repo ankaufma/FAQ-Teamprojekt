@@ -37,7 +37,7 @@ function buildTree(level, precat) {
 									$("#level3").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								if(level==3) {
-									$("#level4").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('3', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
+									$("#level4").append($("<div id=\"style"+data[i+1]+"\" class=\"navTreeCellgap\"><a class=\"navTreeContent\" href=\"#\" onclick=\"buildTree('4', '"+data[i+1]+"')\">"+data[i]+"</a></div>"));
 								}
 								i++;
 							}
