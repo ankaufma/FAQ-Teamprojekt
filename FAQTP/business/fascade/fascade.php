@@ -141,6 +141,7 @@ include $pfad.'answer/CommentManager.php';
 			
 			$qm = new QuestionManager();
 			$qm->updateQuestion($qid, $question);
+		
 		}
 		
 		

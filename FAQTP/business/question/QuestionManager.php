@@ -42,6 +42,7 @@ class QuestionManager {
 		mysqli_close($db);
 	}
 	
+	
 	public function createCategoryToQuestion($cid, $qid) {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO catquestion (CategoryID, QuestionID) VALUES " .

@@ -50,7 +50,7 @@ if(isset($_POST['ChoosenQuestion'])) {
 session_start();
 $fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
 $fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
-
+ 
 
 
 
