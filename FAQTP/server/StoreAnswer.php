@@ -1,4 +1,6 @@
 <html>
+
+
 <head>
 <title>FAQ-Manager</title>
 <meta http-equiv="refresh" content="0; URL= ../site/index.php">
@@ -18,7 +20,7 @@
 </html>
 
 <?php
-if(trim($_POST['qid'])=="" || trim($_POST['AnswerText'])=="" || trim($_POST['Cats'])=="") {
+if(trim($_POST['qid'])=="" || trim($_POST['AnswerText'])=="" || trim($_POST['Cats'])=="" || trim($_POST['ChoosenQuestion'])=="") {
 	header("Location: errorpageUnknown.php");
 }
 include('/../business/fascade/fascade.php');
@@ -26,14 +28,30 @@ $fassi = new Fascade();
 $zubeantwortendeFrage = $_POST['qid'];
 $eingetippteAntwort = $_POST['AnswerText'];
 $categoryId = $_POST['Cats'];
+
+
+
+
 if(isset($_POST['AnswerSelect'])) {
 	foreach($_POST['AnswerSelect'] AS $relatedAnswer) {
 		$fassi->applyRelAnswer($zubeantwortendeFrage,$relatedAnswer);
 	}
 }
+
+
+
+if(isset($_POST['ChoosenQuestion'])) {
+
+		$fassi->updateQuestion($zubeantwortendeFrage,$_POST['ChoosenQuestion']);
+}
+
+
+
 session_start();
 $fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
 $fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
+
+
 
 
 

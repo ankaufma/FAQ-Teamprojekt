@@ -136,6 +136,14 @@ include $pfad.'answer/CommentManager.php';
 			$am->createRelAnswer($qid,$aid);
 		}
 		
+		//neu checken
+		public function updateQuestion($qid, $question) {
+			
+			$qm = new QuestionManager();
+			$qm->updateQuestion($qid, $question);
+		}
+		
+		
 		
 		public function showQuestionById($id) {
 			$qm = new QuestionManager();

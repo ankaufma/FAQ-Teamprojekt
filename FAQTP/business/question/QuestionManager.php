@@ -32,11 +32,11 @@ class QuestionManager {
 	}
 	
 	
-	Public function updateQuestion(Question $question){
+	public function updateQuestion($qid, $question){
 	
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
-		$sql = "Update Question set Question =".$question->getQuestion()." where QuestionID =".$question->getQuestionID()." ;";
-				
+		$sql = "Update Question set Question ='".$question."' where QuestionID =".$qid." ;";
+		
 		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
 		
 		mysqli_close($db);
