@@ -7,6 +7,7 @@ html>
 	</html>
 	
 <?php
+if(trim($_POST['user'])!="" && trim($_POST['vorname'])!="" && trim($_POST['nachname'])!="" && trim($_POST['email'])!="" && trim($_POST['passwort'])!=""){
 	include('/../business/fascade/fascade.php');
 	$fassi = new Fascade();
 	$userName = $_POST['user'];
@@ -15,4 +16,7 @@ html>
 	$userEmail = $_POST['email'];
 	$userPasswort = $_POST['passwort'];
 	$fassi->applyUser($userVorName,$userNachname,$userName,$userEmail,$userPasswort);
+	}else{
+		header("Location: errorpageUnknown.php");
+	}
 ?>
