@@ -1,11 +1,10 @@
-html>
+<html>
 	<head>
 	<meta http-equiv="refresh" content=0"; URL=../site/index.php">
 	</head>
 	<body>
 	</body>
-	</html>
-	
+</html>
 <?php
 if(trim($_POST['user'])!="" && trim($_POST['vorname'])!="" && trim($_POST['nachname'])!="" && trim($_POST['email'])!="" && trim($_POST['passwort'])!=""){
 	include('/../business/fascade/fascade.php');
