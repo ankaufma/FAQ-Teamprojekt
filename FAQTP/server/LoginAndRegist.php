@@ -102,7 +102,7 @@
 												<label class="control-label" for="inputPassword">Password
 													wiederholen</label>
 												<div class="controls">
-													<input type="password" id="inputPassword"
+													<input type="password" id="inputPassword" name="passwort2"
 														placeholder="Password">
 												
 												</div>
