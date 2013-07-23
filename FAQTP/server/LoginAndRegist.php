@@ -61,7 +61,7 @@
 											<div class="control-group">
 												<label class="control-label" for="inputUserName">Username</label>
 												<div class="controls">
-													<input name="user" type="text" id="inputUserName"
+													<input name="inputUserName" type="text" id="inputUserName"
 														placeholder="User">
 												
 												</div>
@@ -69,7 +69,7 @@
 											<div class="control-group">
 												<label class="control-label" for="inputVorname">Firstname</label>
 												<div class="controls">
-													<input name="vorname" type="text" id="inputVorname"
+													<input name="inputVorname" type="text" id="inputVorname"
 														placeholder="Firstname">
 												
 												</div>
@@ -77,7 +77,7 @@
 											<div class="control-group">
 												<label class="control-label" for="inputNachname">Lastname</label>
 												<div class="controls">
-													<input name="nachname" type="text" id="inputNachname"
+													<input name="inputNachname" type="text" id="inputNachname"
 														placeholder="Lastname">
 												
 												</div>
@@ -85,24 +85,24 @@
 											<div class="control-group">
 												<label class="control-label" for="inputEmail">Email</label>
 												<div class="controls">
-													<input name="email" type="text" id="inputEmail"
-														placeholder="Email">
+													<input name="inputEmail" type="text" id="inputEmail"
+														placeholder="inputEmail">
 												
 												</div>
 											</div>
 											<div class="control-group">
 												<label class="control-label" for="inputPassword">Password</label>
 												<div class="controls">
-													<input name="passwort" type="password" id="inputPassword"
+													<input name="inputPassword" type="password" id="inputPassword"
 														placeholder="Password">
 												
 												</div>
 											</div>
 											<div class="control-group">
-												<label class="control-label" for="inputPassword">Password
+												<label class="control-label" for="inputPassword2">Password
 													wiederholen</label>
 												<div class="controls">
-													<input type="password" id="inputPassword" name="passwort2"
+													<input type="password" id="inputPassword2" name="inputPassword2"
 														placeholder="Password">
 												
 												</div>
