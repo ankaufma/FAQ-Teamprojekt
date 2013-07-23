@@ -67,18 +67,18 @@
 												</div>
 											</div>
 											<div class="control-group">
-												<label class="control-label" for="inputVorname">Vorname</label>
+												<label class="control-label" for="inputVorname">Firstname</label>
 												<div class="controls">
 													<input name="vorname" type="text" id="inputVorname"
-														placeholder="Vorname">
+														placeholder="Firstname">
 												
 												</div>
 											</div>
 											<div class="control-group">
-												<label class="control-label" for="inputNachname">Nachname</label>
+												<label class="control-label" for="inputNachname">Lastname</label>
 												<div class="controls">
 													<input name="nachname" type="text" id="inputNachname"
-														placeholder="Nachname">
+														placeholder="Lastname">
 												
 												</div>
 											</div>

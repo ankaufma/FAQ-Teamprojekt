@@ -1,4 +1,4 @@
-<h2>Kategorien zuordnen</h2>
+<h2>Assign category</h2>
 
 <select class="span6" name="Cats" size="10" multiple>
 <?php
