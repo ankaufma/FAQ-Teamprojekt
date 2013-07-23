@@ -20,7 +20,7 @@
 </html>
 
 <?php
-if(trim($_POST['qid'])=="" || trim($_POST['AnswerText'])=="" || trim($_POST['Cats'])=="" || trim($_POST['ChoosenQuestion'])=="") {
+if(trim($_POST['qid'])=="" ||  trim($_POST['Cats'])=="" ||trim($_POST['AnswerText'])=="" && trim($_POST['ChoosenQuestion'])=="") {
 	header("Location: errorpageUnknown.php");
 }
 include('/../business/fascade/fascade.php');

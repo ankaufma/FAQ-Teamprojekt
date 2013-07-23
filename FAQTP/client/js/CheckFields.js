@@ -19,11 +19,16 @@ function checkAdminAnswer(){
 		    return false;
 		  }
 	
-	 if(document.AdminAnswer.AnswerSelect.selectedIndex == -1) {
-		 
-		 alert("sad");
+	 if(document.AdminAnswer.AnswerSelect.selectedIndex == -1 && document.AdminAnswer.AnswerText.value == "") {
+		 alert("No answer selected");
+		 document.AdminAnswer.ChoosenQuestion.focus();
+		 return false; 
 	 }
-	// alert(document.getElementById.AnswerSelect.selectedIndex.value);
-	
+
+	 if(document.AdminAnswer.Cats.selectedIndex == -1 ) {
+		 alert("No category selected");
+		 document.AdminAnswer.Cats.focus();
+		 return false; 
+	 }
 	 
 }
