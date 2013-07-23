@@ -347,10 +347,6 @@ foreach($fassi->showQuestionsByCategory($cat) AS $myQs) {
 					<div class =\"row-fluid\">
 					<div class=\"span2 offset1\">
 	
-	
-			
-			
-			
 					<a href=\"#".$commentModals[$c]."\" role=\"button\" class=\"btn btn-link linksAnswerAndComment\" data-toggle=\"modal\">Leave Comment</a>
 	
 					<!-- Modal -->

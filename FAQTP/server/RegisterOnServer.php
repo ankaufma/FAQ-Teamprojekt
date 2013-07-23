@@ -17,9 +17,9 @@ if(trim($_POST['user'])!="" && trim($_POST['vorname'])!="" && trim($_POST['nachn
 		$userPasswort = $_POST['passwort'];
 		$fassi->applyUser($userVorName,$userNachname,$userName,$userEmail,$userPasswort);
 	}else{
-			header("Location: errorpageUnknown.php");
+			header("Location: errorpageLogin.php");
 	}
 }else{
-	header("Location: errorpageUnknown.php");
+	header("Location: errorpageLogin.php");
 }
 ?>
