@@ -11,6 +11,8 @@
 
 <script type="text/javascript" src="../client/js/bootstrap.js"></script>
 <script tpye="text/javascript" src="../client/js/AdminAnswer.js"></script>
+<script tpye="text/javascript" src="../client/js/CheckFields.js"></script>
+
 
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
 <link rel="stylesheet" href="../client/css/ExpertPages.css">
@@ -35,7 +37,7 @@
 		<div class="span12">
 			<h2 class="textForSelect">Answer Selected Question:</h2>
 			<form id="AdminAnswer" name="AdminAnswer" method="post"
-				action="/../server/StoreAnswer.php">
+				action="/../server/StoreAnswer.php" onsubmit="return checkAdminAnswer()">
 
 				
 				<div class="container-fluid">
