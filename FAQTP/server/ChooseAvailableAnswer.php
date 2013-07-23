@@ -1,4 +1,4 @@
-<h2>vorhandene Antwort auswählen</h2>
+<h2>Vorhandene Antwort auswählen</h2>
 
 <div class="row-fluid searchExistingAnswer">
 	<div class="span12">

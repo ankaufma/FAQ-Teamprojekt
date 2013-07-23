@@ -17,8 +17,8 @@
 					
 				if($myQ==Null){
 				
-					echo ("<option>Keine neuen Fragen ohne Antworten vorhanden</option>");
-				
+					echo ("<option id=\"noQuestions\">Keine neuen Fragen ohne Antworten vorhanden</option>");
+					
 				}
 					
 					

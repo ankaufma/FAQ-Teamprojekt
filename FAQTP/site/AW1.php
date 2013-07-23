@@ -17,6 +17,8 @@
 	<script type="text/javascript" src="../client/js/PostComment.js"></script>
 	<script type="text/javascript" src="../client/js/bootstrap-modal.js"></script>
 
+	<script type="text/javascript" src="../client/js/checkFields.js"></script>
+	
 	
 	<link rel="stylesheet" href="../client/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../client/css/ExpertPages.css">
@@ -45,7 +47,7 @@
 				<div class ="span2"></div>
 				<div class="span8">
 					
-					<form  class="form-horizontal" action="AdminAnswer.php" method="post">
+					<form  id="qform" class="form-horizontal" action="AdminAnswer.php" method="post">
 						<div class="row">
 							<div class="span10">
 															
@@ -60,7 +62,7 @@
 						<div class="span12"> </div>	
 						<div class="row">
 							<div class ="span8">
-								<button type="submit" class="btn btn-primary">Submit</button>
+								<button id="submit" type="submit" onclick="checkField()" class="btn btn-primary">Submit</button>
 							</div>
 						</div>	
 					</form>
