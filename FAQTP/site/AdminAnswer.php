@@ -13,7 +13,8 @@
 <script tpye="text/javascript" src="../client/js/AdminAnswer.js"></script>
 
 <link rel="stylesheet" href="../client/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../client/css/ExpertPages.css">
+<link rel="stylesheet" href="../client/css/ExpertPages.css">
+
 
 </head>
 <body>
