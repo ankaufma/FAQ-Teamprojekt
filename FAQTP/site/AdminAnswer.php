@@ -44,7 +44,7 @@
 				    	<!-- 			Container Question					-->
 				    	<!-- ============================================== -->					
 						<div class="span4 question">
-							<h2>Frage</h2>
+							<h2>Question</h2>
 							<div>
 								<?php
 									include('..\server\QuestionById.php');
@@ -59,7 +59,7 @@
 				    		
 				    		<div class="row-fluid">
 				    			<div class="span12">
-									<h2>Antwort eingeben</h2>
+									<h2>Enter reply</h2>
 									<textarea name="AnswerText" class="span10 textareas" rows="6" id="AnswerText"></textarea>	
 								</div>			    		
 				    		</div>
