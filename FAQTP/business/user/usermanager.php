@@ -32,7 +32,6 @@ class Usermanager {
 		while ($row = mysqli_fetch_array($result)) {
 			array_push($this->users,new User($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6]));
 		}
-	
 		mysqli_free_result($result);
 		mysqli_close($db);
 	

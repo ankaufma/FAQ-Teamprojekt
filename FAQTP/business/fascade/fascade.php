@@ -30,8 +30,11 @@ include $pfad.'answer/CommentManager.php';
 			$audto = new ApplyUserDTO(1, $firstname, $lastname, $username, $email, $password, 'User');
 			$usermanager = new Usermanager();
 			$newUser = new User(1,$audto->getUsername(),$audto->getPassword(),$audto->getEmail(),$audto->getFirstname(),$audto->getLastname(), $audto->getUserrole());
-			if($usermanager->validateUsername($newUser)){
+			if(!$usermanager->validateUsername($newUser)){
 				$usermanager->createUser($newUser);
+				return true;
+			} else {
+				return false;
 			}
 	 	}
 		
