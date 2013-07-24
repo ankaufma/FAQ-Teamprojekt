@@ -23,7 +23,7 @@ if($_SESSION['angemeldet'] == 0){
 			<script type=\"text/javascript\" src=\"../client/js/CreateContactMessage.js\"></script>
 			
 			<!-- ---------------------------------------------------- -->
-			<!-- Contact Modal -->
+			<!-- 					Contact Modal					  -->
 			<!-- ---------------------------------------------------- -->
 				<a href=\"#contactModal\" role=\"button\" class=\" btn-link headerLinks\" data-toggle=\"modal\">Contact</a>
 					<!-- Modal -->
@@ -61,7 +61,6 @@ if($_SESSION['angemeldet'] == 0){
 			data-toggle=\"dropdown\" href=\"#\"><i class=\"icon-globe\"></i>Language<span
 			class=\"caret\"></span> </a>
 			<ul class=\"dropdown-menu\">
-			<li><a href=\"#\"><i class=\"icon-comment\"></i>Deutsch</a></li>
 			<li><a href=\"#\"><i class=\"icon-comment\"></i>English</a></li>
 			</ul>
 			</div>
@@ -114,8 +113,6 @@ if($_SESSION['angemeldet'] == 0){
 					
 				</div>
 			</td>
-			
-			
 			
 			
 			<td width=\"60px\"><a href=\"#\" id=\"aboutPopover\"

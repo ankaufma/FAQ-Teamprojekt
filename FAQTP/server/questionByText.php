@@ -9,6 +9,7 @@ foreach($fassi->showQuestionByText($text) AS $myQs) {
 	}
 	
 	echo($myQs->getQuestion());
+
 	
 	
 };

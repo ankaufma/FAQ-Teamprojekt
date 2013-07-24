@@ -104,7 +104,6 @@ include $pfad.'answer/CommentManager.php';
 		}
 		
 		
-		//In Entwicklung
 		public function applyQuestion($question, $publicityState, $username) {
 			$qm = new QuestionManager();
 			$um = new Usermanager();
