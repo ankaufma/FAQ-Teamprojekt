@@ -19,7 +19,7 @@
 </html>
 
 <?php
-if(trim($_POST['qid'])=="" ||trim($_POST['AnswerText'])=="" && trim($_POST['ChoosenQuestion'])=="") {
+if(trim($_POST['qid'])=="" ||trim($_POST['AnswerText'])=="" ) {
 	header("Location: errorpageUnknown.php");
 } else{
 include('/../business/fascade/fascade.php');
