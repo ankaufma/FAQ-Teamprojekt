@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" tests="4" assertions="4" failures="0" errors="0" time="0.036000">
+    <testcase name="testUserTrue" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="6" assertions="1" time="0.011000"/>
+    <testcase name="testUserFalsePassword" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="11" assertions="1" time="0.011000"/>
+    <testcase name="testUserFalseName" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="16" assertions="1" time="0.002000"/>
+    <testcase name="testUserCompleteFalse" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="21" assertions="1" time="0.012000"/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,24 @@
+<project name="FAQTP" default="build">
+    
+ <target name="clean">
+  <delete dir="${basedir}/build"/>
+ </target>
+
+ <target name="prepare">
+  <mkdir dir="${basedir}/build/logs"/>
+ </target>
+ 
+  <target name="databaseCheck">
+  <exec dir="${basedir}" executable="phpunit.bat" failonerror="true">
+   <arg line="--log-junit ${basedir}/build/logs/dbLog.xml ${basedir}/pUnitTests/databaseTest" />
+  </exec>
+ </target>
+ 
+ <target name="phpunit">
+  <exec dir="${basedir}" executable="phpunit.bat" failonerror="true">
+   <arg line="--log-junit ${basedir}/build/logs/phpunit.xml ${basedir}/pUnitTests/CheckUserTest" />
+  </exec>
+ </target>
+
+ <target name="build" depends="clean,prepare,databaseCheck,phpunit"/>
+</project>
