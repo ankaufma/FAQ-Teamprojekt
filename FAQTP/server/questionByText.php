@@ -8,9 +8,7 @@ foreach($fassi->showQuestionByText($text) AS $myQs) {
 		continue;
 	}
 	
-	echo($myQs->getQuestion());
-
-	
+	echo("<option value=".$myQs->getQuestion().">");
 	
 };
 ?>

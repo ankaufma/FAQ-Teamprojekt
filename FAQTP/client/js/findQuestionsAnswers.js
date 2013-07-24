@@ -7,7 +7,7 @@ function findQuestion(text) {
 		data: {		"text" : text,	},
 		dataType: 	"html",
 		success: 	function(questions){
-				$("#searchResults").append($("<option>"+questions+"</option>"));
+				$("#searchResults").append($(questions));
 		}
 	});
 }
