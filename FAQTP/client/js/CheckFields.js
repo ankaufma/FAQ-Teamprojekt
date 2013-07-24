@@ -15,19 +15,21 @@ function checkAdminAnswer(){
 
 	 if (document.AdminAnswer.ChoosenQuestion.value == "") {
 		    alert("Question Field is empty");
-		    document.AdminAnswer.ChoosenQuestion.focus();
+			setTimeout(function() { document.AdminAnswer.ChoosenQuestion.focus(); }, 777);	    
 		    return false;
 		  }
-	
-	 if(document.AdminAnswer.AnswerSelect.selectedIndex == -1 && document.AdminAnswer.AnswerText.value == "") {
+
+	 if(document.getElementById("AnswerText").value == "" && document.getElementById("AnswerSelect").selectedIndex == -1){
+		 
 		 alert("No answer selected");
-		 document.AdminAnswer.AnswerText.focus();
+		 setTimeout(function() { document.getElementById("AnswerText").focus(); }, 777);	
 		 return false; 
 	 }
 
 	 if(document.AdminAnswer.Cats.selectedIndex == -1 ) {
 		 alert("No category selected");
-		 document.AdminAnswer.Cats.focus();
+		 setTimeout(function() {  document.AdminAnswer.Cats.focus(); }, 777);	
+		
 		 return false; 
 	 }
 	 
