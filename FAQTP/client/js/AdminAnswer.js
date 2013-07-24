@@ -1,7 +1,6 @@
 function findAnswers(text) {
-		console.log(text);
+		
 		$("#AnswerSelect").empty();
-		//select feld muss noch gelöscht werden
 		
 		$.ajax({
 			async: 		false,
@@ -19,8 +18,6 @@ function findAnswers(text) {
 
 	function findRelAnswers(text) {
 
-
-		//select feld muss noch gelöscht werden
 		
 		$.ajax({
 			async: 		false,
@@ -39,7 +36,6 @@ function findAnswers(text) {
 	function findCategory(text) {
 
 
-		//select feld muss noch gelöscht werden
 		
 		$.ajax({
 			async: 		false,
