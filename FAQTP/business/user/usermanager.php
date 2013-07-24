@@ -7,7 +7,7 @@ class Usermanager {
 	public function validatePassword(User $user) {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM USER";
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			array_push($this->users,new User($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6]));
@@ -27,7 +27,7 @@ class Usermanager {
 	public function validateUsername(User $user) {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM USER";
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 	
 		while ($row = mysqli_fetch_array($result)) {
 			array_push($this->users,new User($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6]));
@@ -55,14 +55,14 @@ class Usermanager {
 		", '". $user->getPassword() . "'" .
 		", 'User')";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');	
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');	
 		mysqli_close($db);
 	}
 	
 	public function loadUserByUsername($username) {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM User WHERE Username='".$username."';";
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		while ($row = mysqli_fetch_array($result)) {
 			$sessionUser = new User($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6]);
 		}	
