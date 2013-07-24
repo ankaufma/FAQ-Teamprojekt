@@ -17,7 +17,7 @@
 <body>
 </body>
 </html>
-
+ 
 <?php
 if(trim($_POST['qid'])=="" ||trim($_POST['AnswerText'])=="" ) {
 	header("Location: errorpageUnknown.php");
