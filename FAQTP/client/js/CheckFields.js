@@ -6,13 +6,16 @@ function checkAW1() {
 		
 		window.location = "index.php"
 		return false;
+		
+		
 	}
 }
 
 
+
 function checkAdminAnswer(){
 	
-
+	
 	 if (document.AdminAnswer.ChoosenQuestion.value == "") {
 		    alert("Question Field is empty");
 			setTimeout(function() { document.AdminAnswer.ChoosenQuestion.focus(); }, 777);	    

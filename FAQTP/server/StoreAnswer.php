@@ -19,9 +19,9 @@
 </html>
 
 <?php
-if(trim($_POST['qid'])=="" ||  trim($_POST['Cats'])=="" ||trim($_POST['AnswerText'])=="" && trim($_POST['ChoosenQuestion'])=="") {
+if(trim($_POST['qid'])=="" ||trim($_POST['AnswerText'])=="" && trim($_POST['ChoosenQuestion'])=="") {
 	header("Location: errorpageUnknown.php");
-}
+} else{
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 $zubeantwortendeFrage = $_POST['qid'];
@@ -39,7 +39,7 @@ if(isset($_POST['AnswerSelect'])) {
 
 
 
-if(isset($_POST['ChoosenQuestion'])) {
+if(isset($_POST['ChoosenQuestion'])) { 
 
 		$fassi->updateQuestion($zubeantwortendeFrage,$_POST['ChoosenQuestion']);
 }
@@ -68,6 +68,6 @@ $text = "Your question XY was answered";
 
 mail($empfaenger, $betreff, $text, $from);
 */
-
+}
 
 ?>
