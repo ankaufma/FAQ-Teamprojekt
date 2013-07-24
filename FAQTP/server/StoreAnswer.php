@@ -3,7 +3,6 @@
 
 <head>
 <title>FAQ-Manager</title>
-<meta http-equiv="refresh" content="0; URL= ../site/index.php">
 
 <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
@@ -50,7 +49,7 @@ if(isset($_POST['ChoosenQuestion'])) {
 session_start();
 $fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
 $fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
- 
+header("Location: ../site/index.php");
 
 
 
