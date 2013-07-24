@@ -15,10 +15,7 @@ if (trim ( $_POST ['inputUserName'] ) != "" && trim ( $_POST ['inputVorname'] ) 
 		$userEmail = $_POST ['inputEmail'];
 		$userPasswort = $_POST ['inputPassword'];
 		if(!$fassi->applyUser( $userVorName, $userNachname, $userName, $userEmail, $userPasswort )) {
-			header ( "Location: errorpageLogin.php" );
-		}
-		else {
-			header ( "Location: errorpageUserExists.php" ); //=====????????
+			header ( "Location: errorpageUserExists.php" );
 		}
 		header("Location: ../site/index.php");
 	} else {

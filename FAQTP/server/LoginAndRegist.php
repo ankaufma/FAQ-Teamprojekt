@@ -85,8 +85,8 @@
 											<div class="control-group">
 												<label class="control-label" for="inputEmail">Email</label>
 												<div class="controls">
-													<input name="inputEmail" type="text" id="inputEmail"
-														placeholder="inputEmail">
+													<input name="inputEmail" type="email" id="inputEmail"
+														placeholder="Email">
 												
 												</div>
 											</div>
