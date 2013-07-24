@@ -8,7 +8,7 @@ session_destroy();
 <html>
 <head>
 <title>FAQ-Manager</title>
-<meta http-equiv="refresh" content="3; URL= ../site/index.php">
+<meta http-equiv="refresh" content="1; URL= ../site/index.php">
 
 <script type="text/javascript" src="../client/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../client/js/jquery-2.0.0.min.js"></script>
