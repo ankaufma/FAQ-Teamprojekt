@@ -9,8 +9,9 @@
 				foreach($fassi->showQuestionNoAnswer() as $myQ) {
 						
 						
-					echo("<option value=".$myQ->getQuestionId().">".$myQ->getQuestion()." - date: ".$myQ->getQDate()."</option>");
+					//echo("<option value=".$myQ->getQuestionId().">".$myQ->getQuestion()." - date: ".$myQ->getQDate()."</option>");
 				
+					echo("<option value=".$myQ->getQuestionId().">Date: ".$myQ->getQDate()." - ".$myQ->getQuestion()."</option>");
 						
 				
 				}

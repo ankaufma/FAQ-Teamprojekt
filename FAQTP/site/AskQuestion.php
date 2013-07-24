@@ -7,7 +7,7 @@ if ( $_SESSION['angemeldet']== true) {
 			<div>
 			<div>
 			<h2>Ask Question</h2>
-			<textarea id=\"question\" name=\"question\" class=\"span10 questionTextArea\" rows=\"8\" placeholder=\"Enter your Question and set publicity status\"></textarea>
+			<textarea id=\"question\" name=\"question\" class=\"span10 questionTextArea\" rows=\"8\" maxlength=\"1000\" placeholder=\"Enter your Question and set publicity status\"></textarea>
 			</div>
 			<div>
 
