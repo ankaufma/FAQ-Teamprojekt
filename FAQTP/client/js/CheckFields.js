@@ -11,27 +11,27 @@ function checkAW1() {
 	}
 }
 
-
+eingeb
 
 function checkAdminAnswer(){
 	
 	
 	 if (document.AdminAnswer.ChoosenQuestion.value == "") {
 		    alert("Question Field is empty");
-			setTimeout(function() { document.AdminAnswer.ChoosenQuestion.focus(); }, 777);	    
+			document.AdminAnswer.ChoosenQuestion.focus();	    
 		    return false;
 		  }
 
 	 if(document.getElementById("AnswerText").value == "" && document.getElementById("AnswerSelect").selectedIndex == -1){
 		 
-		 alert("No answer selected");
-		 setTimeout(function() { document.getElementById("AnswerText").focus(); }, 777);	
+		 alert("Please enter or select an answer");
+		 document.getElementById("AnswerText").focus();	
 		 return false; 
 	 }
 
 	 if(document.AdminAnswer.Cats.selectedIndex == -1 ) {
 		 alert("No category selected");
-		 setTimeout(function() {  document.AdminAnswer.Cats.focus(); }, 777);	
+		 document.AdminAnswer.Cats.focus();
 		
 		 return false; 
 	 }
