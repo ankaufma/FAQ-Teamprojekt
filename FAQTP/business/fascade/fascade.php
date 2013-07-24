@@ -39,7 +39,7 @@ include $pfad.'answer/CommentManager.php';
 	 	}
 		
 		public function applyRating($username, $answerid, $rating) {
-						
+					
 			$usermanager = new Usermanager();
 			$answermanager= new AnswerManager();
 			$ardto = new ApplyRatingDTO($username, $answerid, $rating);
@@ -50,7 +50,6 @@ include $pfad.'answer/CommentManager.php';
 					);
 		}
 		
-		//In Entwicklung
 		public function applyComment($username,$answerid, $comment) {
 			$CommentManager = new CommentManager();
 			$usermanager = new Usermanager();
