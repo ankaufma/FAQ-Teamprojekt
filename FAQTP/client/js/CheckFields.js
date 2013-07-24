@@ -32,5 +32,5 @@ function checkAdminAnswer(){
 		
 		 return false; 
 	 }
-	 
+	  
 }
