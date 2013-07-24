@@ -21,7 +21,7 @@ function checkAdminAnswer(){
 	
 	 if(document.AdminAnswer.AnswerSelect.selectedIndex == -1 && document.AdminAnswer.AnswerText.value == "") {
 		 alert("No answer selected");
-		 document.AdminAnswer.ChoosenQuestion.focus();
+		 document.AdminAnswer.AnswerText.focus();
 		 return false; 
 	 }
 
