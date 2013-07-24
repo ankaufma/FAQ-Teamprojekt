@@ -14,7 +14,7 @@ class QuestionManager {
 					", '" . $question->getUser()->getUserId() . "'" .
 					", '" . $question->getPublicityState() . "');";
 		
-			$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+			$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 			mysqli_close($db);	
 	}
@@ -26,7 +26,7 @@ class QuestionManager {
 				", '" . $answerId . "'" .
 				", 'Main');";
 	
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 	
 		mysqli_close($db);
 	}
@@ -37,7 +37,7 @@ class QuestionManager {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "Update Question set Question ='".$question."' where QuestionID =".$qid." ;";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 		mysqli_close($db);
 	}
@@ -49,7 +49,7 @@ class QuestionManager {
 				"('" . $cid . "'" .
 				", '" . $qid . "');";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 		mysqli_close($db);
 	}
@@ -75,15 +75,15 @@ class QuestionManager {
 		."cq.categoryid = cats.child1 or cq.categoryid = cats.child2 or cq.categoryid = cats.child3 or cq.categoryid=".$category->getCatId()." WHERE q.QuestionID = cq.QuestionId"
 		." Order By q.QuestionId DESC;";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! CatQuest');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error in Categories and Question!');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			$resultA = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Answers!');
 			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
+				$resultU = mysqli_query($db, $sqlU) or die ('Unknown Database Error!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
 						new Answer($rowA[0],
@@ -95,12 +95,12 @@ class QuestionManager {
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
+			$resultC = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Categories!');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[5] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$rowU = mysqli_fetch_row($result2);
 			array_push($this->questions,
 					new Question(
@@ -124,15 +124,15 @@ class QuestionManager {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE PublicityState='public' ORDER BY QuestionID DESC;";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error in Questions!');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			$resultA = mysqli_query($db, $sqlA) or die ('Unknown Database Erro in Answers!');
 			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
+				$resultU = mysqli_query($db, $sqlU) or die ('Unknown Database Error!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
 						new Answer($rowA[0],
@@ -144,12 +144,12 @@ class QuestionManager {
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
+			$resultC = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Categories!');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[5] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$rowU = mysqli_fetch_row($result2);
 			array_push($this->questions,
 					new Question(
@@ -177,15 +177,15 @@ class QuestionManager {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE QuestionId=".$id." ORDER BY QuestionID DESC;";
 	
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error in Questions!');
 	
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			$resultA = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Answers!');
 			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
+				$resultU = mysqli_query($db, $sqlU) or die ('Unknown Database Error!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
 						new Answer($rowA[0],
@@ -197,12 +197,12 @@ class QuestionManager {
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
+			$resultC = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Categories!');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[5] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$rowU = mysqli_fetch_row($result2);
 			array_push($this->questions,
 					new Question(
@@ -225,15 +225,15 @@ class QuestionManager {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROm Question q left join Questionanswer qa on q.questionid=qa.question where qa.question IS NULL;";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error in Questions!');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			$resultA = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Answers!');
 			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
+				$resultU = mysqli_query($db, $sqlU) or die ('Unknown Database Error!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
 						new Answer($rowA[0],
@@ -245,12 +245,12 @@ class QuestionManager {
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
+			$resultC = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Categories');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[5] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$rowU = mysqli_fetch_row($result2);
 			array_push($this->questions,
 					new Question(
@@ -273,15 +273,15 @@ class QuestionManager {
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT * FROM QUESTION WHERE Question like '%".$text."%';";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare! Questions');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error in Questions!');
 		
 		while ($row = mysqli_fetch_array($result)) {
 			$this->answers = Array();
 			$sqlA = "SELECT A.* FROM Answer a, QuestionAnswer qa WHERE a.answerid=qa.answer and qa.question=".$row[0].";";
-			$resultA = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Answers');
+			$resultA = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Answers!');
 			while ($rowA = mysqli_fetch_array($resultA)) {
 				$sqlU = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-				$resultU = mysqli_query($db, $sqlU) or die ('Fucking Nightmare!');
+				$resultU = mysqli_query($db, $sqlU) or die ('Unknown Database Error!');
 				$rowU = mysqli_fetch_row($resultU);
 				array_push($this->answers,
 						new Answer($rowA[0],
@@ -293,12 +293,12 @@ class QuestionManager {
 			}
 			$this->categories = Array();
 			$sqlC = "SELECT C.* FROM Category c, CatQuestion cq WHERE c.categoryid=cq.categoryid and cq.questionid=".$row[0].";";
-			$resultC = mysqli_query($db, $sqlA) or die ('Fucking Nightmare! Categories');
+			$resultC = mysqli_query($db, $sqlA) or die ('Unknown Database Error in Categories!');
 			while ($rowC = mysqli_fetch_array($resultC)) {
 				array_push($this->categories,new Category($rowC[0],$rowC[1],$rowC[2]));
 			}
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[5] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$rowU = mysqli_fetch_row($result2);
 			array_push($this->questions,
 					new Question(

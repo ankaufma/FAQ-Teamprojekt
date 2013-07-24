@@ -114,8 +114,7 @@ include $pfad.'answer/CommentManager.php';
 			$qm->createQuestion(new Question(1, $question, 'German', $publicityState, 'date', Array(), Array(), $user));
 		}
 		
-		
-		//in Entwicklung
+
 		public function applyAnswer($answer, $username, $questionId) {
 			$am = new AnswerManager();
 			$qm = new QuestionManager();
@@ -144,7 +143,6 @@ include $pfad.'answer/CommentManager.php';
 			$qm->updateQuestion($qid, $question);
 		
 		}
-		
 		
 		
 		public function showQuestionById($id) {
