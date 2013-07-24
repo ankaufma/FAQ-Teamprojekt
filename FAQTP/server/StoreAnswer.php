@@ -44,11 +44,16 @@ if(isset($_POST['ChoosenQuestion'])) {
 		$fassi->updateQuestion($zubeantwortendeFrage,$_POST['ChoosenQuestion']);
 }
 
-
-
 session_start();
+if(isset($_POST['Cats'])) {
+	foreach($categoryId AS $category) {
+		$fassi->applyCatToQuestion($category,$zubeantwortendeFrage);
+	}
+}
+
+
 $fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
-$fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
+//$fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
 header("Location: ../site/index.php");
 
 
