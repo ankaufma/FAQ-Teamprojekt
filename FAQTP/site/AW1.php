@@ -46,7 +46,7 @@
 				<div class ="span2"></div>
 				<div class="span8">
 					
-					<form  id="qform" class="form-horizontal" action="AdminAnswer.php" method="post">
+					<form  id="qform" class="form-horizontal" action="AdminAnswer.php" method="post" onsubmit="return checkAW1()">
 						<div class="row">
 							<div class="span10">
 															
@@ -61,7 +61,7 @@
 						<div class="span12"> </div>	
 						<div class="row">
 							<div class ="span8">
-								<button id="submit" type="submit" onclick="checkField()" class="btn btn-primary">Submit</button>
+								<button id="submit" type="submit"  class="btn btn-primary">Submit</button>
 							</div>
 						</div>	
 					</form>

@@ -4,7 +4,7 @@
 				$fassi = new Fascade();
 				$question=Array();
 					
-					
+				$myQ=null;	
 					
 				foreach($fassi->showQuestionNoAnswer() as $myQ) {
 						

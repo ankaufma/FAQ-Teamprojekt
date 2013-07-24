@@ -1,11 +1,11 @@
-function checkField() {
+function checkAW1() {
 
     
-	if(document.getElementById("noQuestions").value == "No new questions without Answers")
+	if(document.getElementById("noQuestions").value == "No new questions without Answers" || document.getElementById("noQuestions").selectedIndex == -1)
 	{
-		window.location = "index.php"
-		document.getElementById("qform").innerHTML = "<form  id=\"qform\" class=\"form-horizontal\" action=\"index.php\" method=\"post\"></from>"
 		
+		window.location = "index.php"
+		return false;
 	}
 }
 
