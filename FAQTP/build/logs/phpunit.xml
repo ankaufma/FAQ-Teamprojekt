@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" tests="4" assertions="4" failures="0" errors="0" time="0.036000">
-    <testcase name="testUserTrue" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="6" assertions="1" time="0.011000"/>
-    <testcase name="testUserFalsePassword" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="11" assertions="1" time="0.011000"/>
-    <testcase name="testUserFalseName" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="16" assertions="1" time="0.002000"/>
-    <testcase name="testUserCompleteFalse" class="CheckUserTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\checkUserTest.php" line="21" assertions="1" time="0.012000"/>
+  <testsuite name="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" tests="7" assertions="7" failures="0" errors="0" time="0.278000">
+    <testcase name="testUserTrue" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="6" assertions="1" time="0.023000"/>
+    <testcase name="testUserFalsePassword" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="11" assertions="1" time="0.006000"/>
+    <testcase name="testUserFalseName" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="16" assertions="1" time="0.004000"/>
+    <testcase name="testUserCompleteFalse" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="21" assertions="1" time="0.022000"/>
+    <testcase name="testUserByUsername" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="26" assertions="1" time="0.021000"/>
+    <testcase name="testTryToAplyExistingUsername" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="31" assertions="1" time="0.004000"/>
+    <testcase name="testApplyNewUser" class="PHPUnitTests" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\phpUnitTests.php" line="36" assertions="1" time="0.198000"/>
   </testsuite>
 </testsuites>

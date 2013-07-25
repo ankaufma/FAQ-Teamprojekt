@@ -16,7 +16,7 @@
  
  <target name="phpunit">
   <exec dir="${basedir}" executable="phpunit.bat" failonerror="true">
-   <arg line="--log-junit ${basedir}/build/logs/phpunit.xml ${basedir}/pUnitTests/CheckUserTest" />
+   <arg line="--log-junit ${basedir}/build/logs/phpunit.xml ${basedir}/pUnitTests/PHPUnitTests" />
   </exec>
  </target>
 

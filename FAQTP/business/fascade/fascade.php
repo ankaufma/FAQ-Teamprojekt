@@ -230,9 +230,9 @@ include $pfad.'answer/CommentManager.php';
 			return $allCats;
 		}
 		
-		public function showRatingByAnswer($answerId) {
+		public function showRatingByAnswer(Answer $answer) {
 			$rm = new RatingManager();
-			$swrba = new ShowRatingByAnswerDTO($rm->calcRatingForEachAnswer($answerId));
+			$swrba = new ShowRatingByAnswerDTO($rm->calcRatingForEachAnswer($answer));
 			return $swrba->getRating();
 		}
 		

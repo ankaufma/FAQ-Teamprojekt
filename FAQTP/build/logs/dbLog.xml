@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.024000">
-    <testcase name="testDatabaseConnection" class="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" line="4" assertions="1" time="0.016000"/>
-    <testcase name="testTestDataExisting" class="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" line="13" assertions="1" time="0.008000"/>
+  <testsuite name="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.029000">
+    <testcase name="testDatabaseConnection" class="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" line="4" assertions="1" time="0.017000"/>
+    <testcase name="testTestDataExisting" class="DatabaseTest" file="C:\Users\AK\Desktop\Fachhochschule\WIN6\Teamprojekt\GITRepository\TPFAQ\FAQTP\pUnitTests\databaseTest.php" line="13" assertions="1" time="0.012000"/>
   </testsuite>
 </testsuites>

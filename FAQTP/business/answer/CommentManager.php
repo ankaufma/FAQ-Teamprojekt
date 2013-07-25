@@ -10,7 +10,7 @@ class CommentManager {
 				", '" . $comment->getUser()->getUserId() ."'" .
 				", '". $comment->getAnswer()->getAnswerId() ."');";
 		
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 		mysqli_close($db);
 	}
@@ -18,11 +18,11 @@ class CommentManager {
 	public function loadCommentsByAnswer(Answer $answer){
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql1 = "SELECT * FROM COMMENT WHERE Answer='". $answer->getAnswerId() ."';";
-		$result1 = mysqli_query($db, $sql1) or die ('Fucking Nightmare!');
+		$result1 = mysqli_query($db, $sql1) or die ('Unknown Database Error!');
 		
 		while ($row = mysqli_fetch_array($result1)) {
 			$sql2 = "SELECT * FROM USER WHERE UserId='". $row[3] ."';";
-			$result2 = mysqli_query($db, $sql2) or die ('Fucking Nightmare!');
+			$result2 = mysqli_query($db, $sql2) or die ('Unknown Database Error!');
 			$userRow = mysqli_fetch_row($result2);
 			array_push($this->comments,new Comment($row[0],$row[1],$row[2],new User($userRow[0],$userRow[1],$userRow[2],$userRow[3],$userRow[4],$userRow[5],$userRow[6]),$answer));
 		}

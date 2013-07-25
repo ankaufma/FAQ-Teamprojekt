@@ -8,7 +8,7 @@ class RatingManager
 
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "INSERT INTO rating (Rating,User,Answer)VALUES"."(".$rating->getRating().",".$rating->getUser()->getUserId().",".$rating->getAnswer()->getAnswerId().");";
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		
 		mysqli_close($db);
 		
@@ -19,7 +19,7 @@ class RatingManager
 		#SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer = 1; 
 		$db = mysqli_connect('127.0.0.1', 'root', '', 'tpfaq');
 		$sql = "SELECT ROUND(avg(RATING), 1) FROM RATING WHERE Answer =".$answer->getAnswerId().";";
-		$result = mysqli_query($db, $sql) or die ('Fucking Nightmare!');
+		$result = mysqli_query($db, $sql) or die ('Unknown Database Error!');
 		$ratingRow = mysqli_fetch_row($result);
 		$rating = $ratingRow[0];
 		mysqli_close($db);
