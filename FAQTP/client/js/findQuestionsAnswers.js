@@ -18,7 +18,7 @@ function loadQuestionsByText(text) {
 		async:		false,
 		type: 		"POST",
 		url: 		"../server/loadQuestionsByText.php",
-		data: {		"text" : text,	},
+		data: {		"text" : text	},
 		dataType: 	"html",
 		success: 	function(questions){
 			console.log(questions);

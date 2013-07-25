@@ -3,7 +3,7 @@
 session_start();
 
 include('/../business/fascade/fascade.php');
-$text = $_POST['text'];
+$text = utf8_decode($_POST['text']);
 $multiple = null;
 $fassi = new Fascade();
 
@@ -52,6 +52,7 @@ echo("	<!-- RATING -->
 // Meldung: Keine Ergebnisse gefunden
 if($fassi->showQuestionByText($text) != true) {
 	echo("<p class=\"lead\">No Results Found!</p>");
+	echo("<p>".$text."</p>");
 }
 
 
@@ -59,7 +60,7 @@ if($fassi->showQuestionByText($text) != true) {
 // 	<!-- 							Question
 // 	<!-- ============================================================================ -->
 foreach($fassi->showQuestionByText($text) AS $myQs) {
-	// Bug in SQL - get Questions in morge ChildCategories just one Time --> Same Like Distinct
+	// Bug in SQL - get Questions in more ChildCategories just one Time --> Same Like Distinct
 	if($multiple == $myQs->getQuestionId()) {
 		continue;
 	}
