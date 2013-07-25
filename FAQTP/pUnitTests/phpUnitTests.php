@@ -46,6 +46,20 @@ class PHPUnitTests extends PHPUnit_Framework_TestCase {
 		$sut->applyRating('Anonymous', 3, 2);
 		$this->assertEquals($sut->showRatingByAnswer($answer),5);
 	}
+	
+	function testQuestionById() {
+		$sut = new Fascade();
+		foreach($sut->showQuestionById(1) as $myQuestion) {
+			$this->assertEquals($myQuestion->getQuestionId(), 1);
+		}
+	}
+	
+	function testQuestionByText() {
+		$sut = new Fascade();
+		foreach($sut->showQuestionByText('jetzt') as $myQs) {
+			$this->assertEquals($myQs->getQuestionId(),2);
+		}
+	}
 
 	
 	function tearDown() {
