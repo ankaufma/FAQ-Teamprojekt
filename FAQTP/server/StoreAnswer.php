@@ -19,13 +19,25 @@
 </html>
 
 <?php
-if(trim($_POST['qid'])=="" ||trim($_POST['AnswerText'])=="" && trim($_POST['ChoosenQuestion'])=="") {
+
+
+
+if(trim($_POST['AnswerText'])=="" && trim($_POST['AnswerSelect'])!==""){
+
+	unset($_POST['AnswerText']);
+
+}
+
+
+if(trim($_POST['qid'])==""  ||(trim($_POST['AnswerText'])==""  && isset($_POST['AnswerSelect'])==false)) {
+	
 	header("Location: errorpageUnknown.php");
-} else{
+	
+	
+}else{
 include('/../business/fascade/fascade.php');
 $fassi = new Fascade();
 $zubeantwortendeFrage = $_POST['qid'];
-$eingetippteAntwort = $_POST['AnswerText'];
 $categoryId = $_POST['Cats'];
 
 
@@ -51,8 +63,9 @@ if(isset($_POST['Cats'])) {
 	}
 }
 
-
-$fassi->applyAnswer($eingetippteAntwort,$_SESSION['username'],$zubeantwortendeFrage);
+if(isset($_POST['AnswerText'])){
+$fassi->applyAnswer($_POST['AnswerText'],$_SESSION['username'],$zubeantwortendeFrage);
+}
 //$fassi->applyCatToQuestion($categoryId,$zubeantwortendeFrage);
 header("Location: ../site/index.php");
 
