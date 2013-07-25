@@ -20,7 +20,7 @@ if (trim ( $_POST ['inputUserName'] ) != "" && trim ( $_POST ['inputVorname'] ) 
 		
 		}
 
-		header("Location: ../site/index.php");
+		header("Location: registered.php");
 	} else {
 		header ( "Location: errorpageLogin.php" );
 	}
