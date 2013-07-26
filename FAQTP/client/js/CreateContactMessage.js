@@ -1,19 +1,14 @@
 function sendFormular()
 {
-	
-	
-	alert("Jetzt sind wir im Senden der Mail");
-	
-
-	mail('gipiras@htwg-konstanz.de', 'Mein Betreff', 'Testmail');
 	m = new SendMail();
-	m.To = 'gipiras@htwg-konstanz.de';
-	m.From = 'Contact';
-	m.Body = 'bla bla bla';
+	m.To = '<empfaengerName>@<domain>.<end>';
+	m.From = '<absenderName>@<domain>.<end>';
+	m.Subject = 'FAQ Manager - Contact Message';
+	m.Body = TEXT;
 	m.send();
 
 	if(m.errorCode() != 0)
-	{ write('Fehler aufgetreten: '+m.errorMessage()); }
+	{ write('Transaction failed: '+m.errorMessage()); }
 	else
-	{ write('Die Mail wurde erfolgreich versandt.'); }
+	{ write('The mail was sent correctly.'); }
 }
