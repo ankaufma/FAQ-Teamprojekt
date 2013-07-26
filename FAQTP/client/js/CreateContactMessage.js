@@ -8,7 +8,7 @@ function sendFormular()
 	m.send();
 
 	if(m.errorCode() != 0)
-	{ write('Transaction failed: '+m.errorMessage()); }
+	{ write('Transaction failed: ' + m.errorMessage()); }
 	else
 	{ write('The mail was sent correctly.'); }
 }
