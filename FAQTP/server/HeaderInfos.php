@@ -35,11 +35,13 @@ if($_SESSION['angemeldet'] == 0){
 								</div>
 								<div class=\"modal-body\">
 									<p>Write message...</p>
-								<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
-								</div>
-								<div class=\"modal-footer\">
-								<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-								<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
+								<form name = \"ContactFormular\" action = \"\">
+									<textarea name=\"textfeld\" class=\"span10\" rows=\"8\" placeholder=\"Please enter your message\"></textarea>
+									</div>
+									<div class=\"modal-footer\">
+									<button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+									<button class=\"btn btn-primary\" onClick=\"sendFormular()\">Send</button>
+								</form>
 							</div>
 						</div>
 					

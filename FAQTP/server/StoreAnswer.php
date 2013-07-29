@@ -74,10 +74,10 @@ header("Location: ../site/index.php");
 
 // send mail to user
 /*
-$empfaenger = "thwinter@htwg-konstanz.de";
-$betreff = "Die Mail-Funktion";
+$empfaenger = "<empfaengerName>@<domain>.<end>";
+$betreff = "FAQ Manager - Question answered";
 $from = "From: Experte <absender@domain.de>";
-$text = "Your question XY was answered";
+$text = "Your question has been answered by an expert!!!";
 
 mail($empfaenger, $betreff, $text, $from);
 */
