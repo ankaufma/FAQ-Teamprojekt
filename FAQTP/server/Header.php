@@ -9,7 +9,7 @@
 		<!-- Header-Functions-->
 		
 		<?php 
-			include('/../server/HeaderInfos.php');
+			include('HeaderInfos.php');
 		?>	
 	
 </div>

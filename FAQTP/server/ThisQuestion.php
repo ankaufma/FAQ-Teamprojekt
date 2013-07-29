@@ -2,6 +2,6 @@
 
 <div>
 	<?php
-		include('../server/QuestionById.php');
+		include('QuestionById.php');
 	?>
 </div>

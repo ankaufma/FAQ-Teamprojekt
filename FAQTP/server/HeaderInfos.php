@@ -14,7 +14,7 @@ if($_SESSION['angemeldet'] == 0){
 
 			<!-- Calling Modal for Login and Registration -->");
 
-	include('/../server/LoginAndRegist.php');
+	include('LoginAndRegist.php');
 
 	echo("
 			</td>

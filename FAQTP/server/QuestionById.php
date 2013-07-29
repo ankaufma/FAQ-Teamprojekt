@@ -10,4 +10,3 @@ foreach($fassi->showQuestionById($_POST['auswahl_frage']) as $myQ) {
 	echo ("<span hidden=\"TRUE\"><input type=\"text\" name=\"qid\" value=\"".$myQ->getQuestionId()."\" id=\"qid\"/></span>");	
 }
 ?>
- 
