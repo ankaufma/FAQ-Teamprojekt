@@ -1,6 +1,6 @@
 
 				<?php
-				include('..\business\fascade\fascade.php');
+				include('../business/fascade/fascade.php');
 				$fassi = new Fascade();
 				$question=Array();
 					

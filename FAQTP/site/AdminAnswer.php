@@ -27,7 +27,7 @@
 	<!-- ============================================================================ -->
 
 	<?php 
-		include('..\server\Header.php');
+		include('../server/Header.php');
 	?>
 
 	<!-- ============================================================================ -->
@@ -50,7 +50,7 @@
 							<h2>Question</h2>
 							<div>
 								<?php
-									include('..\server\QuestionById.php');
+									include('../server/QuestionById.php');
 								?>
 							</div>
 				    	</div>
